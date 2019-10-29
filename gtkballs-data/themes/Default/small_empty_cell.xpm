@@ -1,0 +1,7 @@
+/* XPM */
+static char *small_empty_cell[] = {
+"1 1 2 1",
+"  c black",
+". c None",
+"."
+};

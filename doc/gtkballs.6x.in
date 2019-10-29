@@ -1,0 +1,144 @@
+.TH GTKBALLS 6x "A simple logic game" "Version @VERSION@"
+.SH NAME
+gtkballs \- A simple logic game
+.SH SYNOPSIS
+.B gtkballs
+[options]
+.SH DESCRIPTION
+This manual page documents 
+.BR GtkBalls.
+.BR GtkBalls
+is a simple logic game. The goal of this game is to make the highest score
+by matching a number of balls of the same color in a horizontal, vertical or
+diagonal line. For further information on how to play this game refer to the
+rules section in this manual page.
+.SH OPTIONS
+.TP
+.I "\--display [hostname:dpy]"
+Specify what display GtkBalls should use. See
+.BR X
+(1x) for more information on the syntax of hostname and display.
+.SH RULES
+The standard play area of GtkBalls is a 9x9 grid (it can be changed through
+"Rules" option in ingame menu). When GtkBalls is first started a number of
+balls are placed in a random manner on the grid. Balls are in different colors
+(and/or shape). You may move balls on the grid by selecting them and selecting
+an empty square on the grid as destination for the ball you selected. Balls
+will only move if they are not blocked by other balls. Each time you move a
+ball, unless you score some points, new balls appear in a random manner on the
+grid. If the grid is full then the game is lost. However this is bound to
+happen, your goal is to make the highest score. In order to do this you must
+make lines in a vertical, horizontal or diagonal way with balls of the same
+color. By default a line must have at least five balls of the same color (it
+can also be changed through "Rules" option in ingame menu). Making a line of
+minimum amount of the balls, specifed in rules, will earn you twice the points
+for your score. If you make lines over minimum amount of the balls it will earn
+you even more points. In order to help you decide which ball you are going to
+move, there is an indicator on top of the grid that shows what colors the next
+balls that will appear on the grid will be.
+.SH USING THE INTERFACE 
+GtkBalls is a graphical program using the Gtk+ windowing toolkit. This section
+describes it's user interface.
+.SS THE GAME MENU
+.TP
+.I New
+Selecting this menu entry will abandon the current game and start a new one or
+start another game if you just finished one. You may use the keyboard shortcut
+.BR CTRL-N
+to do this also.
+.TP
+.I Rules
+Selecting this menu entry will open "Rules" dialog box, where you can set board
+width and height, number of different objects to appear on the board, number
+of objects that will appear on the board after each turn and number of
+objects that must form the line to eliminate it. You may use the keyboard
+shortcut
+.BR CTRL-R
+to do this also.
+.TP
+.I Save
+Selecting this menu entry will open "Save game" dialog box, where you can save
+current game to play it later. You may use the keyboard shortcut
+.BR CTRL-S
+to do this also.
+.TP
+.I Load
+Selecting this menu entry will open "Load game" dialog box, where you can load
+previously saved game. You may use the keyboard shortcut
+.BR CTRL-L
+to do this also.
+.TP
+.I Hall Of Fame
+Selecting this menu entry will open a dialog box showing the high scores. Only
+the ten best scores are shown. This dialog also displays the name of the person
+who achieved a high score and it's date. You may use the keyboard shortcut
+.BR CTRL-H
+to do this also.
+.TP
+.I Quit
+Selecting this menu entry will quit GtkBalls. You may use the keyboard shortcut
+.BR CTRL-Q
+to do the same thing.
+.SS THE EDIT MENU
+.TP
+.I Undo
+Selecting this menu entry will undo your last move. You may use the keyboard
+shortcut
+.BR CTRL-U
+to do this also.
+.SS THE SETTINGS MENU
+.TP
+.I Preferences
+Selecting this menu entry will open the "Preferences" dialog box. You may use
+the keyboard shortcut
+.BR CTRL-P
+to open it also.
+This dialog box allows you to set some options. Click on a check box to
+activate or deactivate them. Click on the theme name to select it.
+Then click on the
+.B Apply
+button to save your settings or click on
+.B Ok
+button to save your settings and close this dialog box.
+You can disable the showing of footprints,
+path of the ball, color of the next balls indicator, animation of disappearing
+of the ball and set time limit per move from this dialog box.
+.SS THE HELP MENU
+.TP
+.I Rules
+Selecting this menu entry will display a dialog box describing rules of the
+game. You may use the keyboard shortcut
+.BR F1
+to open it also.
+.TP
+.I About
+Selecting this menu entry will display a dialog with the logo and the
+copyright information of GtkBalls. You may use the keyboard shortcut
+.BR CTRL-A
+to open it also. For more details on the license, click
+on the
+.BR "Show license"
+button. This will open another dialog box where you can read the GNU General
+Public License.
+.SH SEE ALSO
+The
+.BR GtkBalls
+web site at:
+.BR http://gtkballs.antex.ru
+.SH AUTHORS
+.BR GtkBalls
+was created by Eugene Morozov <jmv@online.ru>.
+This manual page was created by Christoph Thompson <obituary@freshmeat.net>.
+Current maintainer of
+.BR GtkBalls
+and this manual page is drF_ckoff
+<dfo@antex.ru>.
+.SH COPYRIGHT
+.BR GtkBalls
+is copyright 1998, 1999 Eugene V. Morozov under the terms of the GNU
+General Public License.
+.BR GtkBalls 
+is free software; you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the license, or (at your option) any
+later version.

@@ -1,0 +1,403 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-16 15:19+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/about.c:21
+msgid "About"
+msgstr ""
+
+#: src/about.c:32
+#, c-format
+msgid ""
+"GtkBalls %s\n"
+"Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
+"Copyright (C) 1998-1999 Eugene Morozov\n"
+"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"\n"
+"GtkBalls comes with ABSOLUTELY NO WARRANTY;\n"
+"for details press \"Show license\" button.\n"
+"This is free software and you are welcome to\n"
+"redistribute it under certain conditions;\n"
+"press \"Show license\" button for details."
+msgstr ""
+
+#: src/about.c:49
+msgid "Show license"
+msgstr ""
+
+#: src/gtkballs.c:146
+#, c-format
+msgid "Failed loading theme \"%s\"! Trying \"%s\"\n"
+msgstr ""
+
+#: src/gtkballs.c:153
+#, c-format
+msgid "Failed loading theme \"%s\"! Exiting.\n"
+msgstr ""
+
+#: src/gtkballs.c:171 src/halloffame.c:31 src/inputname.c:59
+msgid "Unable to read score.\n"
+msgstr ""
+
+#: src/license.c:32
+msgid "Can't stat license file"
+msgstr ""
+
+#: src/license.c:38
+msgid "Can't open license file"
+msgstr ""
+
+#: src/license.c:46
+msgid "GNU Public License"
+msgstr ""
+
+#: src/mainmenu.c:20
+msgid "_Game"
+msgstr ""
+
+#: src/mainmenu.c:21
+msgid "_Edit"
+msgstr ""
+
+#: src/mainmenu.c:22
+msgid "_Settings"
+msgstr ""
+
+#: src/mainmenu.c:23
+msgid "_Help"
+msgstr ""
+
+#: src/mainmenu.c:24
+msgid "_New"
+msgstr ""
+
+#: src/mainmenu.c:24
+msgid "Start new game"
+msgstr ""
+
+#: src/mainmenu.c:25 src/mainmenu.c:32
+msgid "_Rules"
+msgstr ""
+
+#: src/mainmenu.c:25
+msgid "Change game rules"
+msgstr ""
+
+#: src/mainmenu.c:26
+msgid "_Save"
+msgstr ""
+
+#: src/mainmenu.c:26 src/savedialog.c:196 src/savedialog.c:266
+msgid "Save game"
+msgstr ""
+
+#: src/mainmenu.c:27
+msgid "_Load"
+msgstr ""
+
+#: src/mainmenu.c:27 src/savedialog.c:196 src/savedialog.c:269
+msgid "Load game"
+msgstr ""
+
+#: src/mainmenu.c:28
+msgid "_Hall of fame"
+msgstr ""
+
+#: src/mainmenu.c:28
+msgid "Show Hall of Fame"
+msgstr ""
+
+#: src/mainmenu.c:29
+msgid "_Quit"
+msgstr ""
+
+#: src/mainmenu.c:29
+msgid "Quit program"
+msgstr ""
+
+#: src/mainmenu.c:30
+msgid "_Undo"
+msgstr ""
+
+#: src/mainmenu.c:30
+msgid "Undo last move"
+msgstr ""
+
+#: src/mainmenu.c:31
+msgid "_Preferences"
+msgstr ""
+
+#: src/mainmenu.c:31
+msgid "Change game settings"
+msgstr ""
+
+#: src/mainmenu.c:32
+msgid "Display help about game rules"
+msgstr ""
+
+#: src/mainmenu.c:33
+msgid "_About"
+msgstr ""
+
+#: src/mainmenu.c:33
+msgid "Show information about program"
+msgstr ""
+
+#: src/mainwin.c:51
+#, c-format
+msgid "Hi-score: %i"
+msgstr ""
+
+#: src/mainwin.c:64
+#, c-format
+msgid "Your score: %i"
+msgstr ""
+
+#: src/mainwin.c:75
+msgid ""
+"Score writer process died unexpectedly. No scores will be writen!\n"
+"Save your game and restart programm.\n"
+msgstr ""
+
+#: src/mainwin.c:77
+msgid "Who Killed Bambi?"
+msgstr ""
+
+#: src/mainwin.c:81
+msgid "Time is unlimited"
+msgstr ""
+
+#: src/mainwin.c:88
+#, c-format
+msgid "Remaining time: %02d:%02d"
+msgstr ""
+
+#: src/mainwin.c:146
+msgid "GtkBalls"
+msgstr ""
+
+#: src/preferences.c:66
+msgid "Failed loading theme \""
+msgstr ""
+
+#: src/preferences.c:130
+msgid "No themes available! =(\n"
+msgstr ""
+
+#: src/preferences.c:136 src/preferences.c:142
+msgid "Preferences"
+msgstr ""
+
+#: src/preferences.c:149
+msgid "Show colors that will appear on next turn"
+msgstr ""
+
+#: src/preferences.c:150
+msgid "Show path of the ball"
+msgstr ""
+
+#: src/preferences.c:151
+msgid "Show footprints of the ball"
+msgstr ""
+
+#: src/preferences.c:152
+msgid "Show animation of disappearing of the ball"
+msgstr ""
+
+#: src/preferences.c:153
+msgid "Highlight \"active\" cell"
+msgstr ""
+
+#: src/preferences.c:155
+msgid "Highlight red value: "
+msgstr ""
+
+#: src/preferences.c:156
+msgid "Highlight green value: "
+msgstr ""
+
+#: src/preferences.c:157
+msgid "Highlight blue value: "
+msgstr ""
+
+#: src/preferences.c:165
+msgid "Enable time limit"
+msgstr ""
+
+#: src/preferences.c:166
+msgid "Time limit (seconds): "
+msgstr ""
+
+#: src/preferences.c:195
+msgid "Select Theme"
+msgstr ""
+
+#: src/prefs.c:236
+#, c-format
+msgid "Can't write to %s: %s"
+msgstr ""
+
+#: src/rules.c:22 src/rules.c:27
+msgid "Rules"
+msgstr ""
+
+#: src/rules.c:34
+msgid ""
+"The standard play area of GtkBalls is a 9x9\n"
+"grid (it can be changed through \"Rules\"\n"
+"option in ingame menu). When GtkBalls is\n"
+"first started a number of balls are placed\n"
+"in a random manner on the grid. Balls are\n"
+"in different colors (and/or shape). You may\n"
+"move balls on the grid by selecting them and\n"
+"selecting an empty square on the grid as\n"
+"destination for the ball you selected. Balls\n"
+"will only move if they are not blocked by\n"
+"other balls. Each time you move a ball,\n"
+"unless you score some points, new balls\n"
+"appear in a random manner on the grid. If\n"
+"the grid is full then the game is lost.\n"
+"However this is bound to happen, your goal\n"
+"is to make the highest score. In order to do\n"
+"this you must make lines in a vertical,\n"
+"horizontal or diagonal way with balls of the\n"
+"same color. By default a line must have at\n"
+"least five balls of the same color (it can\n"
+"also be changed through \"Rules\" option in\n"
+"ingame menu). Making a line of minimum amount\n"
+"of the balls, specifed in rules, will earn you\n"
+"twice the points for your score. If you make\n"
+"lines over minimum amount of the balls it will\n"
+"earn you even more points. In order to help you\n"
+"decide which ball you are going to move, there\n"
+"is an indicator on top of the grid that shows\n"
+"what colors the next balls that will appear on\n"
+"the grid will be."
+msgstr ""
+
+#: src/scoreboard.c:53 src/scoreboard.c:57 src/scoreboard.c:155
+#: src/scoreboard.c:170 src/inputname.c:42 src/inputname.c:46
+#: src/inputname.c:50
+msgid "Unknown"
+msgstr ""
+
+#: src/savedialog.c:29
+msgid "No game selected for load.\n"
+msgstr ""
+
+#: src/savedialog.c:33
+#, c-format
+msgid ""
+"Cannot load game from:\n"
+"%s\n"
+msgstr ""
+
+#: src/savedialog.c:37
+#, c-format
+msgid ""
+"Not enough balls(%d) in current theme.\n"
+"We need %d balls.\n"
+"Load another theme and try again."
+msgstr ""
+
+#: src/savedialog.c:107
+#, c-format
+msgid ""
+"Cannot save game to:\n"
+"%s\n"
+"%s"
+msgstr ""
+
+#: src/savedialog.c:192
+msgid "No saved games found.\n"
+msgstr ""
+
+#: src/savedialog.c:221
+msgid "Empty"
+msgstr ""
+
+#: src/savedialog.c:235 src/halloffame.c:74
+msgid "Date"
+msgstr ""
+
+#: src/savedialog.c:246 src/halloffame.c:71
+msgid "Score"
+msgstr ""
+
+#: src/savedialog.c:272
+msgid "Delete game"
+msgstr ""
+
+#: src/halloffame.c:36 src/halloffame.c:42
+msgid "Hall of Fame"
+msgstr ""
+
+#: src/halloffame.c:60
+msgid "No scores"
+msgstr ""
+
+#: src/halloffame.c:68
+msgid "Name"
+msgstr ""
+
+#: src/inputname.c:35
+msgid "Anonymous"
+msgstr ""
+
+#: src/inputname.c:41 src/inputname.c:45
+msgid "Unable to determine current date.\n"
+msgstr ""
+
+#: src/inputname.c:44
+msgid "%a %b %d %H:%M %Y"
+msgstr ""
+
+#: src/inputname.c:63
+msgid "Unable to save score.\n"
+msgstr ""
+
+#: src/inputname.c:90
+msgid "Enter your name"
+msgstr ""
+
+#: src/rulesdialog.c:61 src/rulesdialog.c:66
+msgid "Game rules"
+msgstr ""
+
+#: src/rulesdialog.c:73
+msgid "Board width"
+msgstr ""
+
+#: src/rulesdialog.c:74
+msgid "Board height"
+msgstr ""
+
+#: src/rulesdialog.c:75
+msgid "Number of different objects"
+msgstr ""
+
+#: src/rulesdialog.c:77
+msgid "Number of 'next' objects"
+msgstr ""
+
+#: src/rulesdialog.c:78
+msgid "How many balls at line eliminate it"
+msgstr ""
+
+#: src/rulesdialog.c:81
+msgid "Classic rules"
+msgstr ""

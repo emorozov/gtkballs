@@ -1,0 +1,7 @@
+Installation is pretty simple:
+
+./configure
+make
+make install
+
+Questions? Suggestions? Mail to dfo@antex.ru

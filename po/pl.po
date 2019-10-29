@@ -1,0 +1,537 @@
+# polish translation gtkballs 2.0
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Przemysław Sułek <pbs@linux.net.pl>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gtkballs 2.2.0 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-16 15:19+0300\n"
+"PO-Revision-Date: 2002-02-16 13:20+0002\n"
+"Last-Translator: Przemysław Sułek <pbs@linux.net.pl>\n"
+"Language-Team: POLISH <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/about.c:21
+msgid "About"
+msgstr "O..."
+
+#: src/about.c:32
+#, fuzzy, c-format
+msgid ""
+"GtkBalls %s\n"
+"Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
+"Copyright (C) 1998-1999 Eugene Morozov\n"
+"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"\n"
+"GtkBalls comes with ABSOLUTELY NO WARRANTY;\n"
+"for details press \"Show license\" button.\n"
+"This is free software and you are welcome to\n"
+"redistribute it under certain conditions;\n"
+"press \"Show license\" button for details."
+msgstr ""
+"GtkBalls %s\n"
+" Copyright (C) 1998-1999 Eugene Morozov\n"
+"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"\n"
+"GtkBalls przychodzi ABSOLUTNIE BEZ GWARANCJI;\n"
+"dla szczegółów naciśnij przycisk \"Pokaż licencję\".\n"
+"Jest to wolne oprogramowanie i możesz je\n"
+"redystrybuować pod określonymi warunkami;\n"
+"szczegóły po naciśnęciu przycisku \"Pokaż licencję\"."
+
+#: src/about.c:49
+msgid "Show license"
+msgstr "Pokaż licencję"
+
+#: src/gtkballs.c:146
+#, c-format
+msgid "Failed loading theme \"%s\"! Trying \"%s\"\n"
+msgstr "Błąd wczytywania wystroju \"%s\"! Próbuję \"%s\"\n"
+
+#: src/gtkballs.c:153
+#, c-format
+msgid "Failed loading theme \"%s\"! Exiting.\n"
+msgstr "Błąd wczytywania wystroju \"%s\"! Wychodzenie.\n"
+
+#: src/gtkballs.c:171 src/halloffame.c:31 src/inputname.c:59
+msgid "Unable to read score.\n"
+msgstr "Nie można przeczytać wyników.\n"
+
+#: src/license.c:32
+msgid "Can't stat license file"
+msgstr "Nie można stwierdzić pliku licencji"
+
+#: src/license.c:38
+msgid "Can't open license file"
+msgstr "Nie można otworzyć pliku licencji"
+
+#: src/license.c:46
+msgid "GNU Public License"
+msgstr "Publiczna Licencja GNU"
+
+#: src/mainmenu.c:20
+#, fuzzy
+msgid "_Game"
+msgstr "/_Gra"
+
+#: src/mainmenu.c:21
+#, fuzzy
+msgid "_Edit"
+msgstr "/_Edycja"
+
+#: src/mainmenu.c:22
+#, fuzzy
+msgid "_Settings"
+msgstr "/_Ustawienia"
+
+#: src/mainmenu.c:23
+#, fuzzy
+msgid "_Help"
+msgstr "/_Pomoc"
+
+#: src/mainmenu.c:24
+msgid "_New"
+msgstr ""
+
+#: src/mainmenu.c:24
+#, fuzzy
+msgid "Start new game"
+msgstr "Zapisz grę"
+
+#: src/mainmenu.c:25 src/mainmenu.c:32
+#, fuzzy
+msgid "_Rules"
+msgstr "Zasady"
+
+#: src/mainmenu.c:25
+#, fuzzy
+msgid "Change game rules"
+msgstr "Zasady gry"
+
+#: src/mainmenu.c:26
+msgid "_Save"
+msgstr ""
+
+#: src/mainmenu.c:26 src/savedialog.c:196 src/savedialog.c:266
+msgid "Save game"
+msgstr "Zapisz grę"
+
+#: src/mainmenu.c:27
+msgid "_Load"
+msgstr ""
+
+#: src/mainmenu.c:27 src/savedialog.c:196 src/savedialog.c:269
+msgid "Load game"
+msgstr "Wczytaj grę"
+
+#: src/mainmenu.c:28
+#, fuzzy
+msgid "_Hall of fame"
+msgstr "Najlepsi"
+
+#: src/mainmenu.c:28
+#, fuzzy
+msgid "Show Hall of Fame"
+msgstr " Najlepsi "
+
+#: src/mainmenu.c:29
+msgid "_Quit"
+msgstr ""
+
+#: src/mainmenu.c:29
+msgid "Quit program"
+msgstr ""
+
+#: src/mainmenu.c:30
+msgid "_Undo"
+msgstr ""
+
+#: src/mainmenu.c:30
+msgid "Undo last move"
+msgstr ""
+
+#: src/mainmenu.c:31
+#, fuzzy
+msgid "_Preferences"
+msgstr "Preferencje"
+
+#: src/mainmenu.c:31
+msgid "Change game settings"
+msgstr ""
+
+#: src/mainmenu.c:32
+msgid "Display help about game rules"
+msgstr ""
+
+#: src/mainmenu.c:33
+#, fuzzy
+msgid "_About"
+msgstr "O..."
+
+#: src/mainmenu.c:33
+msgid "Show information about program"
+msgstr ""
+
+#: src/mainwin.c:51
+#, c-format
+msgid "Hi-score: %i"
+msgstr "Najlepszy: %i"
+
+#: src/mainwin.c:64
+#, c-format
+msgid "Your score: %i"
+msgstr "Twój wynik: %i"
+
+#: src/mainwin.c:75
+msgid ""
+"Score writer process died unexpectedly. No scores will be writen!\n"
+"Save your game and restart programm.\n"
+msgstr ""
+
+#: src/mainwin.c:77
+msgid "Who Killed Bambi?"
+msgstr ""
+
+#: src/mainwin.c:81
+msgid "Time is unlimited"
+msgstr ""
+
+#: src/mainwin.c:88
+#, c-format
+msgid "Remaining time: %02d:%02d"
+msgstr ""
+
+#: src/mainwin.c:146
+msgid "GtkBalls"
+msgstr ""
+
+#: src/preferences.c:66
+msgid "Failed loading theme \""
+msgstr "Błąd wczytywania wystroju \""
+
+#: src/preferences.c:130
+msgid "No themes available! =(\n"
+msgstr "Brak dostępnych wystrojów! =(\n"
+
+#: src/preferences.c:136 src/preferences.c:142
+msgid "Preferences"
+msgstr "Preferencje"
+
+#: src/preferences.c:149
+msgid "Show colors that will appear on next turn"
+msgstr "Pokazuj kolory, które ukażą się następnym razem"
+
+#: src/preferences.c:150
+msgid "Show path of the ball"
+msgstr "Pokazuj ścieżkę kulki"
+
+#: src/preferences.c:151
+msgid "Show footprints of the ball"
+msgstr "Pokazuj ślady kulki"
+
+#: src/preferences.c:152
+msgid "Show animation of disappearing of the ball"
+msgstr "Pokazuj animację znikania kulki"
+
+#: src/preferences.c:153
+msgid "Highlight \"active\" cell"
+msgstr ""
+
+#: src/preferences.c:155
+msgid "Highlight red value: "
+msgstr ""
+
+#: src/preferences.c:156
+msgid "Highlight green value: "
+msgstr ""
+
+#: src/preferences.c:157
+msgid "Highlight blue value: "
+msgstr ""
+
+#: src/preferences.c:165
+msgid "Enable time limit"
+msgstr ""
+
+#: src/preferences.c:166
+msgid "Time limit (seconds): "
+msgstr ""
+
+#: src/preferences.c:195
+msgid "Select Theme"
+msgstr "Wybierz wystrój"
+
+#: src/prefs.c:236
+#, c-format
+msgid "Can't write to %s: %s"
+msgstr "Nie można zapisać do %s: %s"
+
+#: src/rules.c:22 src/rules.c:27
+msgid "Rules"
+msgstr "Zasady"
+
+#: src/rules.c:34
+#, fuzzy
+msgid ""
+"The standard play area of GtkBalls is a 9x9\n"
+"grid (it can be changed through \"Rules\"\n"
+"option in ingame menu). When GtkBalls is\n"
+"first started a number of balls are placed\n"
+"in a random manner on the grid. Balls are\n"
+"in different colors (and/or shape). You may\n"
+"move balls on the grid by selecting them and\n"
+"selecting an empty square on the grid as\n"
+"destination for the ball you selected. Balls\n"
+"will only move if they are not blocked by\n"
+"other balls. Each time you move a ball,\n"
+"unless you score some points, new balls\n"
+"appear in a random manner on the grid. If\n"
+"the grid is full then the game is lost.\n"
+"However this is bound to happen, your goal\n"
+"is to make the highest score. In order to do\n"
+"this you must make lines in a vertical,\n"
+"horizontal or diagonal way with balls of the\n"
+"same color. By default a line must have at\n"
+"least five balls of the same color (it can\n"
+"also be changed through \"Rules\" option in\n"
+"ingame menu). Making a line of minimum amount\n"
+"of the balls, specifed in rules, will earn you\n"
+"twice the points for your score. If you make\n"
+"lines over minimum amount of the balls it will\n"
+"earn you even more points. In order to help you\n"
+"decide which ball you are going to move, there\n"
+"is an indicator on top of the grid that shows\n"
+"what colors the next balls that will appear on\n"
+"the grid will be."
+msgstr ""
+"    Plansza gry GtkBalls to siatka 9x9. Podczas pierwszego\n"
+"uruchomienia kulki ustawiane są w losowy sposób  na polach\n"
+"siatki. Kulki mogą być w jednym z siedmiu kolorów (czerwo-\n"
+"ny, zielony, niebieski, błękitny, brązowy, różowy, żółty).\n"
+"Możesz przesuwać kulki po siatce poprzez ich  kliknięcie a\n"
+"potem kliknięcie pustego pola siatki jako miejsca docelowe-\n"
+"go. Kulki można przesuwać jedynie wtedy, gdy nie są zablo-\n"
+"kowane przez inne kulki. Za każdym  razem, gdy  przesuwasz\n"
+"kulki, dopóki nie otrzymasz punktów, nowe kulki będą poka-\n"
+"zywać się w losowych miejscach siatki. Gdy siatka jest już\n"
+"pełna, gra się kończy. Jakby nie było, twoim celem jest o-\n"
+"siągnięcie jak największej liczby punktów. By to osiągnąć,\n"
+"musisz układać kulki jednego koloru w poziome, pionowe lub\n"
+"ukośne linie. Linia musi zawierać co najmniej pięć kulek w\n"
+"tym samym kolorze. Tworząc linię z pięciu kulek tego same-\n"
+"go koloru zarobisz dziesięć punktów. Jeśli utworzysz linię\n"
+"składającą się z więcej niż pięciu kulek, otrzymasz więcej\n"
+"punktów. By pomóc ci zdecydować, które kulki przesunąć, na\n"
+"górze siatki masz wskaźnik pokazujący, jakie kolory pokażą\n"
+"się w następnym ruchu."
+
+#: src/scoreboard.c:53 src/scoreboard.c:57 src/scoreboard.c:155
+#: src/scoreboard.c:170 src/inputname.c:42 src/inputname.c:46
+#: src/inputname.c:50
+msgid "Unknown"
+msgstr ""
+
+#: src/savedialog.c:29
+msgid "No game selected for load.\n"
+msgstr "Nie wybrano żadnej gry do wczytania.\n"
+
+#: src/savedialog.c:33
+#, c-format
+msgid ""
+"Cannot load game from:\n"
+"%s\n"
+msgstr ""
+"Nie można wczytać gry z:\n"
+"%s\n"
+
+#: src/savedialog.c:37
+#, c-format
+msgid ""
+"Not enough balls(%d) in current theme.\n"
+"We need %d balls.\n"
+"Load another theme and try again."
+msgstr ""
+"Za mało kulek (%d) w bieżącym wystroju.\n"
+"Potrzebujemy %d kulek.\n"
+"Wczytaj inny wystrój i spróbuj ponownie."
+
+#: src/savedialog.c:107
+#, c-format
+msgid ""
+"Cannot save game to:\n"
+"%s\n"
+"%s"
+msgstr ""
+"Nie można zapisać gry do:\n"
+"%s\n"
+"%s"
+
+#: src/savedialog.c:192
+msgid "No saved games found.\n"
+msgstr "Nie znaleziono żadnych zapisanych gier.\n"
+
+#: src/savedialog.c:221
+msgid "Empty"
+msgstr "Puste"
+
+#: src/savedialog.c:235 src/halloffame.c:74
+msgid "Date"
+msgstr ""
+
+#: src/savedialog.c:246 src/halloffame.c:71
+msgid "Score"
+msgstr ""
+
+#: src/savedialog.c:272
+#, fuzzy
+msgid "Delete game"
+msgstr "Wybierz wystrój"
+
+#: src/halloffame.c:36 src/halloffame.c:42
+msgid "Hall of Fame"
+msgstr "Najlepsi"
+
+#: src/halloffame.c:60
+#, fuzzy
+msgid "No scores"
+msgstr "Twój wynik: 0"
+
+#: src/halloffame.c:68
+#, fuzzy
+msgid "Name"
+msgstr "/_Gra"
+
+#: src/inputname.c:35
+msgid "Anonymous"
+msgstr "Anonimowy"
+
+#: src/inputname.c:41 src/inputname.c:45
+msgid "Unable to determine current date.\n"
+msgstr "Nie można określić dzisiejszej daty.\n"
+
+#: src/inputname.c:44
+msgid "%a %b %d %H:%M %Y"
+msgstr "%a %b %d %H:%H %Y"
+
+#: src/inputname.c:63
+msgid "Unable to save score.\n"
+msgstr "Nie można zapisać wyników.\n"
+
+#: src/inputname.c:90
+msgid "Enter your name"
+msgstr "Wpisz swoje imię"
+
+#: src/rulesdialog.c:61 src/rulesdialog.c:66
+msgid "Game rules"
+msgstr "Zasady gry"
+
+#: src/rulesdialog.c:73
+msgid "Board width"
+msgstr "Szerokość planszy"
+
+#: src/rulesdialog.c:74
+msgid "Board height"
+msgstr "Wysokość planszy"
+
+#: src/rulesdialog.c:75
+msgid "Number of different objects"
+msgstr "Ilość różnych obiektów"
+
+#: src/rulesdialog.c:77
+msgid "Number of 'next' objects"
+msgstr "Ilość 'następnych' obiektów"
+
+#: src/rulesdialog.c:78
+msgid "How many balls at line eliminate it"
+msgstr "Ilość kulek w linii usuwających ją"
+
+#: src/rulesdialog.c:81
+msgid "Classic rules"
+msgstr "Zasady klasyczne"
+
+#~ msgid "/_Game/tear0"
+#~ msgstr "/_Gra/tear0"
+
+#~ msgid "/_Game/_New"
+#~ msgstr "/_Gra/_Nowa"
+
+#~ msgid "/_Game/_Rules"
+#~ msgstr "/_Pomoc/Z_asady"
+
+#~ msgid "/_Game/sep0"
+#~ msgstr "/_Gra/sep0"
+
+#~ msgid "/_Game/_Save"
+#~ msgstr "/_Gra/_Zapisz"
+
+#~ msgid "/_Game/_Load"
+#~ msgstr "/_Gra/_Wczytaj"
+
+#~ msgid "/_Game/_Hall of fame"
+#~ msgstr "/_Gra/Na_jlepsi"
+
+#~ msgid "/_Game/sep1"
+#~ msgstr "/_Gra/sep1"
+
+#~ msgid "/_Game/_Quit"
+#~ msgstr "/_Gra/Wyjści_e"
+
+#~ msgid "/_Edit/tear1"
+#~ msgstr "/_Edycja/tear1"
+
+#~ msgid "/_Edit/_Undo"
+#~ msgstr "/_Edycja/_Cofnij"
+
+#~ msgid "/_Settings/tear1"
+#~ msgstr "/_Ustawienia/tear1"
+
+#~ msgid "/_Settings/_Preferences"
+#~ msgstr "/_Ustawienia/_Preferencje"
+
+#~ msgid "/_Help/tear2"
+#~ msgstr "/_Pomoc/tear2"
+
+#~ msgid "/_Help/_Rules"
+#~ msgstr "/_Pomoc/_Zasady"
+
+#~ msgid "/_Help/sep2"
+#~ msgstr "/_Pomoc/sep2"
+
+#~ msgid "/_Help/_About"
+#~ msgstr "/_Pomoc/_O..."
+
+#~ msgid "Date (score)"
+#~ msgstr "Data (wynik)"
+
+#~ msgid "Cannot determine rc file name. ($HOME is toooooo long?)"
+#~ msgstr "Nie można określić nazwy pliku rc. ($HOME jest zbyt dłuuuga?)"
+
+#~ msgid "Cannot allocate %d bytes!"
+#~ msgstr "Nie mogę zaalokować %d bajtów!"
+
+#~ msgid "Hi-score: 0"
+#~ msgstr "Najlepszy: 0"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Cancel"
+#~ msgstr "Anuluj"
+
+#~ msgid "Close"
+#~ msgstr "Zamknij"
+
+#~ msgid "Apply"
+#~ msgstr "Zastosuj"
+
+#~ msgid ""
+#~ "Cannot load game from:\n"
+#~ "%s\n"
+#~ "Invalid savegame file."
+#~ msgstr ""
+#~ "Nie można wczytać gry z:\n"
+#~ "%s\n"
+#~ "Niepoprawny plik zapisanej gry."

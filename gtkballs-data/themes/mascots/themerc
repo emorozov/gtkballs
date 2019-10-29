@@ -1,0 +1,256 @@
+#Theme based on images borrowed from various places:
+#bsd, kde, troll - from xtux (http://xtux.sourceforge.net/)
+#break, coke, walk - from http://www.babytux.org/
+#daemon - from http://freebsd.org/
+
+#number of jump phases must be >= 2
+#number of destroy phases must be >= 2
+#all pixmaps are centered relative to "empty cell"
+
+#empty cell
+cell		= empty.xpm
+
+#footprints
+paw.down_up	= paw_down_up.xpm
+paw.up_down	= paw_up_down.xpm
+paw.left_right	= paw_left_right.xpm
+paw.right_left	= paw_right_left.xpm
+paw.down_right	= paw_down_right.xpm
+paw.down_left	= paw_down_left.xpm
+paw.up_right	= paw_up_right.xpm
+paw.up_left	= paw_up_left.xpm
+
+#number of different balls in theme
+ball.numbers	= 7
+
+ball.1.still = break1.xpm
+ball.1.small = break_small.xpm
+
+ball.1.jump.numbers = 8
+ball.1.jump.1 = break1.xpm
+ball.1.jump.2 = break2.xpm
+ball.1.jump.3 = break3.xpm
+ball.1.jump.4 = break4.xpm
+ball.1.jump.5 = break5.xpm
+ball.1.jump.6 = break6.xpm
+ball.1.jump.7 = break7.xpm
+ball.1.jump.8 = break8.xpm
+
+ball.1.jump.1.usec = 150
+ball.1.jump.2.usec = 150
+ball.1.jump.3.usec = 150
+ball.1.jump.4.usec = 150
+ball.1.jump.5.usec = 150
+ball.1.jump.6.usec = 150
+ball.1.jump.7.usec = 150
+ball.1.jump.8.usec = 150
+
+ball.1.destroy.numbers = 6
+ball.1.destroy.1 = break1.xpm
+ball.1.destroy.2 = break1des1.xpm
+ball.1.destroy.3 = break1des3.xpm
+ball.1.destroy.4 = break1des5.xpm
+ball.1.destroy.5 = break1des7.xpm
+ball.1.destroy.6 = break1des9.xpm
+ball.1.destroy.1.usec = 50
+ball.1.destroy.2.usec = 50
+ball.1.destroy.3.usec = 50
+ball.1.destroy.4.usec = 50
+ball.1.destroy.5.usec = 50
+ball.1.destroy.6.usec = 50
+
+ball.2.still = walk1.xpm
+ball.2.small = walk_small.xpm
+
+ball.2.jump.numbers = 8
+ball.2.jump.1 = walk1.xpm
+ball.2.jump.2 = walk2.xpm
+ball.2.jump.3 = walk3.xpm
+ball.2.jump.4 = walk4.xpm
+ball.2.jump.5 = walk5.xpm
+ball.2.jump.6 = walk6.xpm
+ball.2.jump.7 = walk7.xpm
+ball.2.jump.8 = walk8.xpm
+
+ball.2.jump.1.usec = 150
+ball.2.jump.2.usec = 150
+ball.2.jump.3.usec = 150
+ball.2.jump.4.usec = 150
+ball.2.jump.5.usec = 150
+ball.2.jump.6.usec = 150
+ball.2.jump.7.usec = 150
+ball.2.jump.8.usec = 150
+
+ball.2.destroy.numbers = 6
+ball.2.destroy.1 = walk1.xpm
+ball.2.destroy.2 = walk1des1.xpm
+ball.2.destroy.3 = walk1des2.xpm
+ball.2.destroy.4 = walk1des3.xpm
+ball.2.destroy.5 = walk1des4.xpm
+ball.2.destroy.6 = walk1des5.xpm
+ball.2.destroy.1.usec = 50
+ball.2.destroy.2.usec = 50
+ball.2.destroy.3.usec = 50
+ball.2.destroy.4.usec = 50
+ball.2.destroy.5.usec = 50
+ball.2.destroy.6.usec = 50
+
+ball.3.still = coke1.xpm
+ball.3.small = coke_small.xpm
+
+ball.3.jump.numbers = 8
+ball.3.jump.1 = coke1.xpm
+ball.3.jump.2 = coke2.xpm
+ball.3.jump.3 = coke3.xpm
+ball.3.jump.4 = coke4.xpm
+ball.3.jump.5 = coke5.xpm
+ball.3.jump.6 = coke6.xpm
+ball.3.jump.7 = coke7.xpm
+ball.3.jump.8 = coke8.xpm
+
+ball.3.jump.1.usec = 500
+ball.3.jump.2.usec = 150
+ball.3.jump.3.usec = 150
+ball.3.jump.4.usec = 150
+ball.3.jump.5.usec = 150
+ball.3.jump.6.usec = 150
+ball.3.jump.7.usec = 150
+ball.3.jump.8.usec = 150
+
+ball.3.destroy.numbers = 6
+ball.3.destroy.1 = coke1.xpm
+ball.3.destroy.2 = coke1des1.xpm
+ball.3.destroy.3 = coke1des2.xpm
+ball.3.destroy.4 = coke1des3.xpm
+ball.3.destroy.5 = coke1des4.xpm
+ball.3.destroy.6 = coke1des5.xpm
+ball.3.destroy.1.usec = 50
+ball.3.destroy.2.usec = 50
+ball.3.destroy.3.usec = 50
+ball.3.destroy.4.usec = 50
+ball.3.destroy.5.usec = 50
+ball.3.destroy.6.usec = 50
+
+ball.4.still = daemon1.xpm
+ball.4.small = daemon_small.xpm
+
+ball.4.jump.numbers = 9
+ball.4.jump.1 = daemon1.xpm
+ball.4.jump.2 = daemon2.xpm
+ball.4.jump.3 = daemon3.xpm
+ball.4.jump.4 = daemon4.xpm
+ball.4.jump.5 = daemon5.xpm
+ball.4.jump.6 = daemon4.xpm
+ball.4.jump.7 = daemon3.xpm
+ball.4.jump.8 = daemon2.xpm
+ball.4.jump.9 = daemon1.xpm
+
+ball.4.jump.1.usec = 150
+ball.4.jump.2.usec = 150
+ball.4.jump.3.usec = 150
+ball.4.jump.4.usec = 150
+ball.4.jump.5.usec = 150
+ball.4.jump.6.usec = 150
+ball.4.jump.7.usec = 150
+ball.4.jump.8.usec = 150
+ball.4.jump.9.usec = 150
+
+ball.4.destroy.numbers = 6
+ball.4.destroy.1 = daemon1.xpm
+ball.4.destroy.2 = daemon1des1.xpm
+ball.4.destroy.3 = daemon1des2.xpm
+ball.4.destroy.4 = daemon1des3.xpm
+ball.4.destroy.5 = daemon1des4.xpm
+ball.4.destroy.6 = daemon1des5.xpm
+ball.4.destroy.1.usec = 50
+ball.4.destroy.2.usec = 50
+ball.4.destroy.3.usec = 50
+ball.4.destroy.4.usec = 50
+ball.4.destroy.5.usec = 50
+ball.4.destroy.6.usec = 50
+
+ball.5.still = kde1.xpm
+ball.5.small = kde_small.xpm
+
+ball.5.jump.numbers = 4
+ball.5.jump.1 = kde1.xpm
+ball.5.jump.2 = kde2.xpm
+ball.5.jump.3 = kde1.xpm
+ball.5.jump.4 = kde3.xpm
+
+ball.5.jump.1.usec = 150
+ball.5.jump.2.usec = 150
+ball.5.jump.3.usec = 150
+ball.5.jump.4.usec = 150
+
+ball.5.destroy.numbers = 6
+ball.5.destroy.1 = kde1.xpm
+ball.5.destroy.2 = kde1des1.xpm
+ball.5.destroy.3 = kde1des2.xpm
+ball.5.destroy.4 = kde1des3.xpm
+ball.5.destroy.5 = kde1des4.xpm
+ball.5.destroy.6 = kde1des5.xpm
+ball.5.destroy.1.usec = 50
+ball.5.destroy.2.usec = 50
+ball.5.destroy.3.usec = 50
+ball.5.destroy.4.usec = 50
+ball.5.destroy.5.usec = 50
+ball.5.destroy.6.usec = 50
+
+ball.6.still = bsd1.xpm
+ball.6.small = bsd_small.xpm
+
+ball.6.jump.numbers = 4
+ball.6.jump.1 = bsd1.xpm
+ball.6.jump.2 = bsd2.xpm
+ball.6.jump.3 = bsd1.xpm
+ball.6.jump.4 = bsd3.xpm
+
+ball.6.jump.1.usec = 150
+ball.6.jump.2.usec = 150
+ball.6.jump.3.usec = 150
+ball.6.jump.4.usec = 150
+
+ball.6.destroy.numbers = 6
+ball.6.destroy.1 = bsd1.xpm
+ball.6.destroy.2 = bsd1des1.xpm
+ball.6.destroy.3 = bsd1des2.xpm
+ball.6.destroy.4 = bsd1des3.xpm
+ball.6.destroy.5 = bsd1des4.xpm
+ball.6.destroy.6 = bsd1des5.xpm
+ball.6.destroy.1.usec = 50
+ball.6.destroy.2.usec = 50
+ball.6.destroy.3.usec = 50
+ball.6.destroy.4.usec = 50
+ball.6.destroy.5.usec = 50
+ball.6.destroy.6.usec = 50
+
+ball.7.still = troll1.xpm
+ball.7.small = troll_small.xpm
+
+ball.7.jump.numbers = 5
+ball.7.jump.1 = troll1.xpm
+ball.7.jump.2 = troll2.xpm
+ball.7.jump.3 = troll3.xpm
+ball.7.jump.4 = troll4.xpm
+ball.7.jump.5 = troll5.xpm
+
+ball.7.jump.1.usec = 150
+ball.7.jump.2.usec = 150
+ball.7.jump.3.usec = 150
+ball.7.jump.4.usec = 150
+ball.7.jump.5.usec = 150
+
+ball.7.destroy.numbers = 6
+ball.7.destroy.1 = troll1.xpm
+ball.7.destroy.2 = troll1des1.xpm
+ball.7.destroy.3 = troll1des2.xpm
+ball.7.destroy.4 = troll1des3.xpm
+ball.7.destroy.5 = troll1des4.xpm
+ball.7.destroy.6 = troll1des5.xpm
+ball.7.destroy.1.usec = 50
+ball.7.destroy.2.usec = 50
+ball.7.destroy.3.usec = 50
+ball.7.destroy.4.usec = 50
+ball.7.destroy.5.usec = 50
+ball.7.destroy.6.usec = 50

@@ -1,0 +1,528 @@
+# French message pot file for Gtkballs 
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Christoph Thompson <obituary@freshmeat.net>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gtkballs 1.05pre1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-16 15:19+0300\n"
+"PO-Revision-Date: 1999-08-16 00:46+0400\n"
+"Last-Translator: ObiTuarY <obituary@freshmeat.net>\n"
+"Language-Team: French <french@obituary.linuxbe.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: iso-8859-1\n"
+
+#: src/about.c:21
+msgid "About"
+msgstr "A Propos"
+
+#: src/about.c:32
+#, c-format
+msgid ""
+"GtkBalls %s\n"
+"Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
+"Copyright (C) 1998-1999 Eugene Morozov\n"
+"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"\n"
+"GtkBalls comes with ABSOLUTELY NO WARRANTY;\n"
+"for details press \"Show license\" button.\n"
+"This is free software and you are welcome to\n"
+"redistribute it under certain conditions;\n"
+"press \"Show license\" button for details."
+msgstr ""
+"GtkBalls %s\n"
+"Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
+" Copyright (C) 1998-1999 Eugene Morozov\n"
+"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"\n"
+"GtkBalls est livré ABSOLUMENT SANS AUCUNE GARANTIE;\n"
+"pour les détails clickez sur le bouton \"Afficher la licence\".\n"
+"Ceci est un logiciel libre et vous pouvez le redistribuer à\n"
+"votre gré sous certaines conditions; clickez sur le bouton\n"
+"\"Afficher la licence\" pour les détails."
+
+#: src/about.c:49
+msgid "Show license"
+msgstr "Afficher la license"
+
+#: src/gtkballs.c:146
+#, c-format
+msgid "Failed loading theme \"%s\"! Trying \"%s\"\n"
+msgstr "Impossible de charger le thème\"%s\"! On va essayer \"%s\"\n"
+
+#: src/gtkballs.c:153
+#, c-format
+msgid "Failed loading theme \"%s\"! Exiting.\n"
+msgstr "Impossible de charger le thème \"%s\"! On quitte.\n"
+
+#: src/gtkballs.c:171 src/halloffame.c:31 src/inputname.c:59
+msgid "Unable to read score.\n"
+msgstr "Impossible de lire le score.\n"
+
+#: src/license.c:32
+msgid "Can't stat license file"
+msgstr "Pas de fichier de la licence"
+
+#: src/license.c:38
+msgid "Can't open license file"
+msgstr "Impossible d'ouvrir le fichier de la licence"
+
+#: src/license.c:46
+msgid "GNU Public License"
+msgstr "Licence Public GNU"
+
+#: src/mainmenu.c:20
+#, fuzzy
+msgid "_Game"
+msgstr "/_Jeu"
+
+#: src/mainmenu.c:21
+#, fuzzy
+msgid "_Edit"
+msgstr "/_Édition"
+
+#: src/mainmenu.c:22
+#, fuzzy
+msgid "_Settings"
+msgstr "/_Options"
+
+#: src/mainmenu.c:23
+#, fuzzy
+msgid "_Help"
+msgstr "/_Aide"
+
+#: src/mainmenu.c:24
+msgid "_New"
+msgstr ""
+
+#: src/mainmenu.c:24
+#, fuzzy
+msgid "Start new game"
+msgstr "Sauvegarder le jeu"
+
+#: src/mainmenu.c:25 src/mainmenu.c:32
+#, fuzzy
+msgid "_Rules"
+msgstr "Règles"
+
+#: src/mainmenu.c:25
+#, fuzzy
+msgid "Change game rules"
+msgstr "Les règles du jeu"
+
+#: src/mainmenu.c:26
+msgid "_Save"
+msgstr ""
+
+#: src/mainmenu.c:26 src/savedialog.c:196 src/savedialog.c:266
+msgid "Save game"
+msgstr "Sauvegarder le jeu"
+
+#: src/mainmenu.c:27
+msgid "_Load"
+msgstr ""
+
+#: src/mainmenu.c:27 src/savedialog.c:196 src/savedialog.c:269
+msgid "Load game"
+msgstr "Charger un jeu"
+
+#: src/mainmenu.c:28
+#, fuzzy
+msgid "_Hall of fame"
+msgstr "Tableau des scores"
+
+#: src/mainmenu.c:28
+#, fuzzy
+msgid "Show Hall of Fame"
+msgstr " Tableau des scores "
+
+#: src/mainmenu.c:29
+msgid "_Quit"
+msgstr ""
+
+#: src/mainmenu.c:29
+msgid "Quit program"
+msgstr ""
+
+#: src/mainmenu.c:30
+msgid "_Undo"
+msgstr ""
+
+#: src/mainmenu.c:30
+msgid "Undo last move"
+msgstr ""
+
+#: src/mainmenu.c:31
+#, fuzzy
+msgid "_Preferences"
+msgstr "Préférences"
+
+#: src/mainmenu.c:31
+msgid "Change game settings"
+msgstr ""
+
+#: src/mainmenu.c:32
+msgid "Display help about game rules"
+msgstr ""
+
+#: src/mainmenu.c:33
+#, fuzzy
+msgid "_About"
+msgstr "A Propos"
+
+#: src/mainmenu.c:33
+msgid "Show information about program"
+msgstr ""
+
+#: src/mainwin.c:51
+#, c-format
+msgid "Hi-score: %i"
+msgstr "High score: %i"
+
+#: src/mainwin.c:64
+#, c-format
+msgid "Your score: %i"
+msgstr "Votre score: %i"
+
+#: src/mainwin.c:75
+msgid ""
+"Score writer process died unexpectedly. No scores will be writen!\n"
+"Save your game and restart programm.\n"
+msgstr ""
+
+#: src/mainwin.c:77
+msgid "Who Killed Bambi?"
+msgstr "Qui a tué Bambi?"
+
+#: src/mainwin.c:81
+msgid "Time is unlimited"
+msgstr "Le temps est sans limites"
+
+#: src/mainwin.c:88
+#, c-format
+msgid "Remaining time: %02d:%02d"
+msgstr "Temps restant: %02d:%02d"
+
+#: src/mainwin.c:146
+msgid "GtkBalls"
+msgstr "GtkBalls"
+
+#: src/preferences.c:66
+msgid "Failed loading theme \""
+msgstr "Impossible de charger le thème \""
+
+#: src/preferences.c:130
+msgid "No themes available! =(\n"
+msgstr "Pas de thèmes =(\n"
+
+#: src/preferences.c:136 src/preferences.c:142
+msgid "Preferences"
+msgstr "Préférences"
+
+#: src/preferences.c:149
+msgid "Show colors that will appear on next turn"
+msgstr "Montrer les couleurs qui apparaitront le tour suivant"
+
+#: src/preferences.c:150
+msgid "Show path of the ball"
+msgstr "Montrer le passage de la balle"
+
+#: src/preferences.c:151
+msgid "Show footprints of the ball"
+msgstr "Montrer les empreintes de la balle"
+
+#: src/preferences.c:152
+msgid "Show animation of disappearing of the ball"
+msgstr "Animation des balles disparaissants"
+
+#: src/preferences.c:153
+msgid "Highlight \"active\" cell"
+msgstr ""
+
+#: src/preferences.c:155
+msgid "Highlight red value: "
+msgstr ""
+
+#: src/preferences.c:156
+msgid "Highlight green value: "
+msgstr ""
+
+#: src/preferences.c:157
+msgid "Highlight blue value: "
+msgstr ""
+
+#: src/preferences.c:165
+msgid "Enable time limit"
+msgstr "Mettre un limite de temps"
+
+#: src/preferences.c:166
+msgid "Time limit (seconds): "
+msgstr "Limite de temps (secondes): "
+
+#: src/preferences.c:195
+msgid "Select Theme"
+msgstr "Choisissez le thème"
+
+#: src/prefs.c:236
+#, c-format
+msgid "Can't write to %s: %s"
+msgstr "Impossible d'écrire à %s: %s"
+
+#: src/rules.c:22 src/rules.c:27
+msgid "Rules"
+msgstr "Règles"
+
+#: src/rules.c:34
+#, fuzzy
+msgid ""
+"The standard play area of GtkBalls is a 9x9\n"
+"grid (it can be changed through \"Rules\"\n"
+"option in ingame menu). When GtkBalls is\n"
+"first started a number of balls are placed\n"
+"in a random manner on the grid. Balls are\n"
+"in different colors (and/or shape). You may\n"
+"move balls on the grid by selecting them and\n"
+"selecting an empty square on the grid as\n"
+"destination for the ball you selected. Balls\n"
+"will only move if they are not blocked by\n"
+"other balls. Each time you move a ball,\n"
+"unless you score some points, new balls\n"
+"appear in a random manner on the grid. If\n"
+"the grid is full then the game is lost.\n"
+"However this is bound to happen, your goal\n"
+"is to make the highest score. In order to do\n"
+"this you must make lines in a vertical,\n"
+"horizontal or diagonal way with balls of the\n"
+"same color. By default a line must have at\n"
+"least five balls of the same color (it can\n"
+"also be changed through \"Rules\" option in\n"
+"ingame menu). Making a line of minimum amount\n"
+"of the balls, specifed in rules, will earn you\n"
+"twice the points for your score. If you make\n"
+"lines over minimum amount of the balls it will\n"
+"earn you even more points. In order to help you\n"
+"decide which ball you are going to move, there\n"
+"is an indicator on top of the grid that shows\n"
+"what colors the next balls that will appear on\n"
+"the grid will be."
+msgstr ""
+"L'aire  de jeu est une grille de neuf sur neuf carrés. Quand\n"
+"GtkBalls est démarré pour la première fois un certain nombre\n"
+"de balles sont placées de façon aléatoire sur la grille. Les\n"
+"balles  peuvent  être  de  sept couleurs différentes (rouge,\n"
+"vert, bleu, cyan, brun, rose, jaune).  Vous pouvez  déplacer\n"
+"les  balles sur la grille  en les cliquant  et par la suite,\n"
+"en  cliquant un carré vide sur la grille  comme  destination\n"
+"pour la balle que vous avez sélectioné. Les balles se dépla-\n"
+"cent uniquement  si elles ne sont pas bloquées par  d'autres\n"
+"balles.  Chaque  fois  que vous déplacez  une balle, à moins\n"
+"que  vous ne gagnez des points  pour le score, de  nouvelles\n"
+"balles  apparaissent  de manière aléatoire sur la grille. Si\n"
+"la  grille est remplie, alors  la partie est perdue.  Cepen-\n"
+"dant,  ceci devra forcément arriver. Votre  but est de faire\n"
+"le  plus haut score possible.  Pour pouvoir faire cela, vous\n"
+"devez faire des  lignes dans une  direction verticale, hori-\n"
+"zontale, ou diagonale  avec des balles de la  même  couleur.\n"
+"Une  ligne  doit  au  moins  avoir  cinq  balles  de la même\n"
+"couleur. Si vous faites  une ligne de cinq  balles cela vous\n"
+"attribuera  cinq  points  pour  votre  score. Si vous faites\n"
+"des lignes avec plus de  cinq balles  cela  vous  attribuera\n"
+"encore  plus  de  points.  Pour  vous aider  choisir  quelle\n"
+"balle vous allez déplacer, il y  a un indicateur  au  dessus\n"
+"de  la grille qui affiche la  couleur des  prochaines balles\n"
+"qui apparaitront sur la grille."
+
+#: src/scoreboard.c:53 src/scoreboard.c:57 src/scoreboard.c:155
+#: src/scoreboard.c:170 src/inputname.c:42 src/inputname.c:46
+#: src/inputname.c:50
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: src/savedialog.c:29
+msgid "No game selected for load.\n"
+msgstr "On n'a pas choisi le jeu à charger.\n"
+
+#: src/savedialog.c:33
+#, c-format
+msgid ""
+"Cannot load game from:\n"
+"%s\n"
+msgstr ""
+"Impossible de charger le jeu de:\n"
+"%s\n"
+
+#: src/savedialog.c:37
+#, c-format
+msgid ""
+"Not enough balls(%d) in current theme.\n"
+"We need %d balls.\n"
+"Load another theme and try again."
+msgstr ""
+"Il n'y a pas assez de balles (%d) dans le thème courant.\n"
+"Il faut y avoir %d balles\n"
+"Chargez un autre thème et essayez encore une fois"
+
+#: src/savedialog.c:107
+#, c-format
+msgid ""
+"Cannot save game to:\n"
+"%s\n"
+"%s"
+msgstr ""
+"Impossible de sauvegarder le jeu à:\n"
+"%s\n"
+"%s"
+
+#: src/savedialog.c:192
+msgid "No saved games found.\n"
+msgstr "Pas de jeux sauvegardés.\n"
+
+#: src/savedialog.c:221
+msgid "Empty"
+msgstr "Vide"
+
+#: src/savedialog.c:235 src/halloffame.c:74
+msgid "Date"
+msgstr "Date"
+
+#: src/savedialog.c:246 src/halloffame.c:71
+msgid "Score"
+msgstr "Score"
+
+#: src/savedialog.c:272
+msgid "Delete game"
+msgstr "Effacer le jeu"
+
+#: src/halloffame.c:36 src/halloffame.c:42
+msgid "Hall of Fame"
+msgstr "Tableau des scores"
+
+#: src/halloffame.c:60
+msgid "No scores"
+msgstr "Pas de scores"
+
+#: src/halloffame.c:68
+msgid "Name"
+msgstr "Nom"
+
+#: src/inputname.c:35
+msgid "Anonymous"
+msgstr "Anonyme"
+
+#: src/inputname.c:41 src/inputname.c:45
+msgid "Unable to determine current date.\n"
+msgstr "Impossible de determiner la date actuelle.\n"
+
+#: src/inputname.c:44
+msgid "%a %b %d %H:%M %Y"
+msgstr "%a %d %b %Y %H:%M"
+
+#: src/inputname.c:63
+msgid "Unable to save score.\n"
+msgstr "Impossible de sauvegarder le score.\n"
+
+#: src/inputname.c:90
+msgid "Enter your name"
+msgstr "Entrez votre nom"
+
+#: src/rulesdialog.c:61 src/rulesdialog.c:66
+msgid "Game rules"
+msgstr "Les règles du jeu"
+
+#: src/rulesdialog.c:73
+msgid "Board width"
+msgstr "Largeur du tableau"
+
+#: src/rulesdialog.c:74
+msgid "Board height"
+msgstr "Hauteur du tableau"
+
+#: src/rulesdialog.c:75
+msgid "Number of different objects"
+msgstr "Nombre d'objets differents"
+
+#: src/rulesdialog.c:77
+msgid "Number of 'next' objects"
+msgstr "Nombre d'objets 'suivants'"
+
+#: src/rulesdialog.c:78
+msgid "How many balls at line eliminate it"
+msgstr "Combien de balles éffacent une ligne"
+
+#: src/rulesdialog.c:81
+msgid "Classic rules"
+msgstr "Règles classiques"
+
+#~ msgid "/_Game/tear0"
+#~ msgstr "/_Jeu/tear0"
+
+#~ msgid "/_Game/_New"
+#~ msgstr "/_Jeu/_Nouveau"
+
+#~ msgid "/_Game/_Rules"
+#~ msgstr "/_Aide/_Règles"
+
+#~ msgid "/_Game/sep0"
+#~ msgstr "/_Jeu/sep0"
+
+#~ msgid "/_Game/_Save"
+#~ msgstr "/_Jeu/_Sauvegarder"
+
+#~ msgid "/_Game/_Load"
+#~ msgstr "/_Jeu/_Charger"
+
+#~ msgid "/_Game/_Hall of fame"
+#~ msgstr "/_Jeu/_Tableau des scores"
+
+#~ msgid "/_Game/sep1"
+#~ msgstr "/_Jeu/sep1"
+
+#~ msgid "/_Game/_Quit"
+#~ msgstr "/_Jeu/_Quitter"
+
+#~ msgid "/_Edit/tear1"
+#~ msgstr "_Édition/tear1"
+
+#~ msgid "/_Edit/_Undo"
+#~ msgstr "_Édition/_Annulation"
+
+#~ msgid "/_Settings/tear1"
+#~ msgstr "/_Options/tear1"
+
+#~ msgid "/_Settings/_Preferences"
+#~ msgstr "/_Options/_Préférences"
+
+#~ msgid "/_Help/tear2"
+#~ msgstr "/_Aide/tear2"
+
+#~ msgid "/_Help/_Rules"
+#~ msgstr "/_Aide/_Règles"
+
+#~ msgid "/_Help/sep2"
+#~ msgstr "/_Aide/sep2"
+
+#~ msgid "/_Help/_About"
+#~ msgstr "/_Aide/_A Propos"
+
+# The exact translation should be "Meilleur score" but "High score" is
+# acceptable since it is widely used in France/Belgium and that the 
+# widget that holds this string is too small for the exact translation.
+# Translators for fr_CA probably will not want to use this, because
+# Quebec people are right not to use English words everywhere ;-) Something
+# Widget-wise should be done.
+#~ msgid "Hi-score: 0"
+#~ msgstr "High score: 0"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Apply"
+#~ msgstr "Appliquer"

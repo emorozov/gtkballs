@@ -1,0 +1,34 @@
+p - partialy done, c - done, but not checked =), d - done, but leaved
+here for some reason
+
+very high priority:
+[ ] all read()s/write()s doesnt check return value =/
+    but i'm too lazy to fix it =)
+
+primary:
+[ ] looks like we have memory leaks =/
+[d] After turning on "show next balls" next balls isnt shown till
+    redraw occurs. gtk+ bug? probably. (added workaround)
+
+secondary:
+[ ] option to remove not only "lines", but just some "connected"
+    "balls". i.e:
+
+    ggg
+      g
+     gg
+
+    and, maybe, squares/triangles/etc.
+[ ] make "internal" theme
+[ ] recursive calls of new_game()/new_turn(). should i change it?
+[ ] fix "casuses" in preferences ("next" already checked in reinit_board())
+
+never?:
+[d] remove *sleep*'s (now, when i think of it, i think it is unneeded)
+    (replaced with gettimeofday() + gtk_iteration_do())
+[ ] "unlimited" undo (tell me the reason to do that =/)
+[ ] sound (_what_ sound must be in such game? blam blam
+           when ball jumps? it will annoy player, imho.
+           music? why dont turn on some cd? so, if
+           someone can tell me what fsckin sounds should
+           be here i will think about adding it...)

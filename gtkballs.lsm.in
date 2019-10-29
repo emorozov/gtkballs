@@ -1,0 +1,21 @@
+Begin3
+Title:    	gtkballs
+Version:        @VERSION@
+Entered-date:   June 16, 1999
+Description:	GtkBalls is a simple logic game
+Keywords:	Linux games gtk
+Author:		jmv@lucifer.dorms.spbu.ru (Eugene Morozov)
+Maintained-by:	dfo@antex.ru (Sergey Pinaev)
+
+Primary-site: 	ftp://ftp.antex.ru/pub/unix/dfo/gtkballs/
+                gtkballs-@VERSION@.tar.gz
+                gtkballs.lsm
+Original-site:
+Platforms:	Linux Solaris FreeBSD
+Copying-policy:	GPL
+End
+
+
+
+
+

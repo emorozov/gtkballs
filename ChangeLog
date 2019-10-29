@@ -1,0 +1,274 @@
+2001-10-09  Sergey Pinaev <dfo@antex.ru>
+	* ChangeLog:
+	No more messages will go here, till i set up cvs for
+	gtkballs...
+
+1999-10-08  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/license.h, src/license.c, src/gtkballs.c:
+	Make about window modal, this is better than another global variable.
+
+1999-09-04  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/gtkballs.c:
+	Fixed a bug that allowed user to open several ``About'' windows.
+
+1999-09-04  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/gtkballs.c:
+	Fixed a bug that allowed user to open several ``About'' windows.
+
+1999-09-01  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* ChangeLog: committed changelog.
+
+	* gtkballs.spec: Fixed several bugs in the spec file.
+
+	* ChangeLog: Updated ChangeLog.
+
+	* gtkballs.spec:
+	Changed my Email address because I check yahoo mail seldom.
+	Added installation of gnome icon.
+
+	* GtkBalls.desktop: Added gnome icon.
+
+	* src/interface.c: Reverted changes to init_names_scores_and_dates.
+
+	* gnome-gtkballs.png, gtkballs.tiff: New nice icons from Obituary
+
+1999-09-01  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* gtkballs.spec: Fixed several bugs in the spec file.
+
+	* ChangeLog: Updated ChangeLog.
+
+	* gtkballs.spec:
+	Changed my Email address because I check yahoo mail seldom.
+	Added installation of gnome icon.
+
+	* GtkBalls.desktop: Added gnome icon.
+
+	* src/interface.c: Reverted changes to init_names_scores_and_dates.
+
+	* gnome-gtkballs.png, gtkballs.tiff: New nice icons from Obituary
+
+1999-09-01  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* gtkballs.spec:
+	Changed my Email address because I check yahoo mail seldom.
+	Added installation of gnome icon.
+
+	* GtkBalls.desktop: Added gnome icon.
+
+	* src/interface.c: Reverted changes to init_names_scores_and_dates.
+
+	* gnome-gtkballs.png, gtkballs.tiff: New nice icons from Obituary
+
+1999-08-30  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* ChangeLog: Updated ChangeLog
+
+	* src/gtkballs.c: Added tearoffs to menu.
+
+	* po/ru.po: Translated game rules.
+
+1999-08-30  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/gtkballs.c: Added tearoffs to menu.
+
+	* po/ru.po: Translated game rules.
+
+1999-08-29  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* po/ru.po: Updated Russian translation
+
+	* gtkballs.spec: Added Russian description of the package.
+
+	* README: Updated link to gtkballs site.
+
+1999-08-28  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* README.russian: Update link to gtkballs site
+
+1999-08-26  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* po/fr.po: Updated French translation
+
+1999-08-15  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* ChangeLog, doc/gtkballs.6x, src/gtkballs.c:
+	Added dialog box with game rules and fixed a typo in the manpage
+
+1999-08-16  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/gtkballs.c (show_rules): Implemented dialog box with game
+	rules.
+
+	1999-07-29  ObiTuarY <obituary@freshmeat.net>
+
+	* */*.c: Made all buttons have the same size for a better look and
+ 	consistency (added 5 or 6 gtk_widget_set_usize()).
+	
+	* */GtkBalls.dekstop: Added GNOME desktop file.
+	
+	* */gtkballs.spec: Updated the spec file.
+	
+	1999-07-26  Pablo Saratxaga <srtxg@chanae.alphanet.ch>
+	
+	* */*.*: Some fixes to make gettext work properly. Added
+ 	config.h. It needs to be #include'd before all other headers.
+	
+	1999-07-25  ObiTuarY <obituary@freshmeat.net>
+	
+	* po/fr.po: New french translation. The exact translation should
+ 	be "Meilleur score" but "High score" is acceptable since it is
+ 	widely used in France/Belgium and that the widget that holds this
+ 	string is too small for the exact translation. Translators for
+ 	fr_CA probably will not want to use this, because Quebec people
+ 	are right not to use English words everywhere ;-) Something
+ 	Widget-wise should be done.
+	
+	* configure.in: Add fr to the message catalogs to be installed.
+	
+	* po/Makefile.am: Add fr to the message catalogs list.
+	
+	* src/scoreboard.c: s/PREFIX/LOCALSTATEDIR/g, score becomes
+ 	gtkballs-scores.
+	
+	* gtkballs-data/Makefile.am: install gtkballs-scores in
+ 	$(localstatedir). $(datadir)/gtkballs doesn't need to be mode 777
+ 	anymore. but $(localstatedir)/gtkballs-scores needs to be mode
+ 	666.
+	
+	* src/gtkballs.c: s/PREFIX/DATADIR/g.
+
+	* src/license.c: s/PREFIX/DATADIR/g.
+	
+	* */*.am: Use localstatedir, datadir whenever necessary.
+	
+	* src/Makefile.am: Use nlsdir instead of localedir.
+	
+	* Gtkballs.desktop: New file.
+	
+	* Regenerated automake, autoconf etc... with the latest version ?
+	(automake 1.4, autoconf 2.13). I think it will need some
+ 	re-regeneration probably.
+	
+	
+1999-07-24  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/gtkballs.c (animate_ball): Fixed bug that prevented
+	compilation of GtkBalls with non-gcc compiler (thanks to Jeff
+	Moyer USG <jmoyer@zk3.dec.com>).
+
+1999-07-22  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/scoreboard.c: Redone score handling code, fixed some bugs,
+	added date field to scores.
+	(write_score): block signals to prevent possible file corruption.
+
+	* src/license.c (gnu_license_dialog): Reworked ugly code used for
+	reading license from disk.
+
+1999-07-21  Eugene Morozov  <jmv@lucifer.dorms.spbu.ru>
+
+	* src/gtkballs.c (about): Changed style of the about dialog box
+	to allow translation and simpler modification of the about text.
+
+1999-06-16  Eugene Morozov  <john@lucifer.dorms.spbu ru>
+
+	* Added support for GNU gettext.
+
+1999-06-01  Eugene Morozov  <john@lucifer.dorms.spbu ru>
+
+	* GtkBalls uses GNU autoconf now.
+
+1999-04-01  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* gtkballs.c (about): Disabled resizing about dialog box.
+	interface.c:
+	interface.h:
+	gtkballs.c (button_press_event): if fifth ball will appear, 
+	don't increase user's score--it's not his merit
+
+1999-03-30  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* preferences.c, prefrences.h: Put under GNU license.
+
+1999-03-29  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* gtkballs.c: 
+	Added nice footprints.
+	Fancier about dialog.
+
+1999-03-28  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* preferences.c, prefrences.h, gtkballs.c, interface.c: 
+	Added prefrences dialog.
+
+1999-03-25  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* Removed sound temporarily.
+
+1999-03-07  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* Makefile: Improved installation script.
+
+1999-03-03  Nikolay A. Chervonetsky <nike@duffy.gbank.nsk.su>
+
+	* interface.c: Fixes for multiuser system. Now game saves score
+	even if there's more than one user playing.
+
+1999-02-25  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* gtkballs.c: Drawing fixes.
+
+1999-02-19  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* gtkballs.c, sound_thread.c, interface.c:
+	Added sound support. 
+
+1999-02-10  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* gtkballs.c (about): Changed version number in About dialog.
+
+	* interface.c, interface.h, gtkballs.c: Many improvements, now
+	gtkballs needs less pixmaps and the code is more readable.
+
+1999-02-06  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* interface.c: fixed old annoying bug.
+
+1999-02-04  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* Replaced buttons with menu.
+
+1999-02-01  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* Fixed possible memory leak in license.c
+
+	* Merged repeating code in interface.c in one block.
+
+1999-01-01  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* Now GNU license reads from disk when user presses "Show license" 
+	button.
+
+1998-11-15  Andrey Zakhvatov <andy@icc.surw.chel.su>
+
+	* Some patches for compiling gtkballs-1.02 'out-of-the-box' on
+	FreeBSD system. They implement some of my suggestions about
+	gtkballs, for example, prefix-aware and file/directories naming
+	conventions.
+
+1998-10-04  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* Enhanced install script a little bit
+
+1998-09-06  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* Fixed bug in hiscore handling
+
+1998-08-26  Eugene V. Morozov  <john@lucifer.dorms.spbu.ru>
+
+	* First ready for release version
