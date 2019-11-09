@@ -1,2 +1,9 @@
 *.c linguist-detectable=true
 *.h linguist-detectable=true
+config* linguist-vendored
+depcomp linguist-vendored
+install-sh linguist-vendored
+ltmain.sh linguist-vendored
+missing linguist-vendored
+mkinstalldirs linguist-vendored
+
