@@ -3,6 +3,8 @@
 
 #include <config.h>
 
+extern GtkWindow * main_window;
+
 #ifdef ENABLE_NLS
 #  include <locale.h>
 #  include <libintl.h>

@@ -2,10 +2,8 @@ bin_PROGRAMS = gtkballs
 
 LIBS = @GTK_LIBS@ @LIBS@
 AM_CFLAGS = @CFLAGS@ @GTK_CFLAGS@ -DDATADIR=\"$(datadir)\" -DLOCALSTATEDIR=\"$(localstatedir)\" -DLOCALEDIR=\"$(datadir)/locale\"
-AM_CPPFLAGS = -I../intl
 
 gtkballs_SOURCES = gtkballs.c gtkballs.h gfx.c gfx.h \
-		license.c license.h \
                 path.c path.h preferences.c preferences.h \
                 scoreboard.c scoreboard.h themerc.c themerc.h \
                 gtkutils.c gtkutils.h mainmenu.c mainmenu.h \
