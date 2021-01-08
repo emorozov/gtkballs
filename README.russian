@@ -5,6 +5,7 @@
 
 2. Компиляция
 
+$ ./autogen.sh
 $ ./configure
 $ make
 
