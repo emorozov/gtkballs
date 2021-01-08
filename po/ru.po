@@ -1,6 +1,6 @@
 # Russian translations for GtkBalls.
 # Copyright (C) 1999 Eugene Morozov.
-# Eugene Morozov <jmv@lucifer.dorms.spbu.ru>, 1999.
+# Eugene Morozov <jmv@emorozov.net>, 1999.
 # Copyright (C) 2001 drF_ckoff
 # Sergey Pinaev <dfo@antex.ru>, 2001.
 #
@@ -13,12 +13,12 @@ msgstr ""
 "Last-Translator: drF_ckoff <dfo@antex.ru>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/about.c:21
 msgid "About"
-msgstr "О программе"
+msgstr "п· п©я─п╬пЁя─п╟п╪п╪п╣"
 
 #: src/about.c:32
 #, c-format
@@ -26,7 +26,7 @@ msgid ""
 "GtkBalls %s\n"
 "Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
 "Copyright (C) 1998-1999 Eugene Morozov\n"
-"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"<jmv@emorozov.net>\n"
 "\n"
 "GtkBalls comes with ABSOLUTELY NO WARRANTY;\n"
 "for details press \"Show license\" button.\n"
@@ -36,171 +36,171 @@ msgid ""
 msgstr ""
 "GtkBalls %s\n"
 "Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
-"Copyright (C) 1998-1999 Евгений Морозов\n"
-"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"Copyright (C) 1998-1999 п∙п╡пЁп╣п╫п╦п╧ п°п╬я─п╬п╥п╬п╡\n"
+"<jmv@emorozov.net>\n"
 "\n"
-"GtkBalls поставляется БЕЗ ВСЯКИХ ГАРАНТИЙ;\n"
-"для получения подробностей нажмите кнопку\n"
-"\"Показать лицензию\".\n"
-"Данная программа является свободным программным\n"
-"обеспечением. Вы вправе распространять ее и/или\n"
-"модифицировать в соответствии с условиями версии 2\n"
-"либо по вашему выбору с условиями более поздней\n"
-"версии Стандартной Общественной Лицензии GNU,\n"
-"опубликованной Free Software Foundation."
+"GtkBalls п©п╬я│я┌п╟п╡п╩я▐п╣я┌я│я▐ п▒п∙п≈ п▓п║п╞п п≤п╔ п⌠п░п═п░п²п╒п≤п≥;\n"
+"п╢п╩я▐ п©п╬п╩я┐я┤п╣п╫п╦я▐ п©п╬п╢я─п╬п╠п╫п╬я│я┌п╣п╧ п╫п╟п╤п╪п╦я┌п╣ п╨п╫п╬п©п╨я┐\n"
+"\"п÷п╬п╨п╟п╥п╟я┌я▄ п╩п╦я├п╣п╫п╥п╦я▌\".\n"
+"п■п╟п╫п╫п╟я▐ п©я─п╬пЁя─п╟п╪п╪п╟ я▐п╡п╩я▐п╣я┌я│я▐ я│п╡п╬п╠п╬п╢п╫я▀п╪ п©я─п╬пЁя─п╟п╪п╪п╫я▀п╪\n"
+"п╬п╠п╣я│п©п╣я┤п╣п╫п╦п╣п╪. п▓я▀ п╡п©я─п╟п╡п╣ я─п╟я│п©я─п╬я│я┌я─п╟п╫я▐я┌я▄ п╣п╣ п╦/п╦п╩п╦\n"
+"п╪п╬п╢п╦я└п╦я├п╦я─п╬п╡п╟я┌я▄ п╡ я│п╬п╬я┌п╡п╣я┌я│я┌п╡п╦п╦ я│ я┐я│п╩п╬п╡п╦я▐п╪п╦ п╡п╣я─я│п╦п╦ 2\n"
+"п╩п╦п╠п╬ п©п╬ п╡п╟я┬п╣п╪я┐ п╡я▀п╠п╬я─я┐ я│ я┐я│п╩п╬п╡п╦я▐п╪п╦ п╠п╬п╩п╣п╣ п©п╬п╥п╢п╫п╣п╧\n"
+"п╡п╣я─я│п╦п╦ п║я┌п╟п╫п╢п╟я─я┌п╫п╬п╧ п·п╠я┴п╣я│я┌п╡п╣п╫п╫п╬п╧ п⌡п╦я├п╣п╫п╥п╦п╦ GNU,\n"
+"п╬п©я┐п╠п╩п╦п╨п╬п╡п╟п╫п╫п╬п╧ Free Software Foundation."
 
 #: src/about.c:49
 msgid "Show license"
-msgstr "Показать лицензию"
+msgstr "п÷п╬п╨п╟п╥п╟я┌я▄ п╩п╦я├п╣п╫п╥п╦я▌"
 
 #: src/gtkballs.c:146
 #, c-format
 msgid "Failed loading theme \"%s\"! Trying \"%s\"\n"
-msgstr "Не могу открыть тему \"%s\"! Пробую \"%s\"\n"
+msgstr "п²п╣ п╪п╬пЁя┐ п╬я┌п╨я─я▀я┌я▄ я┌п╣п╪я┐ \"%s\"! п÷я─п╬п╠я┐я▌ \"%s\"\n"
 
 #: src/gtkballs.c:153
 #, c-format
 msgid "Failed loading theme \"%s\"! Exiting.\n"
-msgstr "Не могу открыть тему \"%s\"! Выхожу.\n"
+msgstr "п²п╣ п╪п╬пЁя┐ п╬я┌п╨я─я▀я┌я▄ я┌п╣п╪я┐ \"%s\"! п▓я▀я┘п╬п╤я┐.\n"
 
 #: src/gtkballs.c:171 src/halloffame.c:31 src/inputname.c:59
 msgid "Unable to read score.\n"
-msgstr "Невозможно прочитать таблицу рекордов.\n"
+msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п©я─п╬я┤п╦я┌п╟я┌я▄ я┌п╟п╠п╩п╦я├я┐ я─п╣п╨п╬я─п╢п╬п╡.\n"
 
 #: src/license.c:32
 msgid "Can't stat license file"
-msgstr "Невозможно получить данные о состоянии файла с лицензией"
+msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п©п╬п╩я┐я┤п╦я┌я▄ п╢п╟п╫п╫я▀п╣ п╬ я│п╬я│я┌п╬я▐п╫п╦п╦ я└п╟п╧п╩п╟ я│ п╩п╦я├п╣п╫п╥п╦п╣п╧"
 
 #: src/license.c:38
 msgid "Can't open license file"
-msgstr "Невозможно открыть файл с лицензией"
+msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п╬я┌п╨я─я▀я┌я▄ я└п╟п╧п╩ я│ п╩п╦я├п╣п╫п╥п╦п╣п╧"
 
 #: src/license.c:46
 msgid "GNU Public License"
-msgstr "Публичная лицензия GNU"
+msgstr "п÷я┐п╠п╩п╦я┤п╫п╟я▐ п╩п╦я├п╣п╫п╥п╦я▐ GNU"
 
 #: src/mainmenu.c:20
 msgid "_Game"
-msgstr "_Игра"
+msgstr "_п≤пЁя─п╟"
 
 #: src/mainmenu.c:21
 msgid "_Edit"
-msgstr "_Редактирование"
+msgstr "_п═п╣п╢п╟п╨я┌п╦я─п╬п╡п╟п╫п╦п╣"
 
 #: src/mainmenu.c:22
 msgid "_Settings"
-msgstr "_Настройки"
+msgstr "_п²п╟я│я┌я─п╬п╧п╨п╦"
 
 #: src/mainmenu.c:23
 msgid "_Help"
-msgstr "_Помощь"
+msgstr "_п÷п╬п╪п╬я┴я▄"
 
 #: src/mainmenu.c:24
 msgid "_New"
-msgstr "_Новая"
+msgstr "_п²п╬п╡п╟я▐"
 
 #: src/mainmenu.c:24
 msgid "Start new game"
-msgstr "Начать новую игру"
+msgstr "п²п╟я┤п╟я┌я▄ п╫п╬п╡я┐я▌ п╦пЁя─я┐"
 
 #: src/mainmenu.c:25 src/mainmenu.c:32
 msgid "_Rules"
-msgstr "_Правила"
+msgstr "_п÷я─п╟п╡п╦п╩п╟"
 
 #: src/mainmenu.c:25
 msgid "Change game rules"
-msgstr "Изменить правила игры"
+msgstr "п≤п╥п╪п╣п╫п╦я┌я▄ п©я─п╟п╡п╦п╩п╟ п╦пЁя─я▀"
 
 #: src/mainmenu.c:26
 msgid "_Save"
-msgstr "_Сохранить"
+msgstr "_п║п╬я┘я─п╟п╫п╦я┌я▄"
 
 #: src/mainmenu.c:26 src/savedialog.c:196 src/savedialog.c:266
 msgid "Save game"
-msgstr "Сохранить игру"
+msgstr "п║п╬я┘я─п╟п╫п╦я┌я▄ п╦пЁя─я┐"
 
 #: src/mainmenu.c:27
 msgid "_Load"
-msgstr "_Загрузить"
+msgstr "_п≈п╟пЁя─я┐п╥п╦я┌я▄"
 
 #: src/mainmenu.c:27 src/savedialog.c:196 src/savedialog.c:269
 msgid "Load game"
-msgstr "Загрузить игру"
+msgstr "п≈п╟пЁя─я┐п╥п╦я┌я▄ п╦пЁя─я┐"
 
 #: src/mainmenu.c:28
 msgid "_Hall of fame"
-msgstr "_Таблица рекордов"
+msgstr "_п╒п╟п╠п╩п╦я├п╟ я─п╣п╨п╬я─п╢п╬п╡"
 
 #: src/mainmenu.c:28
 msgid "Show Hall of Fame"
-msgstr "Показать таблицу рекордов "
+msgstr "п÷п╬п╨п╟п╥п╟я┌я▄ я┌п╟п╠п╩п╦я├я┐ я─п╣п╨п╬я─п╢п╬п╡ "
 
 #: src/mainmenu.c:29
 msgid "_Quit"
-msgstr "_Выход"
+msgstr "_п▓я▀я┘п╬п╢"
 
 #: src/mainmenu.c:29
 msgid "Quit program"
-msgstr "Выйти из программы"
+msgstr "п▓я▀п╧я┌п╦ п╦п╥ п©я─п╬пЁя─п╟п╪п╪я▀"
 
 #: src/mainmenu.c:30
 msgid "_Undo"
-msgstr "_Отмена"
+msgstr "_п·я┌п╪п╣п╫п╟"
 
 #: src/mainmenu.c:30
 msgid "Undo last move"
-msgstr "Отменить последний ход"
+msgstr "п·я┌п╪п╣п╫п╦я┌я▄ п©п╬я│п╩п╣п╢п╫п╦п╧ я┘п╬п╢"
 
 #: src/mainmenu.c:31
 msgid "_Preferences"
-msgstr "_Настройки"
+msgstr "_п²п╟я│я┌я─п╬п╧п╨п╦"
 
 #: src/mainmenu.c:31
 msgid "Change game settings"
-msgstr "Изменить настройки игры"
+msgstr "п≤п╥п╪п╣п╫п╦я┌я▄ п╫п╟я│я┌я─п╬п╧п╨п╦ п╦пЁя─я▀"
 
 #: src/mainmenu.c:32
 msgid "Display help about game rules"
-msgstr "Показать правила игры"
+msgstr "п÷п╬п╨п╟п╥п╟я┌я▄ п©я─п╟п╡п╦п╩п╟ п╦пЁя─я▀"
 
 #: src/mainmenu.c:33
 msgid "_About"
-msgstr "_О программе"
+msgstr "_п· п©я─п╬пЁя─п╟п╪п╪п╣"
 
 #: src/mainmenu.c:33
 msgid "Show information about program"
-msgstr "Показать информацию о программе"
+msgstr "п÷п╬п╨п╟п╥п╟я┌я▄ п╦п╫я└п╬я─п╪п╟я├п╦я▌ п╬ п©я─п╬пЁя─п╟п╪п╪п╣"
 
 #: src/mainwin.c:51
 #, c-format
 msgid "Hi-score: %i"
-msgstr "Рекорд: %i"
+msgstr "п═п╣п╨п╬я─п╢: %i"
 
 #: src/mainwin.c:64
 #, c-format
 msgid "Your score: %i"
-msgstr "Ваши очки: %i"
+msgstr "п▓п╟я┬п╦ п╬я┤п╨п╦: %i"
 
 #: src/mainwin.c:75
 msgid ""
 "Score writer process died unexpectedly. No scores will be writen!\n"
 "Save your game and restart programm.\n"
 msgstr ""
-"Процесс записывающий очки неожиданно умер. Очки не будут сохранены!\n"
-"Сохраните вашу игру и перезапустите программу.\n"
+"п÷я─п╬я├п╣я│я│ п╥п╟п©п╦я│я▀п╡п╟я▌я┴п╦п╧ п╬я┤п╨п╦ п╫п╣п╬п╤п╦п╢п╟п╫п╫п╬ я┐п╪п╣я─. п·я┤п╨п╦ п╫п╣ п╠я┐п╢я┐я┌ я│п╬я┘я─п╟п╫п╣п╫я▀!\n"
+"п║п╬я┘я─п╟п╫п╦я┌п╣ п╡п╟я┬я┐ п╦пЁя─я┐ п╦ п©п╣я─п╣п╥п╟п©я┐я│я┌п╦я┌п╣ п©я─п╬пЁя─п╟п╪п╪я┐.\n"
 
 #: src/mainwin.c:77
 msgid "Who Killed Bambi?"
-msgstr "Кто замочил Бэмби?"
+msgstr "п я┌п╬ п╥п╟п╪п╬я┤п╦п╩ п▒я█п╪п╠п╦?"
 
 #: src/mainwin.c:81
 msgid "Time is unlimited"
-msgstr "Время неограничено"
+msgstr "п▓я─п╣п╪я▐ п╫п╣п╬пЁя─п╟п╫п╦я┤п╣п╫п╬"
 
 #: src/mainwin.c:88
 #, c-format
 msgid "Remaining time: %02d:%02d"
-msgstr "Оставшееся время: %02d:%02d"
+msgstr "п·я│я┌п╟п╡я┬п╣п╣я│я▐ п╡я─п╣п╪я▐: %02d:%02d"
 
 #: src/mainwin.c:146
 msgid "GtkBalls"
@@ -208,31 +208,31 @@ msgstr "GtkBalls"
 
 #: src/preferences.c:66
 msgid "Failed loading theme \""
-msgstr "Не могу открыть тему \""
+msgstr "п²п╣ п╪п╬пЁя┐ п╬я┌п╨я─я▀я┌я▄ я┌п╣п╪я┐ \""
 
 #: src/preferences.c:130
 msgid "No themes available! =(\n"
-msgstr "Нет доступных тем! =(\n"
+msgstr "п²п╣я┌ п╢п╬я│я┌я┐п©п╫я▀я┘ я┌п╣п╪! =(\n"
 
 #: src/preferences.c:136 src/preferences.c:142
 msgid "Preferences"
-msgstr "Настройки"
+msgstr "п²п╟я│я┌я─п╬п╧п╨п╦"
 
 #: src/preferences.c:149
 msgid "Show colors that will appear on next turn"
-msgstr "Показывать какого цвета шарики появятся на следующем ходу"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ п╨п╟п╨п╬пЁп╬ я├п╡п╣я┌п╟ я┬п╟я─п╦п╨п╦ п©п╬я▐п╡я▐я┌я│я▐ п╫п╟ я│п╩п╣п╢я┐я▌я┴п╣п╪ я┘п╬п╢я┐"
 
 #: src/preferences.c:150
 msgid "Show path of the ball"
-msgstr "Показывать путь шарика"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ п©я┐я┌я▄ я┬п╟я─п╦п╨п╟"
 
 #: src/preferences.c:151
 msgid "Show footprints of the ball"
-msgstr "Показывать следы шарика"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ я│п╩п╣п╢я▀ я┬п╟я─п╦п╨п╟"
 
 #: src/preferences.c:152
 msgid "Show animation of disappearing of the ball"
-msgstr "Показывать анимацию исчезновения шарика"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ п╟п╫п╦п╪п╟я├п╦я▌ п╦я│я┤п╣п╥п╫п╬п╡п╣п╫п╦я▐ я┬п╟я─п╦п╨п╟"
 
 #: src/preferences.c:153
 msgid "Highlight \"active\" cell"
@@ -252,24 +252,24 @@ msgstr ""
 
 #: src/preferences.c:165
 msgid "Enable time limit"
-msgstr "Включить ограничение времени"
+msgstr "п▓п╨п╩я▌я┤п╦я┌я▄ п╬пЁя─п╟п╫п╦я┤п╣п╫п╦п╣ п╡я─п╣п╪п╣п╫п╦"
 
 #: src/preferences.c:166
 msgid "Time limit (seconds): "
-msgstr "Время на ход (секунд): "
+msgstr "п▓я─п╣п╪я▐ п╫п╟ я┘п╬п╢ (я│п╣п╨я┐п╫п╢): "
 
 #: src/preferences.c:195
 msgid "Select Theme"
-msgstr "Выберите тему"
+msgstr "п▓я▀п╠п╣я─п╦я┌п╣ я┌п╣п╪я┐"
 
 #: src/prefs.c:236
 #, c-format
 msgid "Can't write to %s: %s"
-msgstr "Не могу записать в %s: %s"
+msgstr "п²п╣ п╪п╬пЁя┐ п╥п╟п©п╦я│п╟я┌я▄ п╡ %s: %s"
 
 #: src/rules.c:22 src/rules.c:27
 msgid "Rules"
-msgstr "Правила"
+msgstr "п÷я─п╟п╡п╦п╩п╟"
 
 #: src/rules.c:34
 msgid ""
@@ -304,38 +304,38 @@ msgid ""
 "what colors the next balls that will appear on\n"
 "the grid will be."
 msgstr ""
-"Стандартное гровое поле GtkBalls состоит из сетки\n"
-"9x9 ячеек (Это может быть изменено в меню \"Правила\").\n"
-"В начале игры на поле находится несколько шариков,\n"
-"размещенных в случайном порядке. Шарики бывают разных\n"
-"цветов (и/или формы). Вы можете перемещать шарики по полю,\n"
-"елкая сначала по шарику, а затем по пустой клетке поля, в\n"
-"которую необходимо переместить шарик. Шарик переместится\n"
-"в нужную клетку только если путь не закрыт другими шариками.\n"
-"Если вы не заработали очков перемещением шарика, то на поле\n"
-"появляются новые шарики. Игра заканчивается, если на поле \n"
-"не осталось свободного места. Тем не менее, это единственный\n"
-"вариант завершения игры. Ваша задача набрать к концу игры как\n"
-"можно больше очков. Для этого вы должны составлять горизонтальные,\n"
-"вертикальные или диагональные линии из шариков одного цвета.\n"
-"Для того, чтобы убрать линию, в ней должно быть не менее пяти\n"
-"шариков одного цвета (это тоже может быть изменено в меню\n"
-"\"Правила\"). За линию из минимального количества шариков дается\n"
-"в два раза больше очков, чем количество шариков. Если вы собрали\n"
-"линии из большего числа шариков, то получаете больше очков.\n"
-"Для того, чтобы вам было проще решить, какой шарик надо\n"
-"переместить, над игровым полем находится индикатор, показывающий\n"
-"какие шарики появятся на следующем ходу."
+"п║я┌п╟п╫п╢п╟я─я┌п╫п╬п╣ пЁя─п╬п╡п╬п╣ п©п╬п╩п╣ GtkBalls я│п╬я│я┌п╬п╦я┌ п╦п╥ я│п╣я┌п╨п╦\n"
+"9x9 я▐я┤п╣п╣п╨ (п╜я┌п╬ п╪п╬п╤п╣я┌ п╠я▀я┌я▄ п╦п╥п╪п╣п╫п╣п╫п╬ п╡ п╪п╣п╫я▌ \"п÷я─п╟п╡п╦п╩п╟\").\n"
+"п▓ п╫п╟я┤п╟п╩п╣ п╦пЁя─я▀ п╫п╟ п©п╬п╩п╣ п╫п╟я┘п╬п╢п╦я┌я│я▐ п╫п╣я│п╨п╬п╩я▄п╨п╬ я┬п╟я─п╦п╨п╬п╡,\n"
+"я─п╟п╥п╪п╣я┴п╣п╫п╫я▀я┘ п╡ я│п╩я┐я┤п╟п╧п╫п╬п╪ п©п╬я─я▐п╢п╨п╣. п╗п╟я─п╦п╨п╦ п╠я▀п╡п╟я▌я┌ я─п╟п╥п╫я▀я┘\n"
+"я├п╡п╣я┌п╬п╡ (п╦/п╦п╩п╦ я└п╬я─п╪я▀). п▓я▀ п╪п╬п╤п╣я┌п╣ п©п╣я─п╣п╪п╣я┴п╟я┌я▄ я┬п╟я─п╦п╨п╦ п©п╬ п©п╬п╩я▌,\n"
+"п╣п╩п╨п╟я▐ я│п╫п╟я┤п╟п╩п╟ п©п╬ я┬п╟я─п╦п╨я┐, п╟ п╥п╟я┌п╣п╪ п©п╬ п©я┐я│я┌п╬п╧ п╨п╩п╣я┌п╨п╣ п©п╬п╩я▐, п╡\n"
+"п╨п╬я┌п╬я─я┐я▌ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬ п©п╣я─п╣п╪п╣я│я┌п╦я┌я▄ я┬п╟я─п╦п╨. п╗п╟я─п╦п╨ п©п╣я─п╣п╪п╣я│я┌п╦я┌я│я▐\n"
+"п╡ п╫я┐п╤п╫я┐я▌ п╨п╩п╣я┌п╨я┐ я┌п╬п╩я▄п╨п╬ п╣я│п╩п╦ п©я┐я┌я▄ п╫п╣ п╥п╟п╨я─я▀я┌ п╢я─я┐пЁп╦п╪п╦ я┬п╟я─п╦п╨п╟п╪п╦.\n"
+"п∙я│п╩п╦ п╡я▀ п╫п╣ п╥п╟я─п╟п╠п╬я┌п╟п╩п╦ п╬я┤п╨п╬п╡ п©п╣я─п╣п╪п╣я┴п╣п╫п╦п╣п╪ я┬п╟я─п╦п╨п╟, я┌п╬ п╫п╟ п©п╬п╩п╣\n"
+"п©п╬я▐п╡п╩я▐я▌я┌я│я▐ п╫п╬п╡я▀п╣ я┬п╟я─п╦п╨п╦. п≤пЁя─п╟ п╥п╟п╨п╟п╫я┤п╦п╡п╟п╣я┌я│я▐, п╣я│п╩п╦ п╫п╟ п©п╬п╩п╣ \n"
+"п╫п╣ п╬я│я┌п╟п╩п╬я│я▄ я│п╡п╬п╠п╬п╢п╫п╬пЁп╬ п╪п╣я│я┌п╟. п╒п╣п╪ п╫п╣ п╪п╣п╫п╣п╣, я█я┌п╬ п╣п╢п╦п╫я│я┌п╡п╣п╫п╫я▀п╧\n"
+"п╡п╟я─п╦п╟п╫я┌ п╥п╟п╡п╣я─я┬п╣п╫п╦я▐ п╦пЁя─я▀. п▓п╟я┬п╟ п╥п╟п╢п╟я┤п╟ п╫п╟п╠я─п╟я┌я▄ п╨ п╨п╬п╫я├я┐ п╦пЁя─я▀ п╨п╟п╨\n"
+"п╪п╬п╤п╫п╬ п╠п╬п╩я▄я┬п╣ п╬я┤п╨п╬п╡. п■п╩я▐ я█я┌п╬пЁп╬ п╡я▀ п╢п╬п╩п╤п╫я▀ я│п╬я│я┌п╟п╡п╩я▐я┌я▄ пЁп╬я─п╦п╥п╬п╫я┌п╟п╩я▄п╫я▀п╣,\n"
+"п╡п╣я─я┌п╦п╨п╟п╩я▄п╫я▀п╣ п╦п╩п╦ п╢п╦п╟пЁп╬п╫п╟п╩я▄п╫я▀п╣ п╩п╦п╫п╦п╦ п╦п╥ я┬п╟я─п╦п╨п╬п╡ п╬п╢п╫п╬пЁп╬ я├п╡п╣я┌п╟.\n"
+"п■п╩я▐ я┌п╬пЁп╬, я┤я┌п╬п╠я▀ я┐п╠я─п╟я┌я▄ п╩п╦п╫п╦я▌, п╡ п╫п╣п╧ п╢п╬п╩п╤п╫п╬ п╠я▀я┌я▄ п╫п╣ п╪п╣п╫п╣п╣ п©я▐я┌п╦\n"
+"я┬п╟я─п╦п╨п╬п╡ п╬п╢п╫п╬пЁп╬ я├п╡п╣я┌п╟ (я█я┌п╬ я┌п╬п╤п╣ п╪п╬п╤п╣я┌ п╠я▀я┌я▄ п╦п╥п╪п╣п╫п╣п╫п╬ п╡ п╪п╣п╫я▌\n"
+"\"п÷я─п╟п╡п╦п╩п╟\"). п≈п╟ п╩п╦п╫п╦я▌ п╦п╥ п╪п╦п╫п╦п╪п╟п╩я▄п╫п╬пЁп╬ п╨п╬п╩п╦я┤п╣я│я┌п╡п╟ я┬п╟я─п╦п╨п╬п╡ п╢п╟п╣я┌я│я▐\n"
+"п╡ п╢п╡п╟ я─п╟п╥п╟ п╠п╬п╩я▄я┬п╣ п╬я┤п╨п╬п╡, я┤п╣п╪ п╨п╬п╩п╦я┤п╣я│я┌п╡п╬ я┬п╟я─п╦п╨п╬п╡. п∙я│п╩п╦ п╡я▀ я│п╬п╠я─п╟п╩п╦\n"
+"п╩п╦п╫п╦п╦ п╦п╥ п╠п╬п╩я▄я┬п╣пЁп╬ я┤п╦я│п╩п╟ я┬п╟я─п╦п╨п╬п╡, я┌п╬ п©п╬п╩я┐я┤п╟п╣я┌п╣ п╠п╬п╩я▄я┬п╣ п╬я┤п╨п╬п╡.\n"
+"п■п╩я▐ я┌п╬пЁп╬, я┤я┌п╬п╠я▀ п╡п╟п╪ п╠я▀п╩п╬ п©я─п╬я┴п╣ я─п╣я┬п╦я┌я▄, п╨п╟п╨п╬п╧ я┬п╟я─п╦п╨ п╫п╟п╢п╬\n"
+"п©п╣я─п╣п╪п╣я│я┌п╦я┌я▄, п╫п╟п╢ п╦пЁя─п╬п╡я▀п╪ п©п╬п╩п╣п╪ п╫п╟я┘п╬п╢п╦я┌я│я▐ п╦п╫п╢п╦п╨п╟я┌п╬я─, п©п╬п╨п╟п╥я▀п╡п╟я▌я┴п╦п╧\n"
+"п╨п╟п╨п╦п╣ я┬п╟я─п╦п╨п╦ п©п╬я▐п╡я▐я┌я│я▐ п╫п╟ я│п╩п╣п╢я┐я▌я┴п╣п╪ я┘п╬п╢я┐."
 
 #: src/scoreboard.c:53 src/scoreboard.c:57 src/scoreboard.c:155
 #: src/scoreboard.c:170 src/inputname.c:42 src/inputname.c:46
 #: src/inputname.c:50
 msgid "Unknown"
-msgstr "Неизвестно"
+msgstr "п²п╣п╦п╥п╡п╣я│я┌п╫п╬"
 
 #: src/savedialog.c:29
 msgid "No game selected for load.\n"
-msgstr "Не выбрана игра для загрузки.\n"
+msgstr "п²п╣ п╡я▀п╠я─п╟п╫п╟ п╦пЁя─п╟ п╢п╩я▐ п╥п╟пЁя─я┐п╥п╨п╦.\n"
 
 #: src/savedialog.c:33
 #, c-format
@@ -343,7 +343,7 @@ msgid ""
 "Cannot load game from:\n"
 "%s\n"
 msgstr ""
-"Не могу загрузить игру из:\n"
+"п²п╣ п╪п╬пЁя┐ п╥п╟пЁя─я┐п╥п╦я┌я▄ п╦пЁя─я┐ п╦п╥:\n"
 "%s\n"
 
 #: src/savedialog.c:37
@@ -353,9 +353,9 @@ msgid ""
 "We need %d balls.\n"
 "Load another theme and try again."
 msgstr ""
-"Мало шариков(%d) в текущей теме.\n"
-"Должно быть %d.\n"
-"Загрузите другую тему и попытайтесь еще раз."
+"п°п╟п╩п╬ я┬п╟я─п╦п╨п╬п╡(%d) п╡ я┌п╣п╨я┐я┴п╣п╧ я┌п╣п╪п╣.\n"
+"п■п╬п╩п╤п╫п╬ п╠я▀я┌я▄ %d.\n"
+"п≈п╟пЁя─я┐п╥п╦я┌п╣ п╢я─я┐пЁя┐я▌ я┌п╣п╪я┐ п╦ п©п╬п©я▀я┌п╟п╧я┌п╣я│я▄ п╣я┴п╣ я─п╟п╥."
 
 #: src/savedialog.c:107
 #, c-format
@@ -364,49 +364,49 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"Не могу сохранить игру в:\n"
+"п²п╣ п╪п╬пЁя┐ я│п╬я┘я─п╟п╫п╦я┌я▄ п╦пЁя─я┐ п╡:\n"
 "%s\n"
 "%s"
 
 #: src/savedialog.c:192
 msgid "No saved games found.\n"
-msgstr "Не найдено сохраненых игр.\n"
+msgstr "п²п╣ п╫п╟п╧п╢п╣п╫п╬ я│п╬я┘я─п╟п╫п╣п╫я▀я┘ п╦пЁя─.\n"
 
 #: src/savedialog.c:221
 msgid "Empty"
-msgstr "Пусто"
+msgstr "п÷я┐я│я┌п╬"
 
 #: src/savedialog.c:235 src/halloffame.c:74
 msgid "Date"
-msgstr "Дата"
+msgstr "п■п╟я┌п╟"
 
 #: src/savedialog.c:246 src/halloffame.c:71
 msgid "Score"
-msgstr "Очки"
+msgstr "п·я┤п╨п╦"
 
 #: src/savedialog.c:272
 msgid "Delete game"
-msgstr "Удалить игру"
+msgstr "пёп╢п╟п╩п╦я┌я▄ п╦пЁя─я┐"
 
 #: src/halloffame.c:36 src/halloffame.c:42
 msgid "Hall of Fame"
-msgstr "Таблица рекордов"
+msgstr "п╒п╟п╠п╩п╦я├п╟ я─п╣п╨п╬я─п╢п╬п╡"
 
 #: src/halloffame.c:60
 msgid "No scores"
-msgstr "Нет рекордов"
+msgstr "п²п╣я┌ я─п╣п╨п╬я─п╢п╬п╡"
 
 #: src/halloffame.c:68
 msgid "Name"
-msgstr "Имя"
+msgstr "п≤п╪я▐"
 
 #: src/inputname.c:35
 msgid "Anonymous"
-msgstr "Неизвестный"
+msgstr "п²п╣п╦п╥п╡п╣я│я┌п╫я▀п╧"
 
 #: src/inputname.c:41 src/inputname.c:45
 msgid "Unable to determine current date.\n"
-msgstr "Не могу определить текущую дату.\n"
+msgstr "п²п╣ п╪п╬пЁя┐ п╬п©я─п╣п╢п╣п╩п╦я┌я▄ я┌п╣п╨я┐я┴я┐я▌ п╢п╟я┌я┐.\n"
 
 #: src/inputname.c:44
 msgid "%a %b %d %H:%M %Y"
@@ -414,104 +414,104 @@ msgstr "%a %b %d %H:%M %Y"
 
 #: src/inputname.c:63
 msgid "Unable to save score.\n"
-msgstr "Не могу сохранить таблицу рекордов.\n"
+msgstr "п²п╣ п╪п╬пЁя┐ я│п╬я┘я─п╟п╫п╦я┌я▄ я┌п╟п╠п╩п╦я├я┐ я─п╣п╨п╬я─п╢п╬п╡.\n"
 
 #: src/inputname.c:90
 msgid "Enter your name"
-msgstr "Введите ваше имя"
+msgstr "п▓п╡п╣п╢п╦я┌п╣ п╡п╟я┬п╣ п╦п╪я▐"
 
 #: src/rulesdialog.c:61 src/rulesdialog.c:66
 msgid "Game rules"
-msgstr "Правила игры"
+msgstr "п÷я─п╟п╡п╦п╩п╟ п╦пЁя─я▀"
 
 #: src/rulesdialog.c:73
 msgid "Board width"
-msgstr "Ширина поля"
+msgstr "п╗п╦я─п╦п╫п╟ п©п╬п╩я▐"
 
 #: src/rulesdialog.c:74
 msgid "Board height"
-msgstr "Высота поля"
+msgstr "п▓я▀я│п╬я┌п╟ п©п╬п╩я▐"
 
 #: src/rulesdialog.c:75
 msgid "Number of different objects"
-msgstr "Количество разных объектов"
+msgstr "п п╬п╩п╦я┤п╣я│я┌п╡п╬ я─п╟п╥п╫я▀я┘ п╬п╠я┼п╣п╨я┌п╬п╡"
 
 #: src/rulesdialog.c:77
 msgid "Number of 'next' objects"
-msgstr "Количество 'следующих' объектов"
+msgstr "п п╬п╩п╦я┤п╣я│я┌п╡п╬ 'я│п╩п╣п╢я┐я▌я┴п╦я┘' п╬п╠я┼п╣п╨я┌п╬п╡"
 
 #: src/rulesdialog.c:78
 msgid "How many balls at line eliminate it"
-msgstr "Сколько шаров в строке удалять"
+msgstr "п║п╨п╬п╩я▄п╨п╬ я┬п╟я─п╬п╡ п╡ я│я┌я─п╬п╨п╣ я┐п╢п╟п╩я▐я┌я▄"
 
 #: src/rulesdialog.c:81
 msgid "Classic rules"
-msgstr "Классические правила"
+msgstr "п п╩п╟я│я│п╦я┤п╣я│п╨п╦п╣ п©я─п╟п╡п╦п╩п╟"
 
 #~ msgid "/_Game/tear0"
-#~ msgstr "/_Игра/tear0"
+#~ msgstr "/_п≤пЁя─п╟/tear0"
 
 #~ msgid "/_Game/_New"
-#~ msgstr "/_Игра/_Новая"
+#~ msgstr "/_п≤пЁя─п╟/_п²п╬п╡п╟я▐"
 
 #~ msgid "/_Game/_Rules"
-#~ msgstr "/_Игра/_Правила"
+#~ msgstr "/_п≤пЁя─п╟/_п÷я─п╟п╡п╦п╩п╟"
 
 #~ msgid "/_Game/sep0"
-#~ msgstr "/_Игра/sep0"
+#~ msgstr "/_п≤пЁя─п╟/sep0"
 
 #~ msgid "/_Game/_Save"
-#~ msgstr "/_Игра/_Сохранить"
+#~ msgstr "/_п≤пЁя─п╟/_п║п╬я┘я─п╟п╫п╦я┌я▄"
 
 #~ msgid "/_Game/_Load"
-#~ msgstr "/_Игра/_Загрузить"
+#~ msgstr "/_п≤пЁя─п╟/_п≈п╟пЁя─я┐п╥п╦я┌я▄"
 
 #~ msgid "/_Game/_Hall of fame"
-#~ msgstr "/_Игра/_Таблица рекордов"
+#~ msgstr "/_п≤пЁя─п╟/_п╒п╟п╠п╩п╦я├п╟ я─п╣п╨п╬я─п╢п╬п╡"
 
 #~ msgid "/_Game/sep1"
-#~ msgstr "/_Игра/sep1"
+#~ msgstr "/_п≤пЁя─п╟/sep1"
 
 #~ msgid "/_Game/_Quit"
-#~ msgstr "/_Игра/_Выход"
+#~ msgstr "/_п≤пЁя─п╟/_п▓я▀я┘п╬п╢"
 
 #~ msgid "/_Edit/tear1"
-#~ msgstr "/_Редактирование/tear1"
+#~ msgstr "/_п═п╣п╢п╟п╨я┌п╦я─п╬п╡п╟п╫п╦п╣/tear1"
 
 #~ msgid "/_Edit/_Undo"
-#~ msgstr "/_Редактирование/_Отмена"
+#~ msgstr "/_п═п╣п╢п╟п╨я┌п╦я─п╬п╡п╟п╫п╦п╣/_п·я┌п╪п╣п╫п╟"
 
 #~ msgid "/_Settings/tear1"
-#~ msgstr "/_Настройки/tear1"
+#~ msgstr "/_п²п╟я│я┌я─п╬п╧п╨п╦/tear1"
 
 #~ msgid "/_Settings/_Preferences"
-#~ msgstr "/_Настройки/_Установки"
+#~ msgstr "/_п²п╟я│я┌я─п╬п╧п╨п╦/_пёя│я┌п╟п╫п╬п╡п╨п╦"
 
 #~ msgid "/_Help/tear2"
-#~ msgstr "/_Помощь/tear2"
+#~ msgstr "/_п÷п╬п╪п╬я┴я▄/tear2"
 
 #~ msgid "/_Help/_Rules"
-#~ msgstr "/_Помощь/_Правила"
+#~ msgstr "/_п÷п╬п╪п╬я┴я▄/_п÷я─п╟п╡п╦п╩п╟"
 
 #~ msgid "/_Help/sep2"
-#~ msgstr "/_Помощь/sep2"
+#~ msgstr "/_п÷п╬п╪п╬я┴я▄/sep2"
 
 #~ msgid "/_Help/_About"
-#~ msgstr "/_Помощь/_О программе"
+#~ msgstr "/_п÷п╬п╪п╬я┴я▄/_п· п©я─п╬пЁя─п╟п╪п╪п╣"
 
 #~ msgid "Date (score)"
-#~ msgstr "Дата (очки)"
+#~ msgstr "п■п╟я┌п╟ (п╬я┤п╨п╦)"
 
 #~ msgid "Cannot determine rc file name. ($HOME is toooooo long?)"
 #~ msgstr ""
-#~ "Не могу определить имя файла с настройками. ($HOME слишком длинный?)"
+#~ "п²п╣ п╪п╬пЁя┐ п╬п©я─п╣п╢п╣п╩п╦я┌я▄ п╦п╪я▐ я└п╟п╧п╩п╟ я│ п╫п╟я│я┌я─п╬п╧п╨п╟п╪п╦. ($HOME я│п╩п╦я┬п╨п╬п╪ п╢п╩п╦п╫п╫я▀п╧?)"
 
 #~ msgid "Cannot allocate %d bytes!"
-#~ msgstr "Не могу зарезервировать %d байт!"
+#~ msgstr "п²п╣ п╪п╬пЁя┐ п╥п╟я─п╣п╥п╣я─п╡п╦я─п╬п╡п╟я┌я▄ %d п╠п╟п╧я┌!"
 
 #, fuzzy
 #~ msgid "Time unlimited"
-#~ msgstr "Время неограничено"
+#~ msgstr "п▓я─п╣п╪я▐ п╫п╣п╬пЁя─п╟п╫п╦я┤п╣п╫п╬"
 
 #~ msgid "Hi-score: 0"
-#~ msgstr "Рекорд: 0"
+#~ msgstr "п═п╣п╨п╬я─п╢: 0"
