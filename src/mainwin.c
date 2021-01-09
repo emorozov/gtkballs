@@ -16,6 +16,8 @@
 #include "game.h"
 #include "child.h"
 
+GtkWindow * main_window;
+
 /* Score labels */
 GtkWidget *_hi_score_label = NULL;
 GtkWidget *_user_score_label = NULL;
@@ -136,7 +138,7 @@ gint _user_action_event(GtkWidget *w, GdkEvent *ev) {
 }
 
 void mw_create(gint da_width, gint da_height) {
-        GtkWidget *mainwin;
+    GtkWidget *mainwin;
   	GtkWidget *menubar;
   	GtkWidget *vbox, *hbox, *hbox1, *drawing_area_box;
 	GtkWidget *timer_label;
@@ -144,6 +146,7 @@ void mw_create(gint da_width, gint da_height) {
 	GError *error=NULL;
 
 	mainwin = ut_window_new(_("GtkBalls"), "GtkBalls_Main", "GtkBalls", FALSE, FALSE, FALSE, 0);
+	main_window = GTK_WINDOW (mainwin);
   	g_signal_connect(G_OBJECT(mainwin), "destroy", G_CALLBACK(gtk_main_quit), mainwin);
 
         icon = gdk_pixbuf_new_from_file(DATADIR "/gtkballs/gtkballs_16x16.png", &error);
