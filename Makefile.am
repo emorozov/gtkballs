@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = m4 po doc src gtkballs-data
+SUBDIRS = po doc src gtkballs-data
 
 EXTRA_DIST = README.russian \
 	     TODO \
@@ -8,9 +8,8 @@ EXTRA_DIST = README.russian \
              gtkballs.lsm \
 	     gtkballs.spec
 
-install-data-local:
-	$(mkinstalldirs) $(DESTDIR)$(datadir)/gtkballs
-	$(INSTALL_DATA) COPYING $(DESTDIR)$(datadir)/gtkballs
+appddir = $(datadir)/gtkballs
+appd_DATA = COPYING
 
 install-data-hook:
 	if [ ! -f $(DESTDIR)$(localstatedir)/gtkballs-scores ]; then touch $(DESTDIR)$(localstatedir)/gtkballs-scores; fi

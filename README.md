@@ -9,6 +9,7 @@ This is the README for gtkballs.
 ## Compiling
 
 ```
+$ ./autogen.sh
 $ ./configure
 $ make
 ```
