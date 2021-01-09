@@ -137,6 +137,12 @@ gint _user_action_event(GtkWidget *w, GdkEvent *ev) {
   	return FALSE;
 }
 
+static void main_window_destroy_cb (GtkWidget * w, gpointer user_data)
+{
+   gtkb_theme_free_handler (NULL, NULL);
+   gtk_main_quit ();
+}
+
 void mw_create(gint da_width, gint da_height) {
     GtkWidget *mainwin;
   	GtkWidget *menubar;
@@ -147,7 +153,7 @@ void mw_create(gint da_width, gint da_height) {
 
 	mainwin = ut_window_new(_("GtkBalls"), "GtkBalls_Main", "GtkBalls", FALSE, FALSE, FALSE, 0);
 	main_window = GTK_WINDOW (mainwin);
-  	g_signal_connect(G_OBJECT(mainwin), "destroy", G_CALLBACK(gtk_main_quit), mainwin);
+  	g_signal_connect (G_OBJECT(mainwin), "destroy", G_CALLBACK(main_window_destroy_cb), mainwin);
 
         icon = gdk_pixbuf_new_from_file(DATADIR "/gtkballs/gtkballs_16x16.png", &error);
   	if(icon) {
