@@ -119,7 +119,6 @@ int main(int argc, char **argv) {
         gchar *err, *mapfile;
 
         /* setup all i18n stuff */
-  	gtk_set_locale();
 #ifdef ENABLE_NLS
   	bindtextdomain (PACKAGE, LOCALEDIR);
   	textdomain (PACKAGE);
@@ -156,7 +155,6 @@ int main(int argc, char **argv) {
                         return 1;
                 }
   	}
-        gtk_quit_add(0, (GtkFunction)gtkb_theme_free_handler, NULL);
 
         /* create main application window */
         mw_create(rules_get_width() * theme_get_width(), rules_get_height() * theme_get_height());

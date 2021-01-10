@@ -67,13 +67,14 @@ void update_rectangle(gint x, gint y, gint w, gint h) {
         if(!widget || !_pixmap) {
                 return;
         }
-  	gdk_draw_drawable(widget->window, widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
+  	gdk_draw_drawable (gtk_widget_get_window (widget),
+			  widget->style->fg_gc[gtk_widget_get_state(widget)],
 			  _pixmap, x, y, x, y, w, h);
 }
 
 void draw_ball_no_update(gint ballcolor, gint x, gint y, gint jumpnum, gint destroynum) {
   	GtkWidget *widget = mw_get_da();
-        GdkGC *gc = widget->style->fg_gc[GTK_WIDGET_STATE(widget)];
+        GdkGC *gc = widget->style->fg_gc[gtk_widget_get_state(widget)];
         gint cxs = gtkbTheme->emptycell.xsize;
         gint cys = gtkbTheme->emptycell.ysize;
         GtkbPixmap *obj;
@@ -88,7 +89,13 @@ void draw_ball_no_update(gint ballcolor, gint x, gint y, gint jumpnum, gint dest
         } else {
                 obj = &gtkbTheme->emptycell;
 	}
-	gdk_pixbuf_render_to_drawable(obj->pixbuf, _pixmap, gc, 0, 0, x * cxs, y * cys, cxs, cys, GDK_RGB_DITHER_NONE, 0, 0);
+	gdk_draw_pixbuf (_pixmap,
+	                 gc,
+	                 obj->pixbuf,
+	                 0, 0,
+	                 x * cxs, y * cys,
+	                 cxs, cys,
+	                 GDK_RGB_DITHER_NONE, 0, 0);
 
         if(ballcolor > 0) { 		/* ball */
 	        if(!jumpnum && !destroynum) { 	/* still ball */
@@ -106,7 +113,13 @@ void draw_ball_no_update(gint ballcolor, gint x, gint y, gint jumpnum, gint dest
 
 	xr = x * cxs + (cxs - obj->xsize) / 2;
         yr = y * cys + (cys - obj->ysize) / 2;
-	gdk_pixbuf_render_to_drawable(obj->pixbuf, _pixmap, gc, 0, 0, xr, yr, obj->xsize, obj->ysize, GDK_RGB_DITHER_NONE, 0, 0);
+	gdk_draw_pixbuf (_pixmap,
+	                 gc,
+	                 obj->pixbuf,
+	                 0, 0,
+	                 xr, yr,
+	                 obj->xsize, obj->ysize,
+	                 GDK_RGB_DITHER_NONE, 0, 0);
 }
 
 void draw_ball(gint ballcolor, gint x, gint y, gint jumpnum, gint destroynum) {
@@ -340,7 +353,8 @@ gint expose_event(GtkWidget *widget, GdkEventExpose *event) {
   	gdk_region_get_rectangles(event->region, &rects, &n_rects);
 
   	for(i = 0; i < n_rects; i++) {
-		gdk_draw_drawable(widget->window, widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
+		gdk_draw_drawable (gtk_widget_get_window (widget), 
+				  widget->style->fg_gc[gtk_widget_get_state(widget)],
  				  _pixmap, rects[i].x, rects[i].y, rects[i].x, rects[i].y,
 			  	  rects[i].width, rects[i].height);
     	}

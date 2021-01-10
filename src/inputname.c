@@ -75,7 +75,7 @@ void read_entry(GtkWidget *widget, gpointer data) {
 }
 
 void input_name_dialog(void) {
-  	GtkWidget *prompt_label;
+  	GtkWidget *prompt_label, * vbox;
   	GtkWidget *name;
   	GtkWidget *button;
         gchar *s;
@@ -84,11 +84,13 @@ void input_name_dialog(void) {
   	_saved_score = game_get_score();
 
   	_dialog = gtk_dialog_new();
-        gtk_window_set_wmclass(GTK_WINDOW(_dialog), "GtkBalls_Inputname", "GtkBalls");
-  	gtk_container_set_border_width(GTK_CONTAINER(GTK_DIALOG(_dialog)->vbox), 2);
+        gtk_window_set_role(GTK_WINDOW(_dialog), "GtkBalls_Inputname");
+
+  	vbox = gtk_dialog_get_content_area (GTK_DIALOG (_dialog));
+  	gtk_container_set_border_width(GTK_CONTAINER(vbox), 2);
 
   	prompt_label = gtk_label_new(_("Enter your name"));
-  	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(_dialog)->vbox), prompt_label, TRUE, TRUE, 0);
+  	gtk_box_pack_start (GTK_BOX(vbox), prompt_label, TRUE, TRUE, 0);
 
   	name = gtk_entry_new();
         gtk_entry_set_max_length(GTK_ENTRY(name), 14);
@@ -102,7 +104,7 @@ void input_name_dialog(void) {
         }
     	gtk_entry_set_text(GTK_ENTRY(name), _last_player_name);
     	gtk_editable_select_region(GTK_EDITABLE(name), 0, -1);
-  	gtk_box_pack_start(GTK_BOX(GTK_DIALOG(_dialog)->vbox), name, TRUE, TRUE, 5);
+  	gtk_box_pack_start (GTK_BOX(vbox), name, TRUE, TRUE, 5);
 
         button=ut_button_new_stock(GTK_STOCK_OK, read_entry, name, GTK_DIALOG(_dialog)->action_area);
 
