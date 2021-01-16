@@ -6,28 +6,28 @@ typedef struct _GtkbPixmap GtkbPixmap;
 typedef struct _GtkbBall GtkbBall;
 
 struct _GtkbPixmap {
-        GdkPixbuf  *pixbuf;
-        gint      xsize, ysize;
+   GdkPixbuf  *pixbuf;
+   gint      xsize, ysize;
 };
 
 struct _GtkbBall {
-        GtkbPixmap ball;           /* still picture of ball */
-        GtkbPixmap small;          /* small picture of ball */
-        gint       jumpphases;
-        GtkbPixmap *jump;
-        gint       *jumpdelays;
-        gint       destroyphases;
-        GtkbPixmap *destroy;
-        gint       *destroydelays;
+   GtkbPixmap ball;           /* still picture of ball */
+   GtkbPixmap small;          /* small picture of ball */
+   gint       jumpphases;
+   GtkbPixmap *jump;
+   gint       *jumpdelays;
+   gint       destroyphases;
+   GtkbPixmap *destroy;
+   gint       *destroydelays;
 };
 
 struct _GtkbTheme {
-        GtkbPixmap emptycell;      /* pixmap for empty cell */
-        GtkbPixmap hemptycell;     /* highlighted pixmap for empty cell */
-        GtkbPixmap paws[8];        /* 8 pixmaps for footprints */
-        gint       numballs;       /* number of balls */
-        GtkbBall   *balls;  	   /* array of balls */
-        gint       maxdestphases;  /* maximal number of destroy phases */
+   GtkbPixmap emptycell;      /* pixmap for empty cell */
+   GtkbPixmap hemptycell;     /* highlighted pixmap for empty cell */
+   GtkbPixmap paws[8];        /* 8 pixmaps for footprints */
+   gint       numballs;       /* number of balls */
+   GtkbBall   *balls;         /* array of balls */
+   gint       maxdestphases;  /* maximal number of destroy phases */
 };
 
 
