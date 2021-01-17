@@ -13,10 +13,9 @@
 
 void show_hall_of_fame (GtkWidget *widget, gpointer data, struct score_board b[10])
 {
-   GtkWidget * hall_of_fame;
+   GtkWidget * dialog;
    GtkWidget * frame, * sw, * tv;
-   GtkWidget * vbox, * button_box;
-   GtkWidget * close_button;
+   GtkWidget * main_vbox, * vbox;
    gint i;
    struct score_board *bs = b;
    struct score_board bn[10];
@@ -34,20 +33,14 @@ void show_hall_of_fame (GtkWidget *widget, gpointer data, struct score_board b[1
       }
       bs = bn;
    }
-   hall_of_fame = ut_window_new(_("Hall of Fame"), "GtkBalls_Scores", "GtkBalls", TRUE, TRUE, FALSE, 5);
 
-   vbox = gtk_vbox_new(FALSE, 0);
-   gtk_container_set_border_width(GTK_CONTAINER(vbox), 1);
-   gtk_container_add(GTK_CONTAINER(hall_of_fame), vbox);
-
-   frame = gtk_frame_new(_("Hall of Fame"));
-   gtk_box_pack_start(GTK_BOX(vbox), frame, TRUE, TRUE, 0);
+   dialog = gtkutil_dialog_new (_("Hall of Fame"), main_window, FALSE, &main_vbox);
+   vbox   = gtkutil_frame_vbox (_("Hall of Fame"), main_vbox);
 
    sw = gtk_scrolled_window_new(NULL, NULL);
-   gtk_container_set_border_width(GTK_CONTAINER(sw), 5);
+   gtk_box_pack_start (GTK_BOX (vbox), sw, TRUE, TRUE, 0);
    gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(sw), GTK_POLICY_NEVER, GTK_POLICY_NEVER);
    gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(sw), GTK_SHADOW_ETCHED_IN);
-   gtk_container_add(GTK_CONTAINER(frame), sw);
 
    store = gtk_list_store_new (3,
                                G_TYPE_STRING,
@@ -90,14 +83,11 @@ void show_hall_of_fame (GtkWidget *widget, gpointer data, struct score_board b[1
       g_free(str);
    }
 
-   button_box = gtk_hbox_new(TRUE, 0);
-   gtk_box_pack_start(GTK_BOX(vbox), button_box, FALSE, FALSE, 4);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-close", GTK_RESPONSE_CLOSE);
+   g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+   gtk_widget_grab_focus (gtk_dialog_get_widget_for_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE));
 
-   close_button = ut_button_new_stock_swap(GTK_STOCK_CLOSE, gtk_widget_destroy, hall_of_fame, button_box);
-
-   gtk_widget_grab_focus (close_button);
-   gtk_widget_grab_default (close_button);
-   gtk_widget_show_all (hall_of_fame);
+   gtk_widget_show_all (dialog);
 }
 
 
