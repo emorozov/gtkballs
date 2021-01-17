@@ -35,12 +35,6 @@ GtkWidget *ut_spin_button_new (gchar *label,
                                gint val,
                                GtkWidget *parent);
 
-GtkWidget *ut_spin_button_start_new (gchar *label,
-                                     gint min,
-                                     gint max,
-                                     gint val,
-                                     GtkWidget *parent);
-
 void ut_simple_message_box (gchar *message);
 
 void ut_simple_message_box_with_title (gchar *message, gchar *title);

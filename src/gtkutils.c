@@ -97,30 +97,10 @@ GtkWidget *ut_spin_button_new(gchar *label, gint min, gint max, gint val, GtkWid
    labelw = gtk_label_new(label);
    gtk_box_pack_start(GTK_BOX(hbox), labelw, FALSE, FALSE, 5);
 
-   adj = GTK_ADJUSTMENT (gtk_adjustment_new(val, min, max, 1, 10, 10));
+   adj = GTK_ADJUSTMENT (gtk_adjustment_new (val, min, max, 1, 10, 0));
    button = gtk_spin_button_new(adj, 1, 0);
    gtk_spin_button_set_numeric(GTK_SPIN_BUTTON(button), TRUE);
    gtk_box_pack_end(GTK_BOX(hbox), button, FALSE, FALSE, 5);
-
-   return button;
-}
-
-
-GtkWidget *ut_spin_button_start_new(gchar *label, gint min, gint max, gint val, GtkWidget *parent)
-{
-   GtkAdjustment *adj;
-   GtkWidget *button, *hbox, *labelw;
-
-   hbox = gtk_hbox_new(FALSE, 0);
-   gtk_box_pack_start(GTK_BOX(parent), hbox, TRUE, TRUE, 2);
-
-   labelw = gtk_label_new(label);
-   gtk_box_pack_start(GTK_BOX(hbox), labelw, FALSE, FALSE, 5);
-
-   adj = GTK_ADJUSTMENT (gtk_adjustment_new(val, min, max, 1, 10, 10));
-   button = gtk_spin_button_new(adj, 1, 0);
-   gtk_spin_button_set_numeric(GTK_SPIN_BUTTON(button), TRUE);
-   gtk_box_pack_start(GTK_BOX(hbox), button, FALSE, FALSE, 5);
 
    return button;
 }

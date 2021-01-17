@@ -159,9 +159,9 @@ void preferences_dialog (void)
    buttons[PR_SHOW_ANIM] = ut_check_button_new(_("Show animation of disappearing of the ball"), pref_get_show_destroy(), vbox);
    buttons[PR_SHOW_HL]   = ut_check_button_new(_("Highlight \"active\" cell"), pref_get_show_highlight(), vbox);
 
-   buttons[PR_HL_DR]     = ut_spin_button_start_new(_("Highlight red value: "), -128, 128, prefs_get_hl_dr(), vbox);
-   buttons[PR_HL_DG]     = ut_spin_button_start_new(_("Highlight green value: "), -128, 128, prefs_get_hl_dg(), vbox);
-   buttons[PR_HL_DB]     = ut_spin_button_start_new(_("Highlight blue value: "), -128, 128, prefs_get_hl_db(), vbox);
+   buttons[PR_HL_DR]     = ut_spin_button_new(_("Highlight red value: "), -128, 128, prefs_get_hl_dr(), vbox);
+   buttons[PR_HL_DG]     = ut_spin_button_new(_("Highlight green value: "), -128, 128, prefs_get_hl_dg(), vbox);
+   buttons[PR_HL_DB]     = ut_spin_button_new(_("Highlight blue value: "), -128, 128, prefs_get_hl_db(), vbox);
    g_signal_connect (G_OBJECT(buttons[PR_SHOW_HL]), "toggled", G_CALLBACK(parent_toggled), buttons[PR_HL_DR]);
    g_signal_connect (G_OBJECT(buttons[PR_SHOW_HL]), "toggled", G_CALLBACK(parent_toggled), buttons[PR_HL_DG]);
    g_signal_connect (G_OBJECT(buttons[PR_SHOW_HL]), "toggled", G_CALLBACK(parent_toggled), buttons[PR_HL_DB]);
@@ -170,7 +170,7 @@ void preferences_dialog (void)
    gtk_widget_set_sensitive (buttons[PR_HL_DB], pref_get_show_highlight());
 
    buttons[PR_TIME_LIMIT] = ut_check_button_new(_("Enable time limit"), timer_get_limit() > 0 ? 1 : 0, vbox);
-   buttons[PR_TIME_VALUE] = ut_spin_button_start_new(_("Time limit (seconds): "), 1, 3600, timer_get_limit() > 0 ? timer_get_limit() : 60, vbox);
+   buttons[PR_TIME_VALUE] = ut_spin_button_new(_("Time limit (seconds): "), 1, 3600, timer_get_limit() > 0 ? timer_get_limit() : 60, vbox);
    g_signal_connect (G_OBJECT(buttons[PR_TIME_LIMIT]), "toggled", G_CALLBACK(parent_toggled), buttons[PR_TIME_VALUE]);
    gtk_widget_set_sensitive (buttons[PR_TIME_VALUE], timer_get_limit() > 0 ? 1 : 0);
 
