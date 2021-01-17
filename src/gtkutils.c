@@ -35,6 +35,53 @@ GtkWidget *ut_window_new(gchar *title, gchar *wmname, gchar *wmclass,
 }
 
 
+GtkWidget * gtkutil_dialog_new (char * title,
+                                GtkWindow * parent,
+                                gboolean resizable,
+                                GtkWidget ** main_vbox) /* out */
+{
+   GtkWidget * dialog;
+   dialog = gtk_dialog_new ();
+   gtk_window_set_title (GTK_WINDOW (dialog), title);
+   gtk_container_set_border_width (GTK_CONTAINER (dialog), 4); /* padding */
+   if (parent) {
+      gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (parent));
+      gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+      gtk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
+      gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER_ON_PARENT);
+      gtk_window_set_skip_pager_hint (GTK_WINDOW (dialog), TRUE);
+      gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), TRUE);
+   }
+   if (!resizable) {
+      // no need to call this if TRUE, unexpected behavior in GTK3 IIRC
+      gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+   }
+
+   if (main_vbox) {
+      *main_vbox = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
+      /* padding */
+      gtk_container_set_border_width (GTK_CONTAINER (*main_vbox), 4);
+   }
+
+   return dialog;
+}
+
+
+GtkWidget * gtkutil_frame_vbox (char * label, GtkWidget * parent_box)
+{
+   GtkWidget * frame;
+   frame = gtk_frame_new (label);
+   gtk_box_pack_start (GTK_BOX (parent_box), frame, FALSE, FALSE, 0);
+
+   GtkWidget * frame_vbox = gtk_vbox_new (FALSE, 5);
+   gtk_container_add (GTK_CONTAINER (frame), frame_vbox);
+   /* padding */
+   gtk_container_set_border_width (GTK_CONTAINER (frame_vbox), 5);
+
+   return frame_vbox;
+}
+
+
 GtkWidget *ut_check_button_new(gchar *label, gboolean active, GtkWidget *parent)
 {
    GtkWidget *button;
@@ -92,7 +139,7 @@ GtkWidget *ut_spin_button_new(gchar *label, gint min, gint max, gint val, GtkWid
    GtkWidget *button, *hbox, *labelw;
 
    hbox = gtk_hbox_new(FALSE, 0);
-   gtk_box_pack_start(GTK_BOX(parent), hbox, TRUE, TRUE, 2);
+   gtk_box_pack_start(GTK_BOX(parent), hbox, TRUE, TRUE, 0);
 
    labelw = gtk_label_new(label);
    gtk_box_pack_start(GTK_BOX(hbox), labelw, FALSE, FALSE, 5);

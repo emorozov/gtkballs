@@ -10,6 +10,13 @@ GtkWidget *ut_window_new (gchar *title,
                           gboolean resizable,
                           gint border);
 
+GtkWidget * gtkutil_dialog_new (char * title,
+                                GtkWindow * parent,
+                                gboolean resizable,
+                                GtkWidget ** main_vbox); /* out */
+
+GtkWidget * gtkutil_frame_vbox (char * label, GtkWidget * parent_box);
+
 GtkWidget *ut_check_button_new (gchar *label,
                                 gboolean active,
                                 GtkWidget *parent);
