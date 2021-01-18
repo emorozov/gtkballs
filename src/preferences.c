@@ -18,7 +18,6 @@
 
 enum
 {
-   PR_DIALOG,
    PR_SHOW_NEXT,
    PR_SHOW_PATH,
    PR_SHOW_PAWS,
@@ -33,26 +32,17 @@ enum
    PR_SIZE
 };
 
-void parent_toggled(GtkToggleButton *togglebutton, gpointer data) {
+static void parent_toggled(GtkToggleButton *togglebutton, gpointer data) {
    gtk_widget_set_sensitive(GTK_WIDGET(data), gtk_toggle_button_get_active(togglebutton));
 }
 
-void preferences_destroy_cb(GtkWidget *widget, gpointer data) {
-   g_free(data);
-}
-
-void preferences_cancel(GtkWidget *widget, gpointer data) {
-   GtkWidget **buttons = data;
-   gtk_widget_destroy(buttons[PR_DIALOG]);
-}
-
-gboolean fix_draw_next_balls(gpointer data) {
+static gboolean fix_draw_next_balls(gpointer data) {
    draw_next_balls();
    return FALSE;
 }
 
 
-void preferences_apply(GtkWidget *widget, gpointer data)
+static void preferences_apply(gpointer data)
 {
    GtkWidget **buttons = data;
    GtkTreeModel *model;
@@ -108,22 +98,29 @@ void preferences_apply(GtkWidget *widget, gpointer data)
    }
 }
 
-
-void preferences_ok(GtkWidget *widget, gpointer data) {
-   GtkWidget **buttons = data;
-   preferences_apply(widget, buttons);
-   gtk_widget_destroy(buttons[PR_DIALOG]);
+static void prefs_dialog_response (GtkDialog * dlg, int response, gpointer user_data)
+{
+   switch (response)
+   {
+      case GTK_RESPONSE_APPLY:
+         preferences_apply (user_data);
+         g_signal_stop_emission_by_name (dlg, "response");
+         return;
+      case GTK_RESPONSE_OK:
+         preferences_apply (user_data);
+         break;
+   }
+   gtk_widget_destroy (GTK_WIDGET (dlg));
+   g_free (user_data); /* buttons */
 }
-
 
 
 void preferences_dialog (void)
 {
    GtkWidget ** buttons;
-   GtkWidget * frame;
-   GtkWidget * big_vbox, * vbox, * buttons_box;
+   GtkWidget * dialog, * frame;
+   GtkWidget * big_vbox, * vbox;
    GtkWidget * theme_scrolled_window;
-   GtkWidget * separator;
    gint i, st;
    GtkListStore * store;
    GtkTreeIter iter;
@@ -140,18 +137,8 @@ void preferences_dialog (void)
 
    buttons = g_malloc (PR_SIZE * sizeof(GtkWidget));
 
-   buttons[PR_DIALOG] = ut_window_new(_("Preferences"), "GtkBalls_Preferences", "GtkBalls", TRUE, TRUE, TRUE, 5);
-   g_signal_connect (G_OBJECT(buttons[PR_DIALOG]), "destroy", G_CALLBACK(preferences_destroy_cb), buttons);
-
-   big_vbox = gtk_vbox_new (FALSE, 0);
-   gtk_container_add (GTK_CONTAINER(buttons[PR_DIALOG]), big_vbox);
-
-   frame = gtk_frame_new (_("Preferences"));
-   gtk_box_pack_start (GTK_BOX(big_vbox), frame, FALSE, FALSE, 0);
-
-   vbox = gtk_vbox_new (FALSE, 0);
-   gtk_container_set_border_width (GTK_CONTAINER(vbox), 5);
-   gtk_container_add (GTK_CONTAINER(frame), vbox);
+   dialog = gtkutil_dialog_new (_("Preferences"), main_window, TRUE, &big_vbox);
+   vbox   = gtkutil_frame_vbox (_("Preferences"), big_vbox);
 
    buttons[PR_SHOW_NEXT] = ut_check_button_new(_("Show colors that will appear on next turn"), pref_get_show_next_colors(), vbox);
    buttons[PR_SHOW_PATH] = ut_check_button_new(_("Show path of the ball"), pref_get_show_path(), vbox);
@@ -212,16 +199,10 @@ void preferences_dialog (void)
    }
    g_free (pathstr);
 
-   separator = gtk_hseparator_new ();
-   gtk_box_pack_start (GTK_BOX(big_vbox), separator, FALSE, FALSE, 5);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-apply",  GTK_RESPONSE_APPLY);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-ok",     GTK_RESPONSE_OK);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-cancel", GTK_RESPONSE_CANCEL);
+   g_signal_connect (dialog, "response", G_CALLBACK (prefs_dialog_response), buttons);
 
-   buttons_box = gtk_hbutton_box_new ();
-   gtk_button_box_set_layout (GTK_BUTTON_BOX(buttons_box), GTK_BUTTONBOX_SPREAD);
-   gtk_box_pack_start (GTK_BOX(big_vbox), buttons_box, TRUE, TRUE, 0);
-
-   gtk_widget_grab_default (ut_button_new_stock(GTK_STOCK_OK, preferences_ok, buttons, buttons_box));
-   ut_button_new_stock (GTK_STOCK_CANCEL, preferences_cancel, buttons, buttons_box);
-   ut_button_new_stock (GTK_STOCK_APPLY, preferences_apply, buttons, buttons_box);
-
-   gtk_widget_show_all (buttons[PR_DIALOG]);
+   gtk_widget_show_all (dialog);
 }
