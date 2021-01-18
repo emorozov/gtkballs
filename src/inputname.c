@@ -16,12 +16,10 @@
 #include "halloffame.h"
 #include "game.h"
 
-static GtkWidget *_dialog = NULL;
-
 static gchar _last_player_name[15] = "";
 static gint _saved_score = 0;
 
-void read_entry(GtkWidget *widget, gpointer data)
+static void read_entry (GtkEntry *entry, gpointer data)
 {
    struct score_board current_entry;
    time_t current_time;
@@ -32,7 +30,7 @@ void read_entry(GtkWidget *widget, gpointer data)
    struct score_board b[10];
    struct score_board_full *bf = NULL;
 
-   tstr = (gchar*)gtk_entry_get_text(GTK_ENTRY(data));
+   tstr = (gchar*)gtk_entry_get_text (entry);
    strncpy(current_entry.name, tstr && *tstr ? tstr : _("Anonymous"), sizeof(current_entry.name));
    strncpy(_last_player_name, current_entry.name, sizeof(_last_player_name));
    current_entry.score = _saved_score;
@@ -72,14 +70,25 @@ void read_entry(GtkWidget *widget, gpointer data)
       }
    }
 
-   gtk_widget_destroy(_dialog);
+   gtk_widget_destroy (GTK_WIDGET (data));
    /* show scores to let user see if (s)he's on top ;) */
 }
 
+static void input_name_response (GtkDialog * dlg, int response, gpointer user_data)
+{
+   if (response == GTK_RESPONSE_OK) {
+      read_entry (GTK_ENTRY (user_data), dlg);
+   }
+}
+
+static void input_name_esc (GtkDialog * dlg, gpointer data)
+{
+   g_signal_stop_emission_by_name (dlg, "close"); // ignore Esc
+}
 
 void input_name_dialog(void)
 {
-   GtkWidget * prompt_label, * vbox;
+   GtkWidget * dialog, * prompt_label, * vbox;
    GtkWidget * name;
    GtkWidget * button;
    gchar * s;
@@ -87,18 +96,14 @@ void input_name_dialog(void)
    /* we have to save score, because they will be set to 0 in new_game() */
    _saved_score = game_get_score();
 
-   _dialog = gtk_dialog_new();
-   gtk_window_set_role(GTK_WINDOW(_dialog), "GtkBalls_Inputname");
-
-   vbox = gtk_dialog_get_content_area (GTK_DIALOG (_dialog));
-   gtk_container_set_border_width(GTK_CONTAINER(vbox), 2);
+   dialog = gtkutil_dialog_new (NULL, main_window, TRUE, &vbox);
 
    prompt_label = gtk_label_new(_("Enter your name"));
    gtk_box_pack_start (GTK_BOX(vbox), prompt_label, TRUE, TRUE, 0);
 
    name = gtk_entry_new();
    gtk_entry_set_max_length(GTK_ENTRY(name), 14);
-   g_signal_connect(G_OBJECT(name), "activate", G_CALLBACK(read_entry), name);
+   g_signal_connect(G_OBJECT(name), "activate", G_CALLBACK(read_entry), dialog);
 
    /* restore the last player's name */
    if (!(*_last_player_name)) {
@@ -110,10 +115,9 @@ void input_name_dialog(void)
    gtk_editable_select_region(GTK_EDITABLE(name), 0, -1);
    gtk_box_pack_start (GTK_BOX(vbox), name, TRUE, TRUE, 5);
 
-   button=ut_button_new_stock(GTK_STOCK_OK, read_entry, name, GTK_DIALOG(_dialog)->action_area);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-ok", GTK_RESPONSE_OK);
+   g_signal_connect (dialog, "response", G_CALLBACK (input_name_response), name);
+   g_signal_connect (dialog, "close", G_CALLBACK (input_name_esc), name);
 
-   gtk_widget_grab_focus(name);
-
-   gtk_widget_grab_default(button);
-   gtk_widget_show_all(_dialog);
+   gtk_widget_show_all (dialog);
 }
