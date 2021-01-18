@@ -107,32 +107,6 @@ GtkWidget *ut_button_new(gchar *label, gpointer func, gpointer func_data, GtkWid
 }
 
 
-GtkWidget *ut_button_new_stock(const gchar *stock_id, gpointer func, gpointer func_data, GtkWidget *parent)
-{
-   GtkWidget *button;
-
-   button = gtk_button_new_from_stock(stock_id);
-   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(func), func_data);
-   gtk_box_pack_start(GTK_BOX(parent), button, TRUE, TRUE, 0);
-   gtk_widget_set_can_default (button, TRUE);
-
-   return button;
-}
-
-
-GtkWidget *ut_button_new_stock_swap(const gchar *stock_id, gpointer func, gpointer func_data, GtkWidget *parent)
-{
-   GtkWidget *button;
-
-   button = gtk_button_new_from_stock(stock_id);
-   g_signal_connect_swapped(G_OBJECT(button), "clicked", G_CALLBACK(func), func_data);
-   gtk_box_pack_start(GTK_BOX(parent), button, TRUE, TRUE, 0);
-   gtk_widget_set_can_default (button, TRUE);
-
-   return button;
-}
-
-
 GtkWidget *ut_spin_button_new(gchar *label, gint min, gint max, gint val, GtkWidget *parent)
 {
    GtkAdjustment *adj;

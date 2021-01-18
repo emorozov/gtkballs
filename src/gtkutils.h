@@ -26,16 +26,6 @@ GtkWidget *ut_button_new (gchar *label,
                           gpointer func_data,
                           GtkWidget *parent);
 
-GtkWidget *ut_button_new_stock (const gchar *stock_id,
-                                gpointer func,
-                                gpointer func_data,
-                                GtkWidget *parent);
-
-GtkWidget *ut_button_new_stock_swap (const gchar *stock_id,
-                                     gpointer func,
-                                     gpointer func_data,
-                                     GtkWidget *parent);
-
 GtkWidget *ut_spin_button_new (gchar *label,
                                gint min,
                                gint max,
