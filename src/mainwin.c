@@ -25,12 +25,16 @@ GtkWidget *_user_score_label = NULL;
 /* box for next balls */
 GtkWidget *_small_balls_box;
 
-/* Backing pixmap for drawing area */
+/* board */
 GtkWidget *_drawing_area = NULL;
 
 GtkWidget *mw_get_da(void) {
    return _drawing_area;
 }
+
+/* Backing pixmap for drawing area */
+cairo_surface_t * pixsurf = NULL;
+
 
 /* add child widget to "next balls" display area */
 void mw_small_balls_add(GtkWidget *child) {
@@ -142,6 +146,10 @@ gint _user_action_event(GtkWidget *w, GdkEvent *ev)
 
 static void main_window_destroy_cb (GtkWidget * w, gpointer user_data)
 {
+   if (pixsurf) {
+      cairo_surface_destroy (pixsurf);
+      pixsurf = NULL;
+   }
    gtkb_theme_free_handler (NULL, NULL);
    gtk_main_quit ();
 }
