@@ -31,7 +31,7 @@ gint parse_save_game(gchar *sgame, gchar **rules, gint *score, gint **board, gin
 
    sdata = g_malloc(buf.st_size);
 
-   if (fread(sdata, 1, buf.st_size, f) != buf.st_size) {
+   if (fread(sdata, 1, buf.st_size, f) != (size_t) buf.st_size) {
       g_free (sdata);
       return 0;
    }

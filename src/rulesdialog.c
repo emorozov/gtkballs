@@ -62,9 +62,7 @@ static void rules_dialog_response (GtkDialog * dlg, int response, gpointer user_
 
 void rules_dialog (void)
 {
-   GtkWidget * dialog;
-   GtkWidget * frame;
-   GtkWidget * big_vbox, * vbox, * btn;
+   GtkWidget * dialog, * big_vbox, * vbox;
 
    dialog = gtkutil_dialog_new (_("Game rules"), main_window, TRUE, &big_vbox);
    vbox   = gtkutil_frame_vbox (_("Game rules"), big_vbox);

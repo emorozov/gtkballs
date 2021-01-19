@@ -432,7 +432,7 @@ void move_ball(gint source_ball, gint target_ball)
    gint nodes[rules_get_width() * rules_get_height()];
    gint path[rules_get_width() * rules_get_height()];
    gint pawx = -1, pawy = -1;
-   gint i, j, k, phase, blah;
+   gint i, j, k, blah;
    gint x, y, color, tbx, tby, bc = board_get_at_node(_jumping_ball);
    gint direction, pawnum;
    gint *np = nodes;
@@ -451,7 +451,6 @@ void move_ball(gint source_ball, gint target_ball)
    find_x_y_of_the_node(&x, &y, source_ball, rules_get_width(), rules_get_height());
    color = board_get_at_node(source_ball);
    board_set_at_node(source_ball, 0);
-   phase = 0;
 
    draw_ball(0, x, y, 0, 0);
    if (pref_get_show_path())

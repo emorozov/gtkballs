@@ -174,7 +174,7 @@ gint rules_get_str_len(void) {
 gboolean rules_check_str(gchar *rstr) {
    GtkbGameRules r;
 
-   if (strlen(rstr) != _save_fmt_len ||
+   if (strlen(rstr) != (size_t) _save_fmt_len ||
        strstr(rstr, " ") ||
        strstr(rstr, "\t") ||
        strstr(rstr, "\r") ||

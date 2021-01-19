@@ -161,13 +161,13 @@ gint read_score(struct score_board *b, struct score_board_full **bf, gint *nbf)
                   tstr = g_locale_to_utf8(str_val[0], -1, &br, &bw, NULL);
                }
                if (tstr) {
-                  strncpy(b[sc].name, tstr, sizeof(b[sc].name));
+                  strncpy(b[sc].name, tstr, sizeof(b[sc].name)-1);
                   g_free(tstr);
                } else {
-                  strncpy(b[sc].name, _("Unknown"), sizeof(b[sc].name));
+                  strncpy(b[sc].name, _("Unknown"), sizeof(b[sc].name)-1);
                }
                b[sc].score = strtol(str_val[1], NULL, 10);
-               if ((b[sc].score == LONG_MIN) || (b[sc].score == LONG_MAX)) {
+               if ((b[sc].score == INT_MIN) || (b[sc].score == INT_MAX)) {
                   b[sc].score = 0;
                }
                if (g_utf8_validate(str_val[2], -1, NULL)) {
@@ -176,20 +176,20 @@ gint read_score(struct score_board *b, struct score_board_full **bf, gint *nbf)
                   tstr = g_locale_to_utf8(str_val[2], -1, &br, &bw, NULL);
                }
                if (tstr) {
-                  strncpy(b[sc].date, tstr, sizeof(b[sc].date));
+                  strncpy(b[sc].date, tstr, sizeof(b[sc].date)-1);
                   g_free(tstr);
                } else {
-                  strncpy(b[sc].date, _("Unknown"), sizeof(b[sc].date));
+                  strncpy(b[sc].date, _("Unknown"), sizeof(b[sc].date)-1);
                }
                sc++;
             } else if (bf) {
                *bf = g_realloc(*bf, sizeof(struct score_board_full) * (fsc + 1));
-               strncpy((*bf)[fsc].name, str_val[0], sizeof((*bf)[fsc].name));
+               strncpy((*bf)[fsc].name, str_val[0], sizeof((*bf)[fsc].name)-1);
                (*bf)[fsc].score = strtol(str_val[1], NULL, 10);
-               if (((*bf)[fsc].score == LONG_MIN) || ((*bf)[fsc].score == LONG_MAX)) {
+               if (((*bf)[fsc].score == INT_MIN) || ((*bf)[fsc].score == INT_MAX)) {
                   (*bf)[fsc].score = 0;
                }
-               strncpy((*bf)[fsc].date, str_val[2], sizeof((*bf)[fsc].date));
+               strncpy((*bf)[fsc].date, str_val[2], sizeof((*bf)[fsc].date)-1);
                (*bf)[fsc].rules = g_strdup(g_rules);
                fsc++;
             }
@@ -227,8 +227,8 @@ gint insert_entry_in_score_board(struct score_board *board, struct score_board e
    }
 
    for (j = 8;j >= i; j--) {
-      strncpy(board[j + 1].name, board[j].name, sizeof(board[j + 1].name));
-      strncpy(board[j + 1].date, board[j].date, sizeof(board[j + 1].date));
+      strncpy(board[j + 1].name, board[j].name, sizeof(board[j + 1].name)-1);
+      strncpy(board[j + 1].date, board[j].date, sizeof(board[j + 1].date)-1);
       board[j + 1].score = board[j].score;
    }
 

@@ -14,7 +14,7 @@
 void show_hall_of_fame (GtkWidget *widget, gpointer data, struct score_board b[10])
 {
    GtkWidget * dialog;
-   GtkWidget * frame, * sw, * tv;
+   GtkWidget * sw, * tv;
    GtkWidget * main_vbox, * vbox;
    gint i;
    struct score_board *bs = b;
@@ -73,7 +73,7 @@ void show_hall_of_fame (GtkWidget *widget, gpointer data, struct score_board b[1
    gtk_container_add(GTK_CONTAINER(sw), tv);
 
    if (data) {
-      str = g_strdup_printf("%u", (gint)data - 1);
+      str = g_strdup_printf("%u", GPOINTER_TO_INT (data) - 1);
       if ((path = gtk_tree_path_new_from_string(str))) {
          gtk_tree_selection_select_path(gtk_tree_view_get_selection(GTK_TREE_VIEW(tv)), path);
          gtk_tree_view_set_cursor(GTK_TREE_VIEW(tv), path, NULL, FALSE);
