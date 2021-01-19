@@ -10,6 +10,13 @@ GtkWidget *ut_window_new (gchar *title,
                           gboolean resizable,
                           gint border);
 
+GtkWidget * gtkutil_dialog_new (char * title,
+                                GtkWindow * parent,
+                                gboolean resizable,
+                                GtkWidget ** main_vbox); /* out */
+
+GtkWidget * gtkutil_frame_vbox (char * label, GtkWidget * parent_box);
+
 GtkWidget *ut_check_button_new (gchar *label,
                                 gboolean active,
                                 GtkWidget *parent);
@@ -18,16 +25,6 @@ GtkWidget *ut_button_new (gchar *label,
                           gpointer func,
                           gpointer func_data,
                           GtkWidget *parent);
-
-GtkWidget *ut_button_new_stock (const gchar *stock_id,
-                                gpointer func,
-                                gpointer func_data,
-                                GtkWidget *parent);
-
-GtkWidget *ut_button_new_stock_swap (const gchar *stock_id,
-                                     gpointer func,
-                                     gpointer func_data,
-                                     GtkWidget *parent);
 
 GtkWidget *ut_spin_button_new (gchar *label,
                                gint min,

@@ -58,7 +58,7 @@ void do_load_game(GtkWidget *widget, gpointer data) {
    }
 }
 
-void do_delete_game(GtkWidget *widget, GtkWidget *treeview) {
+static void do_delete_game (GtkWidget *treeview) {
    GtkTreeModel *model;
    GtkTreeIter iter, nextiter;
    GValue value = {0, };
@@ -175,6 +175,29 @@ gint game_compare_func(GtkTreeModel *model, GtkTreeIter *a, GtkTreeIter *b, gpoi
 }
 
 
+#define BUTTON_SAVE_GAME   100
+#define BUTTON_LOAD_GAME   101
+#define BUTTON_DELETE_GAME 102
+
+static void save_load_dlg_response (GtkDialog * dlg, int response, gpointer user_data)
+{
+   GtkWidget * treeview = GTK_WIDGET (user_data);
+   switch (response)
+   {
+      case BUTTON_SAVE_GAME:
+         do_save_game (treeview, dlg);
+         return;
+      case BUTTON_LOAD_GAME:
+         do_load_game (treeview, dlg);
+         return;
+      case BUTTON_DELETE_GAME:
+         do_delete_game (treeview);
+         return;
+   }
+   gtk_widget_destroy (GTK_WIDGET (dlg));
+}
+
+
 
 void save_load_game_dialog(gboolean is_save)
 {
@@ -184,9 +207,7 @@ void save_load_game_dialog(gboolean is_save)
    GtkCellRenderer * renderer;
    GtkTreeViewColumn * column;
    GtkTreePath * path;
-   GtkWidget * window, * swindow;
-   GtkWidget * vbox, * button_box;
-   GtkWidget * ok_button, * cancel_button,  *delete_button;
+   GtkWidget * dialog, * swindow, * main_vbox, * vbox;
    gint      i, num;
    gchar     ** gamelist, str1[20], * str2;
 
@@ -198,13 +219,8 @@ void save_load_game_dialog(gboolean is_save)
       return;
    }
 
-   window = ut_window_new(is_save ? _("Save game") : _("Load game"),
-                          is_save ? "GtkBalls_Save" : "GtkBalls_Load",
-                          "GtkBalls", TRUE, TRUE, TRUE, 5);
-
-   vbox = gtk_vbox_new (FALSE, 0);
-   gtk_container_set_border_width (GTK_CONTAINER(vbox), 1);
-   gtk_container_add (GTK_CONTAINER(window), vbox);
+   dialog = gtkutil_dialog_new (is_save ? _("Save game") : _("Load game"),
+                                main_window, TRUE, &vbox);
 
    swindow = gtk_scrolled_window_new (NULL, NULL);
    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(swindow), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
@@ -269,24 +285,21 @@ void save_load_game_dialog(gboolean is_save)
    }
    g_object_unref (G_OBJECT(store));
 
-   button_box = gtk_hbox_new (TRUE, 10);
    if (is_save) {
-      ok_button = ut_button_new (_("Save game"), do_save_game, window, button_box);
-      g_signal_connect (G_OBJECT(treeview), "row_activated", G_CALLBACK(save_row_activated_cb), window);
+      gtk_dialog_add_button (GTK_DIALOG (dialog), _("Save game"), BUTTON_SAVE_GAME);
+      g_signal_connect (G_OBJECT(treeview), "row_activated", G_CALLBACK(save_row_activated_cb), dialog);
+
    } else {
-      ok_button = ut_button_new (_("Load game"), do_load_game, window, button_box);
-      g_signal_connect(G_OBJECT(treeview), "row_activated", G_CALLBACK(load_row_activated_cb), window);
+      gtk_dialog_add_button (GTK_DIALOG (dialog), _("Load game"), BUTTON_LOAD_GAME);
+      g_signal_connect (G_OBJECT(treeview), "row_activated", G_CALLBACK(load_row_activated_cb), dialog);
    }
-   delete_button = ut_button_new (_("Delete game"), do_delete_game, treeview, button_box);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), _("Delete game"), BUTTON_DELETE_GAME);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-cancel", GTK_RESPONSE_CANCEL);
+   g_signal_connect (dialog, "response", G_CALLBACK (save_load_dlg_response),
+                     treeview);
 
-   cancel_button = ut_button_new_stock_swap (GTK_STOCK_CANCEL, gtk_widget_destroy, window, button_box);
-   gtk_box_pack_start (GTK_BOX(vbox), button_box, FALSE, FALSE, 4);
-
-   gtk_widget_grab_default (ok_button);
-   gtk_widget_grab_focus (ok_button);
-
-   gtk_window_set_default_size (GTK_WINDOW(window), -1, 300);
-   gtk_widget_show_all (window);
+   gtk_window_set_default_size (GTK_WINDOW(dialog), -1, 300);
+   gtk_widget_show_all (dialog);
 }
 
 void save_game_cb(GtkWidget *widget, gpointer data) {

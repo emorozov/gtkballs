@@ -20,7 +20,7 @@ struct _gtkb_rules_dialog {
 
 struct _gtkb_rules_dialog _rd;
 
-void rules_ok(GtkWidget *widget, gpointer data)
+static void rules_ok (void)
 {
    gint oldnext = rules_get_next();
    gchar *msg;
@@ -33,9 +33,6 @@ void rules_ok(GtkWidget *widget, gpointer data)
 
    reinit_board (NULL, NULL, 0, oldnext);
 
-   if(data) {
-      gtk_widget_destroy (GTK_WIDGET(data));
-   }
    msg = save_preferences ();
    if(msg) {
       ut_simple_message_box (msg);
@@ -44,36 +41,33 @@ void rules_ok(GtkWidget *widget, gpointer data)
 }
 
 
-void rules_classic(void)
-{
-   gtk_spin_button_set_value(GTK_SPIN_BUTTON(_rd.xrange), rules_get_classic_width());
-   gtk_spin_button_set_value(GTK_SPIN_BUTTON(_rd.yrange), rules_get_classic_height());
-   gtk_spin_button_set_value(GTK_SPIN_BUTTON(_rd.crange), rules_get_classic_colors());
-   gtk_spin_button_set_value(GTK_SPIN_BUTTON(_rd.nrange), rules_get_classic_next());
-   gtk_spin_button_set_value(GTK_SPIN_BUTTON(_rd.drange), rules_get_classic_destroy());
-}
+#define BTN_CLASSIC_RULES 100
 
+static void rules_dialog_response (GtkDialog * dlg, int response, gpointer user_data)
+{
+   if (response == BTN_CLASSIC_RULES) {
+      gtk_spin_button_set_value (GTK_SPIN_BUTTON(_rd.xrange), rules_get_classic_width());
+      gtk_spin_button_set_value (GTK_SPIN_BUTTON(_rd.yrange), rules_get_classic_height());
+      gtk_spin_button_set_value (GTK_SPIN_BUTTON(_rd.crange), rules_get_classic_colors());
+      gtk_spin_button_set_value (GTK_SPIN_BUTTON(_rd.nrange), rules_get_classic_next());
+      gtk_spin_button_set_value (GTK_SPIN_BUTTON(_rd.drange), rules_get_classic_destroy());
+      g_signal_stop_emission_by_name (dlg, "response");
+      return;
+   }
+   if (response == GTK_RESPONSE_OK) {
+      rules_ok ();
+   }
+   gtk_widget_destroy (GTK_WIDGET (dlg));
+}
 
 void rules_dialog (void)
 {
    GtkWidget * dialog;
    GtkWidget * frame;
-   GtkWidget * big_vbox, * vbox, * buttons_box;
-   GtkWidget * separator;
-   GtkWidget * ok_button, * cancel_button, * classic_button;
+   GtkWidget * big_vbox, * vbox, * btn;
 
-
-   dialog = ut_window_new(_("Game rules"), "GtkBalls_Rules", "GtkBalls", TRUE, TRUE, TRUE, 5);
-
-   big_vbox = gtk_vbox_new (FALSE, 5);
-   gtk_container_add (GTK_CONTAINER(dialog), big_vbox);
-
-   frame = gtk_frame_new (_("Game rules"));
-   gtk_box_pack_start (GTK_BOX(big_vbox), frame, FALSE, FALSE, 0);
-
-   vbox = gtk_vbox_new (FALSE, 0);
-   gtk_container_set_border_width (GTK_CONTAINER(vbox), 5);
-   gtk_container_add (GTK_CONTAINER(frame), vbox);
+   dialog = gtkutil_dialog_new (_("Game rules"), main_window, TRUE, &big_vbox);
+   vbox   = gtkutil_frame_vbox (_("Game rules"), big_vbox);
 
    _rd.xrange = ut_spin_button_new (_("Board width"), 4, 99, rules_get_width(), vbox);
    _rd.yrange = ut_spin_button_new (_("Board height"), 4, 99, rules_get_height(), vbox);
@@ -83,18 +77,11 @@ void rules_dialog (void)
    _rd.drange = ut_spin_button_new (_("How many balls at line eliminate it"),
                                     3, 99, rules_get_destroy(), vbox);
 
-   classic_button = ut_button_new (_("Classic rules"), rules_classic, dialog, big_vbox);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), _("Classic rules"), BTN_CLASSIC_RULES);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-ok",     GTK_RESPONSE_OK);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-cancel", GTK_RESPONSE_CANCEL);
 
-   separator = gtk_hseparator_new ();
-   gtk_box_pack_start (GTK_BOX(big_vbox), separator, FALSE, FALSE, 5);
-
-   buttons_box = gtk_hbutton_box_new ();
-   gtk_button_box_set_layout (GTK_BUTTON_BOX(buttons_box), GTK_BUTTONBOX_SPREAD);
-   gtk_box_pack_start (GTK_BOX(big_vbox), buttons_box, TRUE, TRUE, 0);
-
-   ok_button = ut_button_new_stock (GTK_STOCK_OK, rules_ok, dialog, buttons_box);
-   cancel_button = ut_button_new_stock_swap (GTK_STOCK_CANCEL, gtk_widget_destroy, dialog, buttons_box);
-
-   gtk_widget_grab_default (ok_button);
+   gtk_widget_grab_default (gtk_dialog_get_widget_for_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK));
+   g_signal_connect (dialog, "response", G_CALLBACK (rules_dialog_response), NULL);
    gtk_widget_show_all (dialog);
 }

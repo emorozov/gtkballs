@@ -13,24 +13,16 @@
 /* Show dialog box with game rules*/
 void show_rules (GtkWidget *widget, gpointer data)
 {
-   GtkWidget * window;
-   GtkWidget * vbox, * hbox, * button_box;
+   GtkWidget * dialog;
+   GtkWidget * main_vbox, * vbox, * hbox;
    GtkWidget * label;
    GtkWidget * frame;
-   GtkWidget * separator;
-   GtkWidget * ok_button;
 
-   window = ut_window_new(_("Rules"), "GtkBalls_Rules", "GtkBalls", TRUE, FALSE, FALSE, 5);
-
-   vbox = gtk_vbox_new (FALSE, 0);
-   gtk_container_add (GTK_CONTAINER(window), vbox);
-
-   frame = gtk_frame_new (_("Rules"));
-   gtk_box_pack_start (GTK_BOX(vbox), frame, TRUE, TRUE, 3);
+   dialog = gtkutil_dialog_new (_("Rules"), main_window, TRUE, &main_vbox);
+   vbox   = gtkutil_frame_vbox (_("Rules"), main_vbox);
 
    hbox = gtk_hbox_new (FALSE, 0);
-   gtk_container_set_border_width (GTK_CONTAINER(hbox), 10);
-   gtk_container_add (GTK_CONTAINER(frame), hbox);
+   gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 
    label = gtk_label_new (_("The standard play area of GtkBalls is a 9x9\n" \
                          "grid (it can be changed through \"Rules\"\n" \
@@ -64,14 +56,8 @@ void show_rules (GtkWidget *widget, gpointer data)
                          "the grid will be."));
    gtk_box_pack_start (GTK_BOX(hbox), label, TRUE, TRUE, 5);
 
-   separator = gtk_hseparator_new ();
-   gtk_box_pack_start (GTK_BOX(vbox), separator, FALSE, FALSE, 5);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), "gtk-close", GTK_RESPONSE_OK);
+   g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 
-   button_box = gtk_hbox_new (FALSE, 0);
-   gtk_box_pack_start (GTK_BOX(vbox), button_box, TRUE, TRUE, 2);
-
-   ok_button = ut_button_new_stock_swap (GTK_STOCK_CLOSE, gtk_widget_destroy, window, button_box);
-
-   gtk_widget_grab_default (ok_button);
-   gtk_widget_show_all (window);
+   gtk_widget_show_all (dialog);
 }
