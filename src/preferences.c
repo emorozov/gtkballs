@@ -118,7 +118,7 @@ static void prefs_dialog_response (GtkDialog * dlg, int response, gpointer user_
 void preferences_dialog (void)
 {
    GtkWidget ** buttons;
-   GtkWidget * dialog, * frame;
+   GtkWidget * dialog;
    GtkWidget * big_vbox, * vbox;
    GtkWidget * theme_scrolled_window;
    gint i, st;

@@ -31,6 +31,11 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
 AM_GLIB_GNU_GETTEXT
 
+case "$CC" in
+  gcc*) CPPFLAGS="$CPPFLAGS -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers" ;;
+  *) ;;
+esac
+
 
 AC_CONFIG_FILES([
 	gtkballs.lsm

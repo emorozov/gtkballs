@@ -16,7 +16,6 @@ void show_rules (GtkWidget *widget, gpointer data)
    GtkWidget * dialog;
    GtkWidget * main_vbox, * vbox, * hbox;
    GtkWidget * label;
-   GtkWidget * frame;
 
    dialog = gtkutil_dialog_new (_("Rules"), main_window, TRUE, &main_vbox);
    vbox   = gtkutil_frame_vbox (_("Rules"), main_vbox);

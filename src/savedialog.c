@@ -161,7 +161,7 @@ gint game_compare_func(GtkTreeModel *model, GtkTreeIter *a, GtkTreeIter *b, gpoi
    gtk_tree_model_get_value(model, a, 0, &value_a);
    gtk_tree_model_get_value(model, b, 0, &value_b);
    if ((str_a = (gchar *)g_value_get_string(&value_a)) && (str_b = (gchar *)g_value_get_string(&value_b))) {
-      for (i = 0; i < sizeof(sort_pos) / sizeof(gint); i++) {
+      for (i = 0; (size_t) i < sizeof(sort_pos) / sizeof(gint); i++) {
          if (str_a[sort_pos[i]] != str_b[sort_pos[i]]) {
             r = str_a[sort_pos[i]] < str_b[sort_pos[i]] ? 1 : -1;
             break;
@@ -207,7 +207,7 @@ void save_load_game_dialog(gboolean is_save)
    GtkCellRenderer * renderer;
    GtkTreeViewColumn * column;
    GtkTreePath * path;
-   GtkWidget * dialog, * swindow, * main_vbox, * vbox;
+   GtkWidget * dialog, * swindow, * vbox;
    gint      i, num;
    gchar     ** gamelist, str1[20], * str2;
 

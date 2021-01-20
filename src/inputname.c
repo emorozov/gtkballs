@@ -16,7 +16,7 @@
 #include "halloffame.h"
 #include "game.h"
 
-static gchar _last_player_name[15] = "";
+static gchar _last_player_name[50] = "";
 static gint _saved_score = 0;
 
 static void read_entry (GtkEntry *entry, gpointer data)
@@ -31,25 +31,25 @@ static void read_entry (GtkEntry *entry, gpointer data)
    struct score_board_full *bf = NULL;
 
    tstr = (gchar*)gtk_entry_get_text (entry);
-   strncpy(current_entry.name, tstr && *tstr ? tstr : _("Anonymous"), sizeof(current_entry.name));
-   strncpy(_last_player_name, current_entry.name, sizeof(_last_player_name));
+   strncpy(current_entry.name, tstr && *tstr ? tstr : _("Anonymous"), sizeof(current_entry.name)-1);
+   strncpy(_last_player_name, current_entry.name, sizeof(_last_player_name)-1);
    current_entry.score = _saved_score;
    current_time = time(NULL);
    timeptr = localtime(&current_time);
 
    if (!timeptr) {
       ut_simple_message_box(_("Unable to determine current date.\n"));
-      strncpy(current_entry.date, _("Unknown"), sizeof(current_entry.date));
+      strncpy(current_entry.date, _("Unknown"), sizeof(current_entry.date)-1);
    } else {
       if (!strftime(current_entry.date, sizeof(current_entry.date), _("%a %b %d %H:%M %Y"), timeptr)) {
          ut_simple_message_box(_("Unable to determine current date.\n"));
-         strncpy(current_entry.date, _("Unknown"), sizeof(current_entry.date));
+         strncpy(current_entry.date, _("Unknown"), sizeof(current_entry.date)-1);
       } else {
          tstr = g_locale_to_utf8(current_entry.date, -1, &br, &bw, NULL);
          if (!tstr) {
-            strncpy(current_entry.date, _("Unknown"), sizeof(current_entry.date));
+            strncpy(current_entry.date, _("Unknown"), sizeof(current_entry.date)-1);
          } else {
-            strncpy(current_entry.date, tstr, sizeof(current_entry.date));
+            strncpy(current_entry.date, tstr, sizeof(current_entry.date)-1);
             g_free(tstr);
          }
       }
@@ -66,7 +66,7 @@ static void read_entry (GtkEntry *entry, gpointer data)
       free_score_board_full(bf, fbn);
       if (pos != -1) {
          pos++;
-         show_hall_of_fame(NULL, (gpointer)pos, b);
+         show_hall_of_fame(NULL, GINT_TO_POINTER (pos), b);
       }
    }
 
@@ -90,7 +90,6 @@ void input_name_dialog(void)
 {
    GtkWidget * dialog, * prompt_label, * vbox;
    GtkWidget * name;
-   GtkWidget * button;
    gchar * s;
 
    /* we have to save score, because they will be set to 0 in new_game() */
@@ -108,7 +107,7 @@ void input_name_dialog(void)
    /* restore the last player's name */
    if (!(*_last_player_name)) {
       if ((s = getenv("USER"))) {
-         strncpy(_last_player_name, s, sizeof(_last_player_name));
+         strncpy(_last_player_name, s, sizeof(_last_player_name)-1);
       }
    }
    gtk_entry_set_text(GTK_ENTRY(name), _last_player_name);
