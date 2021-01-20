@@ -19,8 +19,6 @@
 #include "mainwin.h"
 #include "game.h"
 
-GdkPixmap *_pixmap = NULL;
-
 /* x and y of cell "under pointer" */
 gint _pointer_x = 0, _pointer_y = 0;
 
@@ -37,6 +35,7 @@ volatile gint _phase = 0;
 
 /* jumping animation timer tag */
 guint _timer_tag = 0;
+
 
 gboolean have_path(gint source_ball, gint target_ball);
 void move_ball(gint source_ball, gint target_ball);
@@ -64,27 +63,20 @@ gint get_destroy_phase(gint x, gint y) {
    return board_get_destroy_at_xy(x, y);
 }
 
-void update_rectangle(gint x, gint y, gint w, gint h) {
-   GtkWidget *widget = mw_get_da();
-
-   if (!widget || !_pixmap) {
-      return;
-   }
-   gdk_draw_drawable (gtk_widget_get_window (widget),
-   widget->style->fg_gc[gtk_widget_get_state(widget)],
-   _pixmap, x, y, x, y, w, h);
+static void update_rectangle (gint x, gint y, gint w, gint h)
+{
+   GtkWidget * board_w = mw_get_da();
+   gtk_widget_queue_draw_area (board_w, x, y, w, h);
 }
 
 void draw_ball_no_update(gint ballcolor, gint x, gint y, gint jumpnum, gint destroynum)
 {
-   GtkWidget *widget = mw_get_da();
-   GdkGC *gc = widget->style->fg_gc[gtk_widget_get_state(widget)];
    gint cxs = gtkbTheme->emptycell.xsize;
    gint cys = gtkbTheme->emptycell.ysize;
    GtkbPixmap *obj;
    gint xr, yr;
 
-   if (!widget || !_pixmap) {
+   if (!pixsurf) {
       return;
    }
 
@@ -93,13 +85,12 @@ void draw_ball_no_update(gint ballcolor, gint x, gint y, gint jumpnum, gint dest
    } else {
       obj = &gtkbTheme->emptycell;
    }
-   gdk_draw_pixbuf (_pixmap,
-                    gc,
-                    obj->pixbuf,
-                    0, 0,
-                    x * cxs, y * cys,
-                    cxs, cys,
-                    GDK_RGB_DITHER_NONE, 0, 0);
+
+   cairo_t * cr = cairo_create (pixsurf);
+   gdk_cairo_set_source_pixbuf (cr, obj->pixbuf, x * cxs, y * cys);
+   cairo_rectangle (cr, x * cxs, y * cys, cxs, cys);
+   cairo_fill (cr);
+
 
    if (ballcolor > 0) { /* ball */
       if (!jumpnum && !destroynum) { /* still ball */
@@ -117,13 +108,10 @@ void draw_ball_no_update(gint ballcolor, gint x, gint y, gint jumpnum, gint dest
 
    xr = x * cxs + (cxs - obj->xsize) / 2;
    yr = y * cys + (cys - obj->ysize) / 2;
-   gdk_draw_pixbuf (_pixmap,
-                    gc,
-                    obj->pixbuf,
-                    0, 0,
-                    xr, yr,
-                    obj->xsize, obj->ysize,
-                    GDK_RGB_DITHER_NONE, 0, 0);
+
+   gdk_cairo_set_source_pixbuf (cr, obj->pixbuf, xr, yr);
+   cairo_paint (cr);
+   cairo_destroy (cr);
 }
 
 void draw_ball(gint ballcolor, gint x, gint y, gint jumpnum, gint destroynum) {
@@ -147,8 +135,9 @@ void redraw_pointer(void) {
 
 void draw_board(void) {
    gint i, j;
+   GtkWidget * board_w = mw_get_da();
 
-   if (!mw_get_da()) {
+   if (!board_w) {
       return;
    }
    for (j = 0; j < rules_get_height(); j++) {
@@ -158,7 +147,8 @@ void draw_board(void) {
          }
       }
    }
-   update_rectangle(0, 0, -1, -1);
+
+   gtk_widget_queue_draw (board_w);
 }
 
 gint inc_with_limit(gint val, gint lim) {
@@ -342,10 +332,17 @@ void remake_board(gint numoldchilds, gboolean isnextvalid) {
    cxs = gtkbTheme->emptycell.xsize;
    cys = gtkbTheme->emptycell.ysize;
    gtk_widget_set_size_request(mw_get_da(), rules_get_width() * cxs, rules_get_height() * cys);
-   if (_pixmap) {
-      g_object_unref(_pixmap);
+   if (pixsurf) {
+      g_object_unref(pixsurf);
    }
-   _pixmap = gdk_pixmap_new(mw_get_da()->window, rules_get_width() * cxs, rules_get_height() * cys, -1);
+
+   if (pixsurf) {
+      cairo_surface_destroy (pixsurf);
+   }
+   pixsurf = gdk_window_create_similar_surface (gtk_widget_get_window (mw_get_da()),
+                                                CAIRO_CONTENT_COLOR_ALPHA,
+                                                rules_get_width() * cxs, rules_get_height() * cys);
+
    draw_board();
 }
 
@@ -358,22 +355,25 @@ void draw_next_balls(void) {
 }
 
 /* Refill the screen from the backing pixmap */
-gint expose_event(GtkWidget *widget, GdkEventExpose *event) {
-   GdkRectangle *rects;
-   int n_rects;
-   int i;
+gint expose_event (GtkWidget *widget, GdkEventExpose *event)
+{
+   cairo_t * cr = gdk_cairo_create (gtk_widget_get_window (widget));
+   GdkRectangle * area = &(event->area);
 
-   gdk_region_get_rectangles(event->region, &rects, &n_rects);
-
-   for (i = 0; i < n_rects; i++) {
-      gdk_draw_drawable (gtk_widget_get_window (widget),
-                         widget->style->fg_gc[gtk_widget_get_state(widget)],
-                         _pixmap, rects[i].x, rects[i].y, rects[i].x, rects[i].y,
-                         rects[i].width, rects[i].height);
+   GtkAllocation a;
+   gtk_widget_get_allocation (widget, &a);
+   if (area->width == a.width) {
+      cairo_set_source_surface (cr, pixsurf, 0, 0);
+      cairo_paint (cr);
+   } else {
+      //cairo_save (cr);
+      cairo_translate (cr, area->x, area->y);
+      cairo_set_source_surface (cr, pixsurf, -area->x, -area->y);
+      cairo_rectangle (cr, 0, 0, area->width, area->height);
+      cairo_fill (cr);
+      //cairo_restore (cr);
    }
-
-   g_free (rects);
-
+   cairo_destroy (cr);
    return FALSE;
 }
 
