@@ -18,7 +18,7 @@ void redraw_ball(gint x, gint y);
 void redraw_pointer(void);
 void draw_board(void);
 /* Refill the screen from the backing pixmap */
-gint expose_event(GtkWidget *widget, GdkEventExpose *event);
+gboolean boardw_draw_event (GtkWidget *widget, gpointer compat, gpointer data);
 void remake_board(gint numoldchilds, gboolean isnextvalid);
 
 void reinit_board(gint *newboard, gint *newnext, gint score, gint oldnext);

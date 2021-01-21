@@ -247,7 +247,6 @@ void save_load_game_dialog(gboolean is_save)
    free_gamelist(gamelist, num);
 
    treeview = gtk_tree_view_new_with_model (GTK_TREE_MODEL(store));
-   gtk_tree_view_set_rules_hint (GTK_TREE_VIEW(treeview), TRUE);
    gtk_tree_view_set_search_column (GTK_TREE_VIEW(treeview), 0);
    gtk_tree_selection_set_mode (gtk_tree_view_get_selection(GTK_TREE_VIEW(treeview)), GTK_SELECTION_BROWSE);
    g_signal_connect (G_OBJECT(gtk_tree_view_get_selection(GTK_TREE_VIEW(treeview))),
@@ -270,18 +269,16 @@ void save_load_game_dialog(gboolean is_save)
    column = gtk_tree_view_column_new_with_attributes (_("Score"), renderer, "text", 2, NULL);
    gtk_tree_view_append_column (GTK_TREE_VIEW(treeview), column);
 
-   if (iter.stamp == store->stamp) {
-      if (is_save) {
-         path = gtk_tree_model_get_path (GTK_TREE_MODEL(store), &iter);
-      } else {
-         path = gtk_tree_path_new_from_string ("0");
-      }
-      if (path) {
-         gtk_tree_selection_select_path (gtk_tree_view_get_selection(GTK_TREE_VIEW(treeview)), path);
-         gtk_tree_view_set_cursor (GTK_TREE_VIEW(treeview), path, NULL, FALSE);
-         gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW(treeview), path, NULL, TRUE, 0, 0);
-         gtk_tree_path_free (path);
-      }
+   if (is_save) {
+      path = gtk_tree_model_get_path (GTK_TREE_MODEL(store), &iter);
+   } else {
+      path = gtk_tree_path_new_from_string ("0");
+   }
+   if (path) {
+      gtk_tree_selection_select_path (gtk_tree_view_get_selection(GTK_TREE_VIEW(treeview)), path);
+      gtk_tree_view_set_cursor (GTK_TREE_VIEW(treeview), path, NULL, FALSE);
+      gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW(treeview), path, NULL, TRUE, 0, 0);
+      gtk_tree_path_free (path);
    }
    g_object_unref (G_OBJECT(store));
 

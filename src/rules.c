@@ -20,7 +20,7 @@ void show_rules (GtkWidget *widget, gpointer data)
    dialog = gtkutil_dialog_new (_("Rules"), main_window, TRUE, &main_vbox);
    vbox   = gtkutil_frame_vbox (_("Rules"), main_vbox);
 
-   hbox = gtk_hbox_new (FALSE, 0);
+   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
    gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 
    label = gtk_label_new (_("The standard play area of GtkBalls is a 9x9\n" \

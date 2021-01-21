@@ -76,7 +76,6 @@ void menu_get_main(GtkWidget *window, GtkWidget **menubar)
    gtk_action_group_set_translate_func(_action_group, _menu_translate, NULL, NULL);
    gtk_action_group_add_actions(_action_group, _menu_entries, G_N_ELEMENTS(_menu_entries), window);
    _ui_manager = gtk_ui_manager_new();
-   gtk_ui_manager_set_add_tearoffs(_ui_manager, 1);
    gtk_ui_manager_insert_action_group(_ui_manager, _action_group, 0);
    accel_group = gtk_ui_manager_get_accel_group(_ui_manager);
    gtk_window_add_accel_group(GTK_WINDOW(window), accel_group);
