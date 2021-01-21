@@ -21,7 +21,20 @@ AC_PROG_CC
 AC_HEADER_STDC
 AC_CHECK_HEADERS([sys/param.h signal.h])
 
-PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.8)
+AC_ARG_ENABLE(gtk3,
+AS_HELP_STRING([--enable-gtk3],[enable to use gtk-3.0 instead of gtk-2.0]),
+[case "${enableval}" in
+  yes)  enable_gtk3=yes ;;
+  no)   enable_gtk3=no ;;
+esac],[])
+
+if test "x$enable_gtk3" = "xyes" ; then
+  gtk_modules="gtk+-3.0 >= 3.0.0"
+else
+  gtk_modules="gtk+-2.0 >= 2.14.0"
+  CPPFLAGS="$CPPFLAGS -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_DEPRECATED -DGTK_DISABLE_SINGLE_INCLUDES"
+fi
+PKG_CHECK_MODULES(GTK, [$gtk_modules])
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
 
