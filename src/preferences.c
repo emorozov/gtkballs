@@ -163,8 +163,8 @@ void preferences_dialog (void)
 
    theme_scrolled_window = gtk_scrolled_window_new (NULL, NULL);
    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(theme_scrolled_window), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-   gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW(theme_scrolled_window), GTK_SHADOW_ETCHED_IN);
    gtk_box_pack_start (GTK_BOX(vbox), theme_scrolled_window, FALSE, FALSE, 5);
+   gtk_widget_set_size_request (theme_scrolled_window, -1, 150);
 
    store = gtk_list_store_new (1, G_TYPE_STRING);
    for (i = 0, st = 0; themelist[i] != NULL; i++) {
@@ -178,9 +178,7 @@ void preferences_dialog (void)
    g_free (themelist);
 
    buttons[PR_THEME_LIST] = gtk_tree_view_new_with_model (GTK_TREE_MODEL(store));
-   gtk_widget_set_size_request (buttons[PR_THEME_LIST], -1, 150);
    g_object_unref (G_OBJECT(store));
-   gtk_tree_view_set_rules_hint (GTK_TREE_VIEW(buttons[PR_THEME_LIST]), TRUE);
    gtk_tree_view_set_search_column (GTK_TREE_VIEW(buttons[PR_THEME_LIST]), 0);
    gtk_tree_selection_set_mode (gtk_tree_view_get_selection(GTK_TREE_VIEW(buttons[PR_THEME_LIST])), GTK_SELECTION_BROWSE);
    gtk_container_add (GTK_CONTAINER(theme_scrolled_window), buttons[PR_THEME_LIST]);

@@ -7,10 +7,11 @@
  */
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
+#include "gtkcompat.h"
 
 gboolean ut_key_pressed_cb(GtkWidget *widget, GdkEventKey *event)
 {
-   if(widget && event && event->keyval == GDK_Escape) {
+   if(widget && event && event->keyval == GDK_KEY_Escape) {
       gtk_widget_destroy(widget);
       return TRUE;
    }
@@ -73,7 +74,7 @@ GtkWidget * gtkutil_frame_vbox (char * label, GtkWidget * parent_box)
    frame = gtk_frame_new (label);
    gtk_box_pack_start (GTK_BOX (parent_box), frame, FALSE, FALSE, 0);
 
-   GtkWidget * frame_vbox = gtk_vbox_new (FALSE, 5);
+   GtkWidget * frame_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
    gtk_container_add (GTK_CONTAINER (frame), frame_vbox);
    /* padding */
    gtk_container_set_border_width (GTK_CONTAINER (frame_vbox), 5);
@@ -112,7 +113,7 @@ GtkWidget *ut_spin_button_new(gchar *label, gint min, gint max, gint val, GtkWid
    GtkAdjustment *adj;
    GtkWidget *button, *hbox, *labelw;
 
-   hbox = gtk_hbox_new(FALSE, 0);
+   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
    gtk_box_pack_start(GTK_BOX(parent), hbox, TRUE, TRUE, 0);
 
    labelw = gtk_label_new(label);

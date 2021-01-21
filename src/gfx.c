@@ -355,14 +355,21 @@ void draw_next_balls(void) {
 }
 
 /* Refill the screen from the backing pixmap */
-gint expose_event (GtkWidget *widget, GdkEventExpose *event)
+gboolean boardw_draw_event (GtkWidget *widget, gpointer compat, gpointer data)
 {
+#if GTK_MAJOR_VERSION >= 3
+   cairo_t * cr = (cairo_t *) compat;
+   GdkRectangle rect;
+   GdkRectangle * area = &rect;
+   gdk_cairo_get_clip_rectangle (cr, area);
+#else // gtk2, espose_ event
+   GdkEventExpose * event = (GdkEventExpose *) compat;
    cairo_t * cr = gdk_cairo_create (gtk_widget_get_window (widget));
    GdkRectangle * area = &(event->area);
+#endif
 
-   GtkAllocation a;
-   gtk_widget_get_allocation (widget, &a);
-   if (area->width == a.width) {
+   int width = gtk_widget_get_allocated_width (widget);
+   if (area->width == width) {
       cairo_set_source_surface (cr, pixsurf, 0, 0);
       cairo_paint (cr);
    } else {
@@ -373,7 +380,10 @@ gint expose_event (GtkWidget *widget, GdkEventExpose *event)
       cairo_fill (cr);
       //cairo_restore (cr);
    }
+
+#if GTK_MAJOR_VERSION == 2
    cairo_destroy (cr);
+#endif
    return FALSE;
 }
 

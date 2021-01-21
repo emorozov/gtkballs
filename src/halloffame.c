@@ -58,7 +58,6 @@ void show_hall_of_fame (GtkWidget *widget, gpointer data, struct score_board b[1
    }
 
    tv = gtk_tree_view_new_with_model (GTK_TREE_MODEL(store));
-   gtk_tree_view_set_rules_hint (GTK_TREE_VIEW(tv), TRUE);
    gtk_tree_selection_set_mode (gtk_tree_view_get_selection(GTK_TREE_VIEW(tv)), GTK_SELECTION_BROWSE);
    g_object_unref (G_OBJECT(store));
    renderer = gtk_cell_renderer_text_new ();
