@@ -2,6 +2,7 @@
 #define __GTKBALLS__H
 
 #include <config.h>
+#include "gtkcompat.h"
 
 extern GtkWindow * main_window;
 
