@@ -22,6 +22,31 @@
 #include "game.h"
 #include "mainmenu.h"
 #include "mainwin.h"
+#include <sys/types.h>
+#include <sys/stat.h> /* mkdir */
+
+
+#define P_DIR "games"
+char * get_config_dir_file (const char * file)
+{
+   /* returns a path that must be freed with g_free */
+   char * config_home, * res;
+#if __MINGW32__
+   config_home = getenv ("LOCALAPPDATA"); /* XP */
+   if (!config_home) {
+      config_home = getenv ("APPDATA");
+   }
+#else
+   config_home = getenv ("XDG_CONFIG_HOME");
+#endif
+   if (config_home) {
+      res = g_build_filename (config_home, P_DIR, file, NULL);
+   } else {
+      res = g_build_filename (g_get_home_dir(), ".config", P_DIR, file, NULL);
+   }
+   return res;
+}
+
 
 gint destroy_lines(gboolean count_score) {
    gint i = game_destroy_lines(count_score);
@@ -113,6 +138,7 @@ void new_game(void)
    draw_board();
 }
 
+// ==================================================================
 
 int main(int argc, char **argv)
 {
@@ -120,7 +146,7 @@ int main(int argc, char **argv)
    struct timeval tv;
    struct timezone tz;
    struct score_board scoreboard[10];
-   gchar *err, *mapfile;
+   gchar *err, *mapfile, * confdir;
 
    /* setup all i18n stuff */
 #ifdef ENABLE_NLS
@@ -138,11 +164,16 @@ int main(int argc, char **argv)
    gettimeofday(&tv, &tz);
    srand((unsigned int)tv.tv_usec);
 
-   /* load user's preferences */
-   load_preferences();
-
    /* initialize gtk */
    gtk_init (&argc, &argv);
+
+   /* Make sure confdir exists */
+   confdir = get_config_dir_file (NULL);
+   g_mkdir_with_parents (confdir, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+   g_free (confdir);
+
+   /* load user's preferences */
+   load_preferences();
 
    /* load theme, fallback to default if specifed theme cannot be loaded */
    if (!(i = load_theme(pref_get_theme_name()))) {
