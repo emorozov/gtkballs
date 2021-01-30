@@ -199,14 +199,14 @@ int main(int argc, char **argv)
    mw_set_hi_score(scoreboard[0].score);
    mw_set_user_score(0);
 
-   mapfile = g_strconcat(getenv("HOME"), G_DIR_SEPARATOR_S, ".gtkballs",
-                         G_DIR_SEPARATOR_S, "accel.map", NULL);
+   mapfile = get_config_dir_file ("gtkballs-accel.map");
    gtk_accel_map_load (mapfile);
 
    /* enter main application loop */
    gtk_main();
 
    gtk_accel_map_save (mapfile);
+   g_free (mapfile);
 
    return 0;
 }
