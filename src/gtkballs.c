@@ -16,7 +16,6 @@
 #include "prefs.h" /* preferences */
 #include "scoreboard.h" /* read_score, score_setup */
 #include "gfx.h"
-#include "child.h"
 #include "theme.h"
 #include "inputname.h" /* input_name_dialog */
 #include "game.h"
@@ -155,11 +154,6 @@ int main(int argc, char **argv)
    bind_textdomain_codeset(PACKAGE, "UTF8");
 #endif /* ENABLE_NLS */
 
-   /* drop privileges after spawning child with extra privs */
-   if (score_setup() == -1)
-      return 1;
-   setregid(getgid(), getgid());
-
    /* initialize random seed */
    gettimeofday(&tv, &tz);
    srand((unsigned int)tv.tv_usec);
@@ -201,9 +195,7 @@ int main(int argc, char **argv)
    remake_board(-1, 1);
 
    /* read and set scores */
-   if (!read_score(scoreboard, NULL, NULL)) {
-      ut_simple_message_box(_("Unable to read score.\n"));
-   }
+   read_score (scoreboard, NULL, NULL);
    mw_set_hi_score(scoreboard[0].score);
    mw_set_user_score(0);
 

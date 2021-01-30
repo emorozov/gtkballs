@@ -14,7 +14,6 @@
 #include "gtkutils.h"
 #include "mainmenu.h" /* menu_* */
 #include "game.h"
-#include "child.h"
 
 GtkWindow * main_window;
 
@@ -77,12 +76,6 @@ gboolean _countdown_timer(gpointer data)
    gchar *text;
    GtkLabel *label = data;
    gint trem;
-
-   if (child_writer_dead_handler()) {
-      ut_simple_message_box_with_title(_("Score writer process died unexpectedly. No scores will be writen!\n" \
-                                       "Save your game and restart programm.\n"),
-                                       _("Who Killed Bambi?"));
-   }
 
    if (!timer_is_running()) {
       gtk_label_set_text(label, _("Time is unlimited"));

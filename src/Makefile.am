@@ -7,7 +7,7 @@ gtkballs_SOURCES = gtkballs.c gtkballs.h gfx.c gfx.h \
                 path.c path.h preferences.c preferences.h \
                 scoreboard.c scoreboard.h themerc.c themerc.h \
                 gtkutils.c gtkutils.h mainmenu.c mainmenu.h \
-                rules.c rules.h about.c about.h child.c child.h \
+                rules.c rules.h about.c about.h \
                 theme.c theme.h savegame.c savegame.h \
                 savedialog.c savedialog.h halloffame.c halloffame.h \
                 inputname.c inputname.h rulesdialog.c rulesdialog.h \
