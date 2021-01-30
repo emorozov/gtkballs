@@ -15,7 +15,7 @@
 #include "gtkballs.h" /* for _() */
 
 #define BUFFER_SIZE 1024
-#define CONFIG_FILE_NAME ".gtkballsrc"
+#define CONFIG_FILE_NAME "gtkballs.ini"
 
 gint _show_next_colors = TRUE;
 gint _show_path = TRUE;
@@ -112,17 +112,6 @@ void pref_set_theme_name(gchar *name) {
    _theme_name = g_strdup(name);
 }
 
-gchar *find_rc_file(void) {
-   gchar *rc_file = NULL;
-
-   if (getenv("HOME")) {
-      rc_file = g_strdup_printf("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
-   } else { /* unable to find $HOME, assuming current directory */
-      rc_file = g_strdup(CONFIG_FILE_NAME);
-   }
-
-   return rc_file;
-}
 
 /* converts string to TRUE/FALSE. "true", "yes" or "1" is TRUE, otherwise - FALSE */
 gboolean pref_str_to_bool(gchar *val) {
@@ -152,7 +141,7 @@ void load_preferences(void)
    if (!_theme_name) {
       _theme_name = g_strdup(_default_theme_name);
    }
-   rc_file = find_rc_file();
+   rc_file = get_config_dir_file (CONFIG_FILE_NAME);
    if ((fp = fopen(rc_file, "r")))
    {
       while(fgets(buffer, BUFFER_SIZE, fp))
@@ -219,7 +208,7 @@ gchar *save_preferences (void)
    gchar *rc_file/*, *err*/;
    gchar *ret = NULL;
 
-   rc_file = find_rc_file();
+   rc_file = get_config_dir_file (CONFIG_FILE_NAME);
    if ((fp = fopen(rc_file, "w"))) {
       write_pref_string(fp, "show_hints", pref_bool_to_str(_show_next_colors));
       write_pref_string(fp, "show_path", pref_bool_to_str(_show_path));
