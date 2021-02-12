@@ -98,6 +98,9 @@ gint read_score(struct score_board *b, struct score_board_full **bf, gint *nbf)
    memset(b, 0, sizeof(struct score_board) * 10);
 
    if (!(fp = fopen(score_file, "r"))) {
+      if (nbf) {
+         *nbf = 0;
+      }
       g_free (score_file);
       return TRUE;
    }
