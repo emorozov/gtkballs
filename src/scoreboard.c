@@ -16,18 +16,10 @@
 #include "gtkballs.h"
 #include "scoreboard.h"
 
-#include "child.h" /* child_writer_alive, child_setup */
 #include "game.h"
 
+#define SCORE_FILE "gtkballs-scores"
 #define BUFFER_SIZE 1024
-
-int _score_fd = -1;
-
-gint score_setup(void)
-{
-   _score_fd = child_setup(SCORE_FILE);
-   return _score_fd;
-}
 
 
 void free_score_board_full(struct score_board_full *bf, gint nbf)
@@ -44,10 +36,13 @@ void free_score_board_full(struct score_board_full *bf, gint nbf)
 gint write_score(struct score_board *b, struct score_board_full *bf, gint nbf)
 {
    gint i;
-   gchar *buf, *tname, *tdate, *rules;
-   size_t sz;
+   gchar *tname, *tdate, *rules;
+   char * score_file = get_config_dir_file (SCORE_FILE);
+   FILE * fd;
 
-   if (child_writer_alive() == 0) {
+   fd = fopen (score_file, "w");
+   if (!fd) {
+      g_free (score_file);
       return FALSE;
    }
 
@@ -63,27 +58,19 @@ gint write_score(struct score_board *b, struct score_board_full *bf, gint nbf)
             tdate = g_strdup(_("Unknown"));
          }
          rules = rules_get_as_str();
-         buf = g_strdup_printf("%s\t%i\t%s\t%s\n", tname, b[i].score, tdate, rules);
-         sz = strlen(buf);
-         write(_score_fd, &sz, sizeof(sz));
-         write(_score_fd, buf, strlen(buf));
+         fprintf (fd, "%s\t%i\t%s\t%s\n", tname, b[i].score, tdate, rules);
          g_free(rules);
          g_free(tdate);
          g_free(tname);
-         g_free(buf);
       }
    }
    for (i = 0; i < nbf; i++) {
       if (strlen(bf[i].name)) {
-         buf = g_strdup_printf("%s\t%i\t%s\t%s\n", bf[i].name, bf[i].score, bf[i].date, bf[i].rules);
-         sz = strlen(buf);
-         write(_score_fd, &sz, sizeof(sz));
-         write(_score_fd, buf, strlen(buf));
-         g_free(buf);
+         fprintf (fd, "%s\t%i\t%s\t%s\n", bf[i].name, bf[i].score, bf[i].date, bf[i].rules);
       }
    }
-   sz = 0;
-   write(_score_fd, &sz, sizeof(sz));
+   g_free (score_file);
+   fclose (fd);
 
    return TRUE;
 }
@@ -104,23 +91,19 @@ gint read_score(struct score_board *b, struct score_board_full **bf, gint *nbf)
    gchar **str_val, *tstr, **tstr_val;
    gint  valid, sc, fsc;
    gsize br, bw;
-   struct flock lockinfo;
+   char * score_file = get_config_dir_file (SCORE_FILE);
 
    gchar *g_rules = NULL;
 
    memset(b, 0, sizeof(struct score_board) * 10);
 
-   if (!(fp = fopen(LOCALSTATEDIR SCORE_FILE, "r"))) {
-      return FALSE;
+   if (!(fp = fopen(score_file, "r"))) {
+      if (nbf) {
+         *nbf = 0;
+      }
+      g_free (score_file);
+      return TRUE;
    }
-
-   do {
-      lockinfo.l_whence = SEEK_SET;
-      lockinfo.l_start = 0;
-      lockinfo.l_len = 0;
-      lockinfo.l_type = F_WRLCK;
-      fcntl(fileno(fp), F_GETLK, &lockinfo);
-   } while (lockinfo.l_type != F_UNLCK);
 
    sc = 0;
    fsc = 0;
@@ -198,6 +181,8 @@ gint read_score(struct score_board *b, struct score_board_full **bf, gint *nbf)
       }
       g_strfreev(str_val);
    }
+
+   g_free (score_file);
    fclose(fp);
 
    qsort(b, 10, sizeof(struct score_board), score_sort);

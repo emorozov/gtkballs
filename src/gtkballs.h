@@ -26,6 +26,7 @@ extern GtkWindow * main_window;
 #    define N_(String) (String)
 #endif                          /* ENABLE_NLS */
 
+char * get_config_dir_file (const char * file);
 void new_game(void);
 void new_turn(gint number, gboolean first);
 void undo_move(GtkWidget *widget, gpointer data);
