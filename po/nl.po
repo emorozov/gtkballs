@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-16 15:19+0300\n"
+"PO-Revision-Date: 2021-04-17 19:18+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+#: src/about.c:21
+msgid "About"
+msgstr "Over"
+
+#: src/about.c:32
+#, c-format
+msgid ""
+"GtkBalls %s\n"
+"Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
+"Copyright (C) 1998-1999 Eugene Morozov\n"
+"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"\n"
+"GtkBalls comes with ABSOLUTELY NO WARRANTY;\n"
+"for details press \"Show license\" button.\n"
+"This is free software and you are welcome to\n"
+"redistribute it under certain conditions;\n"
+"press \"Show license\" button for details."
+msgstr ""
+"GtkBalls %s\n"
+"Copyright (C) 2001-2002 drF_ckoff <dfo@antex.ru>\n"
+"Copyright (C) 1998-1999 Eugene Morozov\n"
+"<jmv@online.ru>, <roshiajin@yahoo.com>\n"
+"\n"
+"GtkBalls wordt geleverd ZONDER ENIGE VORM VAN GARANTIE;\n"
+"klik voor meer informatie op 'Licentie tonen'.\n"
+"Dit is vrije software je mag het opnieuw\n"
+"uitgeven onder bepaalde voorwaarden;\n"
+"klik voor meer informatie op 'Licentie tonen'."
+
+#: src/about.c:49
+msgid "Show license"
+msgstr "Licentie tonen"
+
+#: src/gtkballs.c:146
+#, c-format
+msgid "Failed loading theme \"%s\"! Trying \"%s\"\n"
+msgstr "Het thema '%s' kan niet worden geladen! '%s' wordt geprobeerd…\n"
+
+#: src/gtkballs.c:153
+#, c-format
+msgid "Failed loading theme \"%s\"! Exiting.\n"
+msgstr "Het thema '%s' kan niet worden geladen! Bezig met afsluiten…\n"
+
+#: src/gtkballs.c:171 src/halloffame.c:31 src/inputname.c:59
+msgid "Unable to read score.\n"
+msgstr "De score kan niet worden uitgelezen.\n"
+
+#: src/license.c:32
+msgid "Can't stat license file"
+msgstr "Het licentiebestand kan niet worden geraadpleegd"
+
+#: src/license.c:38
+msgid "Can't open license file"
+msgstr "Het licentiebestand kan niet worden geopend"
+
+#: src/license.c:46
+msgid "GNU Public License"
+msgstr "GNU Public License"
+
+#: src/mainmenu.c:20
+msgid "_Game"
+msgstr "_Spel"
+
+#: src/mainmenu.c:21
+msgid "_Edit"
+msgstr "B_ewerken"
+
+#: src/mainmenu.c:22
+msgid "_Settings"
+msgstr "In_stellingen"
+
+#: src/mainmenu.c:23
+msgid "_Help"
+msgstr "_Hulp"
+
+#: src/mainmenu.c:24
+msgid "_New"
+msgstr "_Nieuw"
+
+#: src/mainmenu.c:24
+msgid "Start new game"
+msgstr "Start een nieuw spel"
+
+#: src/mainmenu.c:25 src/mainmenu.c:32
+msgid "_Rules"
+msgstr "_Regels"
+
+#: src/mainmenu.c:25
+msgid "Change game rules"
+msgstr "Pas de spelregels aan"
+
+#: src/mainmenu.c:26
+msgid "_Save"
+msgstr "Op_slaan"
+
+#: src/mainmenu.c:26 src/savedialog.c:196 src/savedialog.c:266
+msgid "Save game"
+msgstr "Sla het spel op"
+
+#: src/mainmenu.c:27
+msgid "_Load"
+msgstr "_Laden"
+
+#: src/mainmenu.c:27 src/savedialog.c:196 src/savedialog.c:269
+msgid "Load game"
+msgstr "Laad een spel"
+
+#: src/mainmenu.c:28
+msgid "_Hall of fame"
+msgstr "Ere_galerij"
+
+#: src/mainmenu.c:28
+msgid "Show Hall of Fame"
+msgstr "Toon de eregalerij"
+
+#: src/mainmenu.c:29
+msgid "_Quit"
+msgstr "Af_sluiten"
+
+#: src/mainmenu.c:29
+msgid "Quit program"
+msgstr "Sluit het spel af"
+
+#: src/mainmenu.c:30
+msgid "_Undo"
+msgstr "O_ngedaan maken"
+
+#: src/mainmenu.c:30
+msgid "Undo last move"
+msgstr "Maak de recentste zet ongedaan"
+
+#: src/mainmenu.c:31
+msgid "_Preferences"
+msgstr "Voor_keuren"
+
+#: src/mainmenu.c:31
+msgid "Change game settings"
+msgstr "Pas de spelinstellingen aan"
+
+#: src/mainmenu.c:32
+msgid "Display help about game rules"
+msgstr "Toon de speluitleg"
+
+#: src/mainmenu.c:33
+msgid "_About"
+msgstr "_Over"
+
+#: src/mainmenu.c:33
+msgid "Show information about program"
+msgstr "Toon informatie over dit spel"
+
+#: src/mainwin.c:51
+#, c-format
+msgid "Hi-score: %i"
+msgstr "Topscore: %i"
+
+#: src/mainwin.c:64
+#, c-format
+msgid "Your score: %i"
+msgstr "Mijn score: %i"
+
+#: src/mainwin.c:75
+msgid ""
+"Score writer process died unexpectedly. No scores will be writen!\n"
+"Save your game and restart programm.\n"
+msgstr ""
+"De scorenotatie is onverwachts afgesloten - de score wordt niet genoteerd.\n"
+"Sla je spel op en heropen het venster.\n"
+
+#: src/mainwin.c:77
+msgid "Who Killed Bambi?"
+msgstr "Wie heeft Bambi vermoord?"
+
+#: src/mainwin.c:81
+msgid "Time is unlimited"
+msgstr "Geen tijdslimiet"
+
+#: src/mainwin.c:88
+#, c-format
+msgid "Remaining time: %02d:%02d"
+msgstr "Resterende tijd: %02d:%02d"
+
+#: src/mainwin.c:146
+msgid "GtkBalls"
+msgstr "GtkBalls"
+
+#: src/preferences.c:66
+msgid "Failed loading theme \""
+msgstr "Het thema kan niet worden geladen"
+
+#: src/preferences.c:130
+msgid "No themes available! =(\n"
+msgstr "Geen thema's beschikbaar! =(\n"
+
+#: src/preferences.c:136 src/preferences.c:142
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: src/preferences.c:149
+msgid "Show colors that will appear on next turn"
+msgstr "Kleuren tonen die bij de volgende zet zullen verschijnen"
+
+#: src/preferences.c:150
+msgid "Show path of the ball"
+msgstr "Pad van de bal volgen"
+
+#: src/preferences.c:151
+msgid "Show footprints of the ball"
+msgstr "Sporen van de bal volgen"
+
+#: src/preferences.c:152
+msgid "Show animation of disappearing of the ball"
+msgstr "Animatie tonen bij verdwijnen van de bal"
+
+#: src/preferences.c:153
+msgid "Highlight \"active\" cell"
+msgstr "'Actieve' bal markeren"
+
+#: src/preferences.c:155
+msgid "Highlight red value: "
+msgstr "Rode waarde markeren: "
+
+#: src/preferences.c:156
+msgid "Highlight green value: "
+msgstr "Groene waarde markeren: "
+
+#: src/preferences.c:157
+msgid "Highlight blue value: "
+msgstr "Blauwe waarde markeren: "
+
+#: src/preferences.c:165
+msgid "Enable time limit"
+msgstr "Tijdslimiet instellen"
+
+#: src/preferences.c:166
+msgid "Time limit (seconds): "
+msgstr "Tijdslimiet (in seconden): "
+
+#: src/preferences.c:195
+msgid "Select Theme"
+msgstr "Thema kiezen"
+
+#: src/prefs.c:236
+#, c-format
+msgid "Can't write to %s: %s"
+msgstr "Kan niet wegschrijven naar %s: %s"
+
+#: src/rules.c:22 src/rules.c:27
+msgid "Rules"
+msgstr "Spelregels"
+
+#: src/rules.c:34
+msgid ""
+"The standard play area of GtkBalls is a 9x9\n"
+"grid (it can be changed through \"Rules\"\n"
+"option in ingame menu). When GtkBalls is\n"
+"first started a number of balls are placed\n"
+"in a random manner on the grid. Balls are\n"
+"in different colors (and/or shape). You may\n"
+"move balls on the grid by selecting them and\n"
+"selecting an empty square on the grid as\n"
+"destination for the ball you selected. Balls\n"
+"will only move if they are not blocked by\n"
+"other balls. Each time you move a ball,\n"
+"unless you score some points, new balls\n"
+"appear in a random manner on the grid. If\n"
+"the grid is full then the game is lost.\n"
+"However this is bound to happen, your goal\n"
+"is to make the highest score. In order to do\n"
+"this you must make lines in a vertical,\n"
+"horizontal or diagonal way with balls of the\n"
+"same color. By default a line must have at\n"
+"least five balls of the same color (it can\n"
+"also be changed through \"Rules\" option in\n"
+"ingame menu). Making a line of minimum amount\n"
+"of the balls, specifed in rules, will earn you\n"
+"twice the points for your score. If you make\n"
+"lines over minimum amount of the balls it will\n"
+"earn you even more points. In order to help you\n"
+"decide which ball you are going to move, there\n"
+"is an indicator on top of the grid that shows\n"
+"what colors the next balls that will appear on\n"
+"the grid will be."
+msgstr ""
+"Het standaard speelveld van GtkBalls is een rooster\n"
+"van 9x9 (wat kan worden aangepast via de optie\n"
+"'Spelregels' in het spelmenu). Aan het begin van\n"
+"het spel wordt een aantal ballen willekeurig op het\n"
+"rooster geplaatst. De ballen hebben verschillende\n"
+"kleuren (en/of vormen). Verplaats ballen door ze\n"
+"aan te klikken en daarna een leeg vakje aan te\n"
+"klikken. De ballen kunnen alleen worden verplaatst\n"
+"als ze niet worden gedwarsboomd door andere\n"
+"ballen. Telkens als je een bal verplaatst, scoor je\n"
+"en worden er willekeurig nieuwe ballen geplaatst.\n"
+"Als het rooster vol is, is het spel afgelopen.\n"
+"Maar het doel van het spel is om de hoogste score\n"
+"te behalen. Dit doe je door verticale, horizontale en\n"
+"diagonale regels op te vullen met ballen van dezelfde\n"
+"kleur. Standaard dient een regel minimaal vijf ballen\n"
+"van dezelfde kleur te hebben (wat kan worden aangepast\n"
+"via de menu-optie 'Spelregels'. Als je een regel met het\n"
+"minimumaantal ballen opvult, dan wordt je score\n"
+"verdubbeld. En als je eroverheen gaat, scoor je nóg\n"
+"meer punten! Boven het rooster zie je een indicator\n"
+"die aangeeft welke kleuren als volgt op het rooster\n"
+"zullen verschijnen."
+
+#: src/scoreboard.c:53 src/scoreboard.c:57 src/scoreboard.c:155
+#: src/scoreboard.c:170 src/inputname.c:42 src/inputname.c:46
+#: src/inputname.c:50
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: src/savedialog.c:29
+msgid "No game selected for load.\n"
+msgstr "Je hebt geen te laden spel geselecteerd.\n"
+
+#: src/savedialog.c:33
+#, c-format
+msgid ""
+"Cannot load game from:\n"
+"%s\n"
+msgstr ""
+"Het spel kan niet worden geladen uit:\n"
+"%s\n"
+
+#: src/savedialog.c:37
+#, c-format
+msgid ""
+"Not enough balls(%d) in current theme.\n"
+"We need %d balls.\n"
+"Load another theme and try again."
+msgstr ""
+"Het huidige thema bevat onvoldoende ballen (%d).\n"
+"Er zijn %d ballen benodigd.\n"
+"Kies een ander thema en probeer het opnieuw."
+
+#: src/savedialog.c:107
+#, c-format
+msgid ""
+"Cannot save game to:\n"
+"%s\n"
+"%s"
+msgstr ""
+"Het spel kan niet worden opgeslagen naar:\n"
+"%s\n"
+"%s"
+
+#: src/savedialog.c:192
+msgid "No saved games found.\n"
+msgstr "Geen opgeslagen spellen gevonden.\n"
+
+#: src/savedialog.c:221
+msgid "Empty"
+msgstr "Leeg"
+
+#: src/savedialog.c:235 src/halloffame.c:74
+msgid "Date"
+msgstr "Datum"
+
+#: src/savedialog.c:246 src/halloffame.c:71
+msgid "Score"
+msgstr "Score"
+
+#: src/savedialog.c:272
+msgid "Delete game"
+msgstr "Spel verwijderen"
+
+#: src/halloffame.c:36 src/halloffame.c:42
+msgid "Hall of Fame"
+msgstr "Eregalerij"
+
+#: src/halloffame.c:60
+msgid "No scores"
+msgstr "Geen scores"
+
+#: src/halloffame.c:68
+msgid "Name"
+msgstr "Naam"
+
+#: src/inputname.c:35
+msgid "Anonymous"
+msgstr "Anoniem"
+
+#: src/inputname.c:41 src/inputname.c:45
+msgid "Unable to determine current date.\n"
+msgstr "De huidige datum kan niet worden vastgesteld.\n"
+
+#: src/inputname.c:44
+msgid "%a %b %d %H:%M %Y"
+msgstr "%a %b %d %H:%M %Y"
+
+#: src/inputname.c:63
+msgid "Unable to save score.\n"
+msgstr "De score kan niet worden genoteerd.\n"
+
+#: src/inputname.c:90
+msgid "Enter your name"
+msgstr "Voer je naam in"
+
+#: src/rulesdialog.c:61 src/rulesdialog.c:66
+msgid "Game rules"
+msgstr "Spelregels"
+
+#: src/rulesdialog.c:73
+msgid "Board width"
+msgstr "Breedte van bord"
+
+#: src/rulesdialog.c:74
+msgid "Board height"
+msgstr "Hoogte van bord"
+
+#: src/rulesdialog.c:75
+msgid "Number of different objects"
+msgstr "Aantal verschillende objecten"
+
+#: src/rulesdialog.c:77
+msgid "Number of 'next' objects"
+msgstr "Aantal 'volgende' objecten"
+
+#: src/rulesdialog.c:78
+msgid "How many balls at line eliminate it"
+msgstr "Hoeveel ballen per regel er moeten worden verwijderd"
+
+#: src/rulesdialog.c:81
+msgid "Classic rules"
+msgstr "Traditionele regels"
