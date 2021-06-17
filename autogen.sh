@@ -1,6 +1,58 @@
 #!/bin/sh
 # Run this to generate all the initial makefiles, etc.
 
+# special params:
+# - po       update .pot & po files
+# - linguas  update LINGUAS and POTFILES.in
+# - release  create release tarball
+
+#===========================================================================
+
+if test "$1" =  "po" ; then
+	# Before creating a release you might want to update the po files
+	test -d "po/"         || exit
+	#git clean -dfx
+	test -f ./configure   || ./autogen.sh
+	test -f ./po/Makefile || ./configure
+	find po -name '*.pot' -delete # updates don't happen if pot files already exist...
+	make -C po update-po
+	# cleanup
+	rm -f po/*.po~
+	#sed -i '/#~ /d' po/*.po
+	#git clean -dfx
+	exit
+fi
+
+if test "$1" =  "linguas" ; then
+	test -d "po/" || exit
+	pot_in=$(grep '_(' $(find . -type f -name '*.h' -or -name '*.c') | sed -e 's%^\./%%' -e 's%:.*%%' | sort -u)
+	echo "${pot_in}" > po/POTFILES.in
+	linguas=$(find po -name '*.po' | sed -e 's%.*/%%' -e 's%\.po%%' | sort)
+	echo ${linguas} > po/LINGUAS
+	exit
+fi
+
+#===========================================================================
+
+if test "$1" == "release" || test "$1" == "--release" ; then
+	pkg="$(grep -m 1 AC_INIT configure.ac | cut -f 2 -d '[' | cut -f 1 -d ']')"
+	ver="$(grep -m 1 AC_INIT configure.ac | cut -f 3 -d '[' | cut -f 1 -d ']')"
+	ver=$(echo $ver)
+	dir=${pkg}-${ver}
+	rm -rf ../$dir
+	mkdir -p ../$dir
+	cp -rf $PWD/* ../$dir
+	( cd ../$dir ; ./autogen.sh )
+	cd ..
+	tar -Jcf ${dir}.tar.xz $dir
+	exit
+fi
+
+
+#===========================================================================
+#                    autogen.sh [--verbose]
+#===========================================================================
+
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 cd $srcdir
