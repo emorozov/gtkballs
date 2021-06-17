@@ -1,7 +1,6 @@
 *.so
 *.o
 ar-lib
-po/Makefile.in.in
 po/POTFILES
 po/*.gmo
 stamp-it
