@@ -27,3 +27,5 @@ stamp-h1
 .deps
 .libs
 src/gtkballs
+autoconf
+autoconf-m4

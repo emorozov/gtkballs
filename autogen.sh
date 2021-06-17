@@ -18,15 +18,26 @@ if test "$1" == "verbose" || test "$1" == "--verbose" ; then
 	verbose2='--debug'
 fi
 
+# pre-create some dirs / files
+auxdir='.'
+if grep -q "AC_CONFIG_AUX_DIR" configure.ac ; then
+	auxdir="$(grep AC_CONFIG_AUX_DIR configure.ac | cut -f 2 -d '[' | cut -f 1 -d ']')"
+fi
+mkdir -p ${auxdir}
+touch ${auxdir}/config.rpath
+m4dir="$(grep AC_CONFIG_MACRO_DIR configure.ac | cut -f 2 -d '[' | cut -f 1 -d ']')"
+if test -n "$m4dir" ; then
+	mkdir -p ${m4dir}
+fi
+
 # Get all required m4 macros required for configure
 $LIBTOOLIZE ${verbose} --copy --force || exit 1
-$ACLOCAL ${verbose} -I m4 || exit 1
+$ACLOCAL ${verbose} || exit 1
 
 # Generate config.h.in
 $AUTOHEADER ${verbose} --force || exit 1
 
 # Generate Makefile.in's
-touch config.rpath
 $AUTOMAKE ${verbose} --add-missing --copy --force || exit 1
 
 if grep "IT_PROG_INTLTOOL" configure.ac >/dev/null ; then

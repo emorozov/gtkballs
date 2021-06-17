@@ -16,4 +16,4 @@ install-data-hook:
 	if [ "${UID}" = 0 ]; then chgrp games $(DESTDIR)$(localstatedir)/gtkballs-scores; fi
 	chmod 0664 $(DESTDIR)$(localstatedir)/gtkballs-scores
 
-ACLOCAL_AMFLAGS = -I m4
+ACLOCAL_AMFLAGS = -I autoconf-m4
