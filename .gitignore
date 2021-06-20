@@ -2,7 +2,8 @@
 *.o
 ar-lib
 po/POTFILES
-po/*.gmo
+*.gmo
+*.mo
 stamp-it
 compile
 config.guess
@@ -20,6 +21,7 @@ libtool
 ltmain.sh
 Makefile
 Makefile.in
+!po/Makefile.in
 m4
 missing
 stamp-h1
