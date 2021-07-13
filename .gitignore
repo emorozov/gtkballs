@@ -1,9 +1,9 @@
 *.so
 *.o
 ar-lib
-po/Makefile.in.in
 po/POTFILES
-po/*.gmo
+*.gmo
+*.mo
 stamp-it
 compile
 config.guess
@@ -21,9 +21,12 @@ libtool
 ltmain.sh
 Makefile
 Makefile.in
+!po/Makefile.in
 m4
 missing
 stamp-h1
 .deps
 .libs
 src/gtkballs
+autoconf
+autoconf-m4
