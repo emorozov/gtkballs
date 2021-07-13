@@ -332,9 +332,6 @@ void remake_board(gint numoldchilds, gboolean isnextvalid) {
    cxs = gtkbTheme->emptycell.xsize;
    cys = gtkbTheme->emptycell.ysize;
    gtk_widget_set_size_request(mw_get_da(), rules_get_width() * cxs, rules_get_height() * cys);
-   if (pixsurf) {
-      g_object_unref(pixsurf);
-   }
 
    if (pixsurf) {
       cairo_surface_destroy (pixsurf);
