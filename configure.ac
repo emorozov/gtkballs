@@ -69,7 +69,6 @@ esac
 
 
 AC_CONFIG_FILES([
-	gtkballs.lsm
 	Makefile
 	src/Makefile
 	doc/Makefile

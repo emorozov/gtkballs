@@ -5,7 +5,6 @@ SUBDIRS = po doc src gtkballs-data
 EXTRA_DIST = README.russian \
 	     TODO \
 	     gnome-gtkballs.png \
-             gtkballs.lsm \
 	     gtkballs.spec
 
 appddir = $(datadir)/gtkballs
