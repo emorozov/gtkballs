@@ -5,6 +5,11 @@
  * License as published by the Free Software Foundation; either
  * version 2 of the License, or (at your option) any later version.
  */
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <sys/types.h>

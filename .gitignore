@@ -1,7 +1,6 @@
 *.so
 *.o
 ar-lib
-po/POTFILES
 *.gmo
 *.mo
 stamp-it
@@ -14,14 +13,10 @@ config.status
 config.sub
 autom4te.cache
 aclocal.m4
-configure
 depcomp
 install-sh
 libtool
 ltmain.sh
-Makefile
-Makefile.in
-!po/Makefile.in
 m4
 missing
 stamp-h1
@@ -30,3 +25,6 @@ stamp-h1
 src/gtkballs
 autoconf
 autoconf-m4
+config.mk
+config.h
+config.sh

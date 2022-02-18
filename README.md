@@ -9,7 +9,6 @@ This is the README for gtkballs.
 
 Run
 
-- ./autogen.sh
 - ./configure --prefix=/usr
 - make
 
