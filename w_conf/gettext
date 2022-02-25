@@ -30,7 +30,6 @@ opt_configure_gettext()
 			#sed -i '/#~ /d' po/*.po
 			exit 0
 			;;
-		po2c) printf "" ;;
 		esac
 	done
 }
